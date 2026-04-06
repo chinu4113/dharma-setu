@@ -733,24 +733,22 @@ function gp(id){
 }
 
 function fst(cat, btn){
+
   document.getElementById('empty-msg').style.display = 'none';
 
   document.querySelectorAll('.stab').forEach(b => b.classList.remove('on'));
   btn.classList.add('on');
 
+  // hide all
   document.querySelectorAll('.stotra-card').forEach(c => {
     c.style.display = 'none';
   });
 
+  // show selected
   document.querySelectorAll(`.stotra-card[data-cat="${cat}"]`).forEach(c => {
-    c.style.display = 'block';
+    c.style.display = 'flex'; // 👈 THIS LINE FIXED
   });
-}
 
-  // show only selected category
-  document.querySelectorAll(`.stotra-card[data-cat="${cat}"]`).forEach(c => {
-    c.style.display = 'block';
-  });
 }
 
 function sp(name){
