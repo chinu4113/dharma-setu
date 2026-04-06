@@ -733,14 +733,19 @@ function gp(id){
 }
 
 function fst(cat, btn){
-  // remove active from all buttons
+  document.getElementById('empty-msg').style.display = 'none';
+
   document.querySelectorAll('.stab').forEach(b => b.classList.remove('on'));
   btn.classList.add('on');
 
-  // hide all cards first
   document.querySelectorAll('.stotra-card').forEach(c => {
     c.style.display = 'none';
   });
+
+  document.querySelectorAll(`.stotra-card[data-cat="${cat}"]`).forEach(c => {
+    c.style.display = 'block';
+  });
+}
 
   // show only selected category
   document.querySelectorAll(`.stotra-card[data-cat="${cat}"]`).forEach(c => {
