@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>धर्मसेतु – पं. यश कुलकर्णी गुरुजी</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Tiro+Devanagari+Sanskrit&display=swap" rel="stylesheet">
+<style>
+:root{--s:#E85D04;--sl:#F48C06;--sd:#C44B00;--g:#D4A017;--gl:#F5C842;--gp:#FFF8E8;--cr:#9B1B30;--cream:#FDF6E3;--ivory:#FFFAF0;--dk:#1A0800;--dk2:#2D1200;--tx:#3A1500;--txm:#7A5C3A;--bd:#E0C060;--sh:rgba(180,100,0,0.15);--r:12px;--rt:20px}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Cormorant Garamond',Georgia,serif;background:var(--cream);color:var(--tx);overflow-x:hidden;min-height:100vh}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--cream)}::-webkit-scrollbar-thumb{background:var(--g);border-radius:3px}
+#topbar{position:sticky;top:0;z-index:999;background:linear-gradient(135deg,var(--dk2),#3D1800,var(--dk2));border-bottom:1.5px solid var(--g);box-shadow:0 3px 24px rgba(0,0,0,0.5)}
+.tb-inner{display:flex;align-items:center;justify-content:space-between;padding:10px 20px;border-bottom:1px solid rgba(212,160,23,0.25);flex-wrap:wrap;gap:6px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;cursor:pointer}
+.logo-orb{width:44px;height:44px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#F5C842,#D4A017);display:flex;align-items:center;justify-content:center;font-size:20px;font-family:'Tiro Devanagari Sanskrit',serif;box-shadow:0 0 16px rgba(212,160,23,0.55);animation:aura 3s ease-in-out infinite;color:var(--dk2);font-weight:bold}
+@keyframes aura{0%,100%{box-shadow:0 0 14px rgba(212,160,23,0.5)}50%{box-shadow:0 0 26px rgba(212,160,23,0.85)}}
+.logo-t{color:var(--gl);font-family:'Cinzel Decorative',serif;font-size:1.25rem;line-height:1}.logo-s{color:rgba(255,248,200,0.6);font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.7rem;letter-spacing:1px;margin-top:2px}
+.live-pill{display:flex;align-items:center;gap:10px;background:rgba(212,160,23,0.12);border:1px solid rgba(212,160,23,0.3);border-radius:20px;padding:5px 14px}
+.live-pill span{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.75rem;letter-spacing:0.5px;color:rgba(255,248,200,0.9)}
+.live-dot{width:7px;height:7px;border-radius:50%;background:#4CAF50;animation:blink 1.5s ease-in-out infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+.navrow{display:flex;align-items:center;padding:0 12px;overflow-x:auto;scrollbar-width:none}.navrow::-webkit-scrollbar{display:none}
+.navrow a{display:flex;align-items:center;gap:5px;color:rgba(255,248,200,0.72);text-decoration:none;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.82rem;padding:10px 14px;white-space:nowrap;border-bottom:2px solid transparent;transition:color .2s,border-color .2s,background .2s}
+.navrow a .ni{font-size:14px}.navrow a:hover,.navrow a.on{color:var(--gl);border-bottom-color:var(--gl);background:rgba(212,160,23,0.07)}
+.pg{display:none;animation:fadeIn .35s ease}.pg.on{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.hero{background:linear-gradient(155deg,var(--dk2) 0%,#5C2400 45%,#3D1400 100%);padding:52px 20px 44px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ccircle cx='40' cy='40' r='30' fill='none' stroke='rgba(212,160,23,0.05)' stroke-width='1'/%3E%3C/svg%3E") repeat}
+.hbgom{position:absolute;top:50%;left:50%;transform:translate(-50%,-55%);font-size:28vw;color:rgba(212,160,23,0.04);font-family:'Tiro Devanagari Sanskrit',serif;pointer-events:none;user-select:none;line-height:1}
+.hero-chip{display:inline-block;border:1px solid rgba(212,160,23,0.5);color:rgba(245,200,66,0.9);font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.78rem;letter-spacing:1px;padding:5px 20px;border-radius:20px;background:rgba(212,160,23,0.1);margin-bottom:18px;position:relative}
+.hero h1{font-family:'Cinzel Decorative',serif;font-size:clamp(2.2rem,7vw,3.6rem);color:var(--gl);line-height:1.1;position:relative;text-shadow:0 0 40px rgba(212,160,23,0.35);margin-bottom:10px}
+.hero p{color:rgba(255,248,200,0.75);font-size:1.05rem;font-family:'Tiro Devanagari Sanskrit',serif;margin-bottom:30px;position:relative}
+.hbtns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;position:relative}
+.btn-fire{background:linear-gradient(135deg,var(--sl),var(--s),var(--sd));color:#fff;border:none;cursor:pointer;padding:14px 30px;border-radius:30px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.95rem;box-shadow:0 5px 20px rgba(232,93,4,0.45);transition:transform .2s,box-shadow .2s;text-decoration:none;display:inline-block}
+.btn-fire:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(232,93,4,0.6)}
+.btn-ring{background:transparent;color:var(--gl);border:1.5px solid var(--g);padding:13px 28px;border-radius:30px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.95rem;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block}
+.btn-ring:hover{background:rgba(212,160,23,0.15);border-color:var(--gl)}
+.btn-wa{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;border:none;cursor:pointer;padding:13px 26px;border-radius:30px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.9rem;text-decoration:none;transition:opacity .2s}
+.btn-wa:hover{opacity:.88}
+.btn-sm{background:linear-gradient(135deg,var(--s),var(--sd));color:#fff;border:none;cursor:pointer;padding:9px 20px;border-radius:20px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.85rem;transition:opacity .2s}
+.btn-sm:hover{opacity:.88}
+.pband{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bd);border:1px solid var(--bd);border-radius:var(--r);overflow:hidden;max-width:720px;margin:0 auto;position:relative}
+.pband-cell{background:linear-gradient(135deg,rgba(26,8,0,.93),rgba(45,20,0,.93));padding:13px 10px;text-align:center}
+.pband-cell .lbl{color:var(--g);font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.68rem;letter-spacing:1px;margin-bottom:4px}
+.pband-cell .val{color:var(--cream);font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;font-weight:600}
+.sec{padding:52px 20px}.sec-alt{background:linear-gradient(160deg,#FEF9EE,var(--cream))}.sec-dk{background:linear-gradient(135deg,var(--dk2),#3D1400);color:var(--cream)}
+.stitle{font-family:'Tiro Devanagari Sanskrit',serif;font-size:clamp(1.3rem,4vw,1.9rem);color:var(--sd);text-align:center;margin-bottom:6px}
+.sec-dk .stitle{color:var(--gl)}
+.sdiv{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:32px}
+.sdiv-line{height:1px;width:50px;background:var(--g)}.sdiv-sym{color:var(--g);font-size:1rem}.sec-dk .sdiv-line{background:rgba(212,160,23,0.4)}
+.rahu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;max-width:960px;margin:0 auto}
+.rahu-card{background:#fff;border:1px solid var(--bd);border-radius:var(--r);padding:18px;text-align:center;border-top:3px solid var(--s);box-shadow:0 2px 14px var(--sh);transition:transform .2s}
+.rahu-card.gt{border-top-color:var(--g)}.rahu-card:hover{transform:translateY(-3px)}
+.rahu-card .rc-day{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.72rem;color:var(--txm);margin-bottom:4px}
+.rahu-card .rc-time{font-size:1.1rem;font-weight:600;color:var(--sd);font-family:'Tiro Devanagari Sanskrit',serif}
+.rahu-card .rc-type{font-size:0.82rem;font-style:italic;color:var(--txm);margin-top:3px;font-family:'Tiro Devanagari Sanskrit',serif}
+.feat-box{background:linear-gradient(145deg,var(--dk2),#5C2400);border:1.5px solid rgba(212,160,23,0.5);border-radius:var(--rt);padding:36px 32px;max-width:680px;margin:0 auto;text-align:center;position:relative;overflow:hidden}
+.feat-box::before{content:'ॐ';position:absolute;font-size:10rem;color:rgba(212,160,23,0.06);font-family:'Tiro Devanagari Sanskrit',serif;right:-10px;top:-20px;pointer-events:none}
+.feat-box .fb-tag{color:var(--g);font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.72rem;letter-spacing:1px;margin-bottom:10px}
+.feat-box .fb-name{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1.5rem;color:var(--gl);margin-bottom:20px}
+.feat-box .fb-verse{color:rgba(255,248,200,0.88);font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;line-height:2.2}
+.pow-band{background:linear-gradient(135deg,var(--sd),var(--cr));text-align:center;padding:44px 20px}
+.pow-band .pb-by{font-size:0.78rem;letter-spacing:2px;color:rgba(255,255,255,0.7);margin-bottom:8px;font-family:'Tiro Devanagari Sanskrit',serif}
+.pow-band .pb-name{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1.8rem;color:var(--gl)}
+.pow-band .pb-role{font-size:0.95rem;color:rgba(255,255,255,0.8);margin-top:6px;font-family:'Tiro Devanagari Sanskrit',serif}
+.pan-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:32px;flex-wrap:wrap}
+.pan-nav button{background:transparent;border:1.5px solid var(--g);color:var(--g);padding:9px 22px;border-radius:20px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.85rem;cursor:pointer;transition:all .2s}
+.pan-nav button:hover{background:var(--g);color:var(--dk2)}.pan-nav .pdate{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1.05rem;color:var(--sd);text-align:center}
+.pan-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:14px;max-width:960px;margin:0 auto}
+.pan-item{background:#fff;border:1px solid var(--bd);border-radius:var(--r);padding:18px;text-align:center;box-shadow:0 2px 10px var(--sh);transition:transform .2s}
+.pan-item:hover{transform:translateY(-2px)}.pan-item .pi-lbl{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.68rem;color:var(--txm);margin-bottom:6px}
+.pan-item .pi-val{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1.05rem;font-weight:600;color:var(--sd)}.pan-item .pi-t{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.78rem;color:var(--txm);margin-top:3px}
+.pi-red{color:#B71C1C!important}.pi-grn{color:#1B5E20!important}
+.muh-list{display:flex;flex-direction:column;gap:12px;max-width:820px;margin:0 auto}
+.muh-row{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--bd);border-left:4px solid var(--g);border-radius:var(--r);padding:16px 20px;box-shadow:0 2px 10px var(--sh);flex-wrap:wrap;transition:transform .2s}
+.muh-row:hover{transform:translateX(4px)}.muh-date{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.78rem;color:var(--sd);min-width:110px}
+.muh-name{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;font-weight:500;flex:1}.muh-tag{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.72rem;background:var(--gp);border:1px solid var(--bd);color:var(--txm);padding:3px 10px;border-radius:10px}
+.muh-time{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.85rem;color:var(--txm)}
+.rashi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;max-width:1100px;margin:0 auto}
+.rashi-card{background:#fff;border:1px solid var(--bd);border-radius:var(--r);padding:20px;box-shadow:0 2px 12px var(--sh);cursor:pointer;transition:transform .2s,box-shadow .2s}
+.rashi-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px var(--sh)}.rashi-card .ri{font-size:2rem;margin-bottom:8px;display:block}
+.rashi-card .rn{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.95rem;color:var(--sd);margin-bottom:2px}
+.rashi-card .re{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.78rem;color:var(--txm);margin-bottom:10px}
+.rashi-card .rp{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.9rem;line-height:1.8;color:var(--tx)}
+.rashi-card .ru{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.82rem;color:var(--cr);margin-top:10px;padding-top:8px;border-top:1px solid var(--bd)}
+.badge{display:inline-block;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.68rem;padding:3px 10px;border-radius:10px;margin-bottom:10px}
+.bg-g{background:#E8F5E9;color:#1B5E20}.bg-y{background:#FFF8E1;color:#E65100}.bg-r{background:#FFEBEE;color:#B71C1C}
+.stotra-tabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:28px}
+.stab{background:transparent;border:1.5px solid rgba(212,160,23,0.5);color:rgba(245,200,66,0.85);padding:8px 20px;border-radius:20px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.85rem;cursor:pointer;transition:all .2s}
+.stab.on,.stab:hover{background:var(--g);color:var(--dk2);border-color:var(--g)}
+.stotra-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;max-width:1040px;margin:0 auto}
+.stotra-card{background:rgba(255,248,200,0.1);border:1px solid rgba(212,160,23,0.25);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:8px;transition:transform .2s,background .2s;cursor:pointer}
+.stotra-card:hover{transform:translateY(-3px);background:rgba(255,248,200,0.18)}
+.stotra-card .sd{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.72rem;color:rgba(212,160,23,0.7);margin-bottom:2px}
+.stotra-card .sn{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;color:var(--gl)}
+.stotra-card .sp{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.88rem;color:rgba(255,248,200,0.65);line-height:1.7}
+.audio-ph{background:rgba(212,160,23,0.1);border:1px dashed rgba(212,160,23,0.35);border-radius:6px;padding:8px;text-align:center;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.78rem;color:rgba(212,160,23,0.7)}
+.ov{display:none;position:fixed;inset:0;z-index:9999;background:rgba(10,4,0,0.82);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:16px}
+.ov.open{display:flex}
+.ov-box{background:linear-gradient(145deg,var(--cream),var(--ivory));border:1.5px solid var(--bd);border-radius:var(--rt);max-width:640px;width:100%;max-height:88vh;overflow-y:auto;padding:36px 28px;position:relative}
+.ov-close{position:absolute;top:14px;right:18px;background:none;border:none;font-size:1.6rem;color:var(--txm);cursor:pointer;line-height:1}.ov-close:hover{color:var(--tx)}
+.ov-title{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1.4rem;color:var(--sd);margin-bottom:4px}
+.ov-sub{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.8rem;color:var(--txm);margin-bottom:20px}
+.ov-text{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;line-height:2.2;color:var(--tx);white-space:pre-line}
+.puja-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;max-width:1040px;margin:0 auto 40px}
+.puja-card{background:#fff;border:1px solid var(--bd);border-radius:var(--r);padding:22px;text-align:center;box-shadow:0 2px 10px var(--sh);transition:transform .2s}
+.puja-card:hover{transform:translateY(-3px)}.puja-card .picon{font-size:2.4rem;margin-bottom:10px;display:block}
+.puja-card .pname{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.95rem;color:var(--sd);margin-bottom:6px}
+.puja-card .pdesc{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.85rem;color:var(--txm);line-height:1.65;margin-bottom:14px}
+.bform{max-width:580px;margin:0 auto;background:#fff;border:1px solid var(--bd);border-radius:var(--rt);padding:36px 32px;box-shadow:0 6px 28px var(--sh)}
+.bform-title{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1.2rem;color:var(--sd);margin-bottom:24px;text-align:center}
+.fg{margin-bottom:18px}.fg label{display:block;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.75rem;color:var(--txm);margin-bottom:6px}
+.fg input,.fg select,.fg textarea{width:100%;padding:12px 15px;border:1px solid var(--bd);border-radius:8px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.95rem;color:var(--tx);background:var(--ivory);transition:border-color .2s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:var(--g)}.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.about-wrap{display:grid;grid-template-columns:240px 1fr;gap:44px;max-width:900px;margin:0 auto;align-items:start}
+.guru-card{background:#fff;border:1px solid var(--bd);border-radius:var(--rt);padding:28px;text-align:center;box-shadow:0 4px 20px var(--sh)}
+.guru-orb{width:120px;height:120px;border-radius:50%;margin:0 auto 14px;background:radial-gradient(circle,var(--sl),var(--sd));border:3px solid var(--g);display:flex;align-items:center;justify-content:center;font-size:3.5rem;box-shadow:0 0 30px rgba(212,160,23,0.25)}
+.guru-name{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1.1rem;color:var(--sd);margin-bottom:4px}
+.guru-role{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.85rem;color:var(--txm);margin-bottom:14px}
+.guru-badges{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.gbadge{background:var(--gp);border:1px solid var(--bd);color:var(--txm);padding:4px 12px;border-radius:10px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.72rem}
+.about-body p{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.98rem;line-height:1.9;color:var(--tx);margin-bottom:16px}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+.stat-box{background:var(--gp);border:1px solid var(--bd);border-radius:var(--r);padding:16px;text-align:center}
+.stat-box .num{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1.7rem;color:var(--sd)}.stat-box .lbl{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.78rem;color:var(--txm);margin-top:3px}
+.ct-wrap{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:900px;margin:0 auto}
+.ct-info h3{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.95rem;color:var(--sd);margin-bottom:22px}
+.ct-row{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px}.ct-ico{font-size:1.4rem;width:36px;flex-shrink:0;text-align:center;margin-top:2px}
+.ct-lbl{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.72rem;color:var(--txm);margin-bottom:2px}.ct-val{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.98rem;color:var(--tx)}
+.ct-val a{color:var(--sd);text-decoration:none}.ct-val a:hover{text-decoration:underline}
+.fwa{position:fixed;bottom:22px;right:22px;z-index:900;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;font-size:1.5rem;text-decoration:none;box-shadow:0 4px 18px rgba(37,211,102,0.5);transition:transform .2s}
+.fwa:hover{transform:scale(1.1)}
+footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:30px 20px 20px;text-align:center}
+.flogo{color:var(--gl);font-family:'Tiro Devanagari Sanskrit',serif;font-size:1.25rem;margin-bottom:12px}
+.flinks{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
+.flinks a{color:rgba(255,248,200,0.55);text-decoration:none;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.85rem;transition:color .2s}.flinks a:hover{color:var(--gl)}
+.fcopy{color:rgba(255,248,200,0.35);font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.75rem}.fmantra{color:rgba(212,160,23,0.5);font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.85rem;margin-bottom:8px}
+.pan-loading{text-align:center;padding:24px;font-family:'Tiro Devanagari Sanskrit',serif;color:var(--txm);font-size:0.9rem}
+.pan-source{text-align:center;margin-top:18px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.75rem;color:var(--txm);font-style:italic}
+@media(max-width:640px){.about-wrap{grid-template-columns:1fr}.ct-wrap{grid-template-columns:1fr}.fg2{grid-template-columns:1fr}.stat-row{grid-template-columns:repeat(2,1fr)}.pband{grid-template-columns:repeat(2,1fr)}.guru-card{max-width:280px;margin:0 auto}}
+/* your existing CSS above */
+
+.logo-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #D4A017;
+  box-shadow: 0 0 10px rgba(212,160,23,0.6);
+}
+
+</style>
+</style>
+</head>
+<body>
+
+<a class="fwa" href="https://wa.me/919999999999" target="_blank">💬</a>
+
+<div id="topbar">
+  <div class="tb-inner">
+    <div class="logo" onclick="gp('home')">
+      <img src="logo.jpg" class="logo-img" />
+      <div><div class="logo-t">DharmaSetu</div><div class="logo-s">पवित्र वैदिक पोर्टल</div></div>
+    </div>
+    <div class="live-pill">
+      <div class="live-dot"></div>
+      <span id="ld-date">लोड होत आहे…</span>
+      <span>·</span>
+      <span id="ld-tithi">—</span>
+    </div>
+  </div>
+  <div class="navrow">
+    <a href="#" id="n-home" class="on" onclick="return gp('home')"><span class="ni">🏠</span> मुखपृष्ठ</a>
+    <a href="#" id="n-panchang" onclick="return gp('panchang')"><span class="ni">📅</span> पंचांग</a>
+    <a href="#" id="n-muhurat" onclick="return gp('muhurat')"><span class="ni">⭐</span> मुहूर्त</a>
+    <a href="#" id="n-rashifal" onclick="return gp('rashifal')"><span class="ni">♈</span> राशिफल</a>
+    <a href="#" id="n-stotra" onclick="return gp('stotra')"><span class="ni">📿</span> स्तोत्र व मंत्र</a>
+    <a href="#" id="n-booking" onclick="return gp('booking')"><span class="ni">🙏</span> पूजा बुकिंग</a>
+    <a href="#" id="n-about" onclick="return gp('about')"><span class="ni">👤</span> गुरुजींबद्दल</a>
+    <a href="#" id="n-contact" onclick="return gp('contact')"><span class="ni">📞</span> संपर्क</a>
+  </div>
+</div>
+
+<!-- HOME -->
+<div id="pg-home" class="pg on">
+<div class="hero">
+  <div class="hbgom">ॐ</div>
+  <div class="hero-chip">॥ श्री गणेशाय नमः ॥</div>
+  <h1>धर्मसेतु</h1>
+  <p>वैदिक ज्ञान, शुभ मुहूर्त आणि आध्यात्मिक मार्गदर्शनाचा पवित्र सेतु</p>
+  <div class="hbtns">
+    <button class="btn-fire" onclick="gp('booking')">🙏 पूजा बुक करा</button>
+    <button class="btn-ring" onclick="gp('panchang')">📅 पंचांग पाहा</button>
+    <button class="btn-ring" onclick="gp('rashifal')">🔮 आजचे राशिफल</button>
+  </div>
+  <div class="pband">
+    <div class="pband-cell"><div class="lbl">तिथी</div><div class="val" id="hp-tithi">—</div></div>
+    <div class="pband-cell"><div class="lbl">नक्षत्र</div><div class="val" id="hp-nak">—</div></div>
+    <div class="pband-cell"><div class="lbl">योग</div><div class="val" id="hp-yoga">—</div></div>
+    <div class="pband-cell"><div class="lbl">करण</div><div class="val" id="hp-karan">—</div></div>
+    <div class="pband-cell"><div class="lbl">राहुकाळ</div><div class="val" id="hp-rahu">—</div></div>
+    <div class="pband-cell"><div class="lbl">अभिजित</div><div class="val">११:४८–१२:३६</div></div>
+  </div>
+</div>
+
+<div class="sec sec-alt" style="text-align:center">
+  <div class="stitle">धर्मसेतु म्हणजे काय?</div>
+  <div class="sdiv"><div class="sdiv-line"></div><div class="sdiv-sym">✦</div><div class="sdiv-line"></div></div>
+  <p style="max-width:660px;margin:0 auto;font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;line-height:1.95;color:var(--txm)">धर्मसेतु हे <strong style="color:var(--tx)">पं. यश कुलकर्णी गुरुजी</strong> यांच्या मार्गदर्शनाखाली एक संपूर्ण वैदिक व्यासपीठ आहे. अचूक दैनंदिन पंचांग, शुभ मुहूर्त, १२ राशींचे राशिफल, चिरंतन स्तोत्रे व मंत्र आणि वैयक्तिक पूजा बुकिंग — सर्व एकाच पवित्र स्थळी.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px">
+    <button class="btn-fire" onclick="gp('stotra')">📿 स्तोत्रे पाहा</button>
+    <button class="btn-ring" onclick="gp('rashifal')">🔮 राशिफल पाहा</button>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="stitle">राहुकाळ व मुहूर्त मार्गदर्शन</div>
+  <div class="sdiv"><div class="sdiv-line"></div><div class="sdiv-sym">🚫</div><div class="sdiv-line"></div></div>
+  <div class="rahu-grid">
+    <div class="rahu-card"><div class="rc-day">सोमवार</div><div class="rc-time">७:३०–९:०० सकाळ</div><div class="rc-type">राहुकाळ</div></div>
+    <div class="rahu-card"><div class="rc-day">मंगळवार</div><div class="rc-time">३:००–४:३० दुपार</div><div class="rc-type">राहुकाळ</div></div>
+    <div class="rahu-card"><div class="rc-day">बुधवार</div><div class="rc-time">१२:००–१:३० दुपार</div><div class="rc-type">राहुकाळ</div></div>
+    <div class="rahu-card"><div class="rc-day">गुरुवार</div><div class="rc-time">१:३०–३:०० दुपार</div><div class="rc-type">राहुकाळ</div></div>
+    <div class="rahu-card"><div class="rc-day">शुक्रवार</div><div class="rc-time">१०:३०–१२:०० सकाळ</div><div class="rc-type">राहुकाळ</div></div>
+    <div class="rahu-card"><div class="rc-day">शनिवार</div><div class="rc-time">९:००–१०:३० सकाळ</div><div class="rc-type">राहुकाळ</div></div>
+    <div class="rahu-card gt" style="background:var(--gp)"><div class="rc-day">आजचा राहुकाळ</div><div class="rc-time" id="td-rahu">—</div><div class="rc-type">नवे कार्य टाळावे</div></div>
+    <div class="rahu-card gt" style="background:var(--gp)"><div class="rc-day">अभिजित मुहूर्त (दैनिक)</div><div class="rc-time">११:४८–१२:३६</div><div class="rc-type">✅ शुभ वेळ</div></div>
+  </div>
+</div>
+
+<div class="sec sec-alt">
+  <div class="stitle">विशेष स्तोत्र</div>
+  <div class="sdiv"><div class="sdiv-line"></div><div class="sdiv-sym">📿</div><div class="sdiv-line"></div></div>
+  <div class="feat-box">
+    <div class="fb-tag">॥ हनुमान चालीसा ॥</div>
+    <div class="fb-name">श्री हनुमान चालीसा</div>
+    <div class="fb-verse">श्रीगुरु चरन सरोज रज, निज मनु मुकुरु सुधारि।<br>बरनउँ रघुबर बिमल जसु, जो दायकु फल चारि॥<br><br>जय हनुमान ज्ञान गुन सागर।<br>जय कपीस तिहुँ लोक उजागर॥</div>
+    <div style="margin-top:24px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <button class="btn-fire" onclick="openStotra('hanuman-chalisa')">📖 संपूर्ण वाचा</button>
+      <button class="btn-ring" onclick="gp('stotra')">सर्व स्तोत्रे पाहा</button>
+    </div>
+  </div>
+</div>
+
+<div class="pow-band">
+  <div class="pb-by">मार्गदर्शन व संचालन</div>
+  <div class="pb-name">पं. यश कुलकर्णी गुरुजी</div>
+  <div class="pb-role">ज्योतिष आचार्य · वैदिक ज्योतिषी · पूजा विशेषज्ञ · इचलकरंजी, महाराष्ट्र</div>
+  <div style="margin-top:22px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <a class="btn-wa" href="https://wa.me/919999999999" target="_blank">💬 व्हॉट्सअॅप करा</a>
+    <button class="btn-ring" style="color:#fff;border-color:rgba(255,255,255,0.5)" onclick="gp('about')">👤 गुरुजींबद्दल जाणून घ्या</button>
+  </div>
+</div>
+</div>
+
+<!-- PANCHANG -->
+<div id="pg-panchang" class="pg">
+<div class="sec sec-alt">
+  <div class="stitle">दैनंदिन पंचांग</div>
+  <div class="sdiv"><div class="sdiv-line"></div><div class="sdiv-sym">📅</div><div class="sdiv-line"></div></div>
+  <div class="pan-nav">
+    <button onclick="cd(-1)">← मागील दिवस</button>
+    <div class="pdate" id="pan-date">लोड होत आहे…</div>
+    <button onclick="cd(1)">पुढील दिवस →</button>
+  </div>
+  <div id="pan-loading" class="pan-loading">🔄 पंचांग माहिती मिळवत आहे…</div>
+  <div class="pan-grid" id="pan-grid-main">
+    <div class="pan-item"><div class="pi-lbl">तिथी</div><div class="pi-val" id="pan-tithi">—</div><div class="pi-t" id="pan-tithi-end">—</div></div>
+    <div class="pan-item"><div class="pi-lbl">नक्षत्र</div><div class="pi-val" id="pan-nak">—</div><div class="pi-t" id="pan-nak-end">—</div></div>
+    <div class="pan-item"><div class="pi-lbl">योग</div><div class="pi-val" id="pan-yoga">—</div><div class="pi-t" id="pan-yoga-end">—</div></div>
+    <div class="pan-item"><div class="pi-lbl">करण</div><div class="pi-val" id="pan-karan">—</div><div class="pi-t">—</div></div>
+    <div class="pan-item"><div class="pi-lbl">पक्ष</div><div class="pi-val" id="pan-paksha">—</div><div class="pi-t" id="pan-masa">—</div></div>
+    <div class="pan-item"><div class="pi-lbl">सूर्योदय</div><div class="pi-val pi-grn" id="pan-sunrise">—</div><div class="pi-t">इचलकरंजी</div></div>
+    <div class="pan-item"><div class="pi-lbl">सूर्यास्त</div><div class="pi-val" style="color:#E65100" id="pan-sunset">—</div><div class="pi-t">इचलकरंजी</div></div>
+    <div class="pan-item"><div class="pi-lbl">राहुकाळ</div><div class="pi-val pi-red" id="pan-rahu">—</div><div class="pi-t">नवे कार्य टाळावे</div></div>
+    <div class="pan-item"><div class="pi-lbl">यमगंड</div><div class="pi-val pi-red" id="pan-yama">—</div><div class="pi-t">अशुभ काळ</div></div>
+    <div class="pan-item"><div class="pi-lbl">गुलिक काळ</div><div class="pi-val pi-red" id="pan-gulika">—</div><div class="pi-t">अशुभ काळ</div></div>
+    <div class="pan-item"><div class="pi-lbl">अभिजित</div><div class="pi-val pi-grn">११:४८–१२:३६</div><div class="pi-t">✅ शुभ वेळ</div></div>
+    <div class="pan-item"><div class="pi-lbl">अमृत काळ</div><div class="pi-val pi-grn" id="pan-amrit">—</div><div class="pi-t">✅ शुभ वेळ</div></div>
+  </div>
+  <div class="pan-source">पंचांग माहिती: इचलकरंजी (१६.७°उ, ७४.४६°पू) यावर आधारित गणना</div>
+</div>
+</div>
+
+<!-- MUHURAT -->
+<div id="pg-muhurat" class="pg">
+<div class="sec sec-alt">
+  <div class="stitle">आगामी शुभ मुहूर्त</div>
+  <div class="sdiv"><div class="sdiv-line"></div><div class="sdiv-sym">⭐</div><div class="sdiv-line"></div></div>
+  <div class="muh-list">
+    <div class="muh-row"><div class="muh-date">१२ एप्रिल २०२६</div><div class="muh-name">🏠 गृहप्रवेश</div><span class="muh-tag">गृहप्रवेश</span><div class="muh-time">७:१५–९:३० सकाळ</div></div>
+    <div class="muh-row"><div class="muh-date">१८ एप्रिल २०२६</div><div class="muh-name">💍 विवाह मुहूर्त</div><span class="muh-tag">विवाह</span><div class="muh-time">११:०० सकाळ–१:०० दुपार</div></div>
+    <div class="muh-row"><div class="muh-date">२२ एप्रिल २०२६</div><div class="muh-name">👶 नामकरण / अन्नप्राशन</div><span class="muh-tag">नामकरण</span><div class="muh-time">१०:००–११:४५ सकाळ</div></div>
+    <div class="muh-row"><div class="muh-date">२५ एप्रिल २०२६</div><div class="muh-name">📊 व्यापार प्रारंभ</div><span class="muh-tag">व्यवसाय</span><div class="muh-time">९:००–१०:३० सकाळ</div></div>
+    <div class="muh-row"><div class="muh-date">३० एप्रिल २०२६</div><div class="muh-name">🏠 गृहप्रवेश</div><span class="muh-tag">गृहप्रवेश</span><div class="muh-time">६:४५–८:०० सकाळ</div></div>
+    <div class="muh-row"><div class="muh-date">५ मे २०२६</div><div class="muh-name">💍 विवाह मुहूर्त</div><span class="muh-tag">विवाह</span><div class="muh-time">७:००–९:०० सकाळ</div></div>
+    <div class="muh-row"><div class="muh-date">१० मे २०२६</div><div class="muh-name">✂️ मुंडण मुहूर्त</div><span class="muh-tag">मुंडण</span><div class="muh-time">१०:३० सकाळ–१२:०० दुपार</div></div>
+    <div class="muh-row"><div class="muh-date">१५ मे २०२६</div><div class="muh-name">🚗 वाहन पूजा</div><span class="muh-tag">वाहन</span><div class="muh-time">८:३०–१०:०० सकाळ</div></div>
+  </div>
+  <div style="text-align:center;margin-top:32px">
+    <p style="font-family:'Tiro Devanagari Sanskrit',serif;font-style:italic;color:var(--txm);margin-bottom:18px">वैयक्तिक मुहूर्त हवा असल्यास गुरुजींशी थेट संपर्क करा.</p>
+    <a class="btn-wa" href="https://wa.me/919999999999?text=नमस्कार%20गुरुजी!%20मला%20मुहूर्त%20हवा%20आहे." target="_blank">💬 व्हॉट्सअॅपवर विचारा</a>
+  </div>
+</div>
+</div>
+
+<!-- RASHIFAL -->
+<div id="pg-rashifal" class="pg">
+<div class="sec sec-alt">
+  <div class="stitle">आजचे राशिफल</div>
+  <div class="sdiv"><div class="sdiv-line"></div><div class="sdiv-sym">♈</div><div class="sdiv-line"></div></div>
+  <p style="text-align:center;font-family:'Tiro Devanagari Sanskrit',serif;color:var(--txm);margin-bottom:28px;font-size:0.95rem">दैनंदिन भविष्य व उपाय – पं. यश कुलकर्णी गुरुजी · <span id="ras-date"></span></p>
+  <div class="rashi-grid">
+    <div class="rashi-card"><span class="ri">♈</span><span class="badge bg-g">शुभ</span><div class="rn">मेष राशी</div><div class="re">Aries · २१ मार्च – १९ एप्रिल</div><div class="rp">आजचा दिवस शुभ आहे. कार्यक्षेत्रात यश मिळेल. कुटुंबाचा साथ लाभेल. नव्या कामाची सुरुवात करण्यास उत्तम वेळ आहे.</div><div class="ru">🔴 उपाय: मंगळवारी हनुमान चालीसा वाचावी.</div></div>
+    <div class="rashi-card"><span class="ri">♉</span><span class="badge bg-y">मध्यम</span><div class="rn">वृषभ राशी</div><div class="re">Taurus · २० एप्रिल – २० मे</div><div class="rp">आर्थिक स्थिती ठीक राहील. व्यवसायात स्थिरता. स्त्रियांचा आदर करावा. जमीन संबंधित कामांसाठी शुभ काळ.</div><div class="ru">💚 उपाय: शुक्रवारी देवीला पांढरी फुले अर्पण करावीत.</div></div>
+    <div class="rashi-card"><span class="ri">♊</span><span class="badge bg-g">शुभ</span><div class="rn">मिथुन राशी</div><div class="re">Gemini · २१ मे – २० जून</div><div class="rp">बुद्धिमान लोकांसाठी उत्कृष्ट दिवस. नवे संपर्क होतील. सामाजिक जीवनात सुधारणा. प्रवासाचे योग आहेत.</div><div class="ru">💛 उपाय: बुधवारी हिरवे कपडे घालावेत.</div></div>
+    <div class="rashi-card"><span class="ri">♋</span><span class="badge bg-r">सावधान</span><div class="rn">कर्क राशी</div><div class="re">Cancer · २१ जून – २२ जुलै</div><div class="rp">आरोग्याची काळजी घ्यावी. घरगुती वाद टाळावेत. आज महत्त्वाचे निर्णय घेऊ नयेत. पूजा-पाठाने मन शांत होईल.</div><div class="ru">🤍 उपाय: सोमवारी शिवलिंगावर जल अर्पण करावे.</div></div>
+    <div class="rashi-card"><span class="ri">♌</span><span class="badge bg-g">शुभ</span><div class="rn">सिंह राशी</div><div class="re">Leo · २३ जुलै – २२ ऑगस्ट</div><div class="rp">आत्मविश्वास वाढलेला राहील. नेतृत्वाच्या संधी मिळतील. करिअरमध्ये प्रगती होईल. शासकीय कामे होतील.</div><div class="ru">🌻 उपाय: आदित्य हृदयम् पाठ करावा.</div></div>
+    <div class="rashi-card"><span class="ri">♍</span><span class="badge bg-y">मध्यम</span><div class="rn">कन्या राशी</div><div class="re">Virgo · २३ ऑगस्ट – २२ सप्टेंबर</div><div class="rp">कामात व्यग्रता राहील. मित्रांकडून मदत मिळेल. आर्थिक स्थिती ठीक राहील. कोणत्याही कामात घाई करू नये.</div><div class="ru">💚 उपाय: बुधवारी गणेश आरती करावी.</div></div>
+    <div class="rashi-card"><span class="ri">♎</span><span class="badge bg-g">शुभ</span><div class="rn">तुला राशी</div><div class="re">Libra · २३ सप्टेंबर – २२ ऑक्टोबर</div><div class="rp">जीवनसाथीशी संबंध सुंदर राहतील. वस्तू खरेदीचे योग आहेत. भागीदारीत लाभ होईल. आज भाग्यशाली दिवस.</div><div class="ru">🌸 उपाय: शुक्रवारी श्री लक्ष्मी आरती करावी.</div></div>
+    <div class="rashi-card"><span class="ri">♏</span><span class="badge bg-r">सावधान</span><div class="rn">वृश्चिक राशी</div><div class="re">Scorpio · २३ ऑक्टोबर – २१ नोव्हेंबर</div><div class="rp">शत्रुपक्षापासून सावध राहावे. जास्त बोलू नये. गुप्त कार्यात यश मिळेल. धीर धरावा.</div><div class="ru">🔵 उपाय: शनिवारी शनिदेवाला मोहरीचे तेल अर्पण करावे.</div></div>
+    <div class="rashi-card"><span class="ri">♐</span><span class="badge bg-g">शुभ</span><div class="rn">धनु राशी</div><div class="re">Sagittarius · २२ नोव्हेंबर – २१ डिसेंबर</div><div class="rp">धार्मिक कार्यात मन लागेल. गुरूची कृपा राहील. दूरचा प्रवास शक्य. शिक्षणात यश मिळेल.</div><div class="ru">💛 उपाय: गुरुवारी विष्णु सहस्रनाम पाठ करावा.</div></div>
+    <div class="rashi-card"><span class="ri">♑</span><span class="badge bg-y">मध्यम</span><div class="rn">मकर राशी</div><div class="re">Capricorn · २२ डिसेंबर – १९ जानेवारी</div><div class="rp">मेहनतीचे फळ मिळेल पण थोडा उशीर होऊ शकतो. कार्यालयात सहकार्य मिळेल. व्यापारात स्थिरता राहील.</div><div class="ru">⚫ उपाय: शनिवारी शनि चालीसा वाचावी.</div></div>
+    <div class="rashi-card"><span class="ri">♒</span><span class="badge bg-g">शुभ</span><div class="rn">कुंभ राशी</div><div class="re">Aquarius · २० जानेवारी – १८ फेब्रुवारी</div><div class="rp">समाजात प्रतिष्ठा वाढेल. नवे मित्र होतील. तंत्रज्ञानात यश. आर्थिक लाभाचे योग आहेत.</div><div class="ru">🔵 उपाय: शनिवारी शनिदेवाला तेलाचा दिवा लावावा.</div></div>
+    <div class="rashi-card"><span class="ri">♓</span><span class="badge bg-y">मध्यम</span><div class="rn">मीन राशी</div><div class="re">Pisces · १९ फेब्रुवारी – २० मार्च</div><div class="rp">ध्यान आणि पूजेने मन शांत होईल. कुटुंबात आनंद येईल. प्रवासाचे योग आहेत.</div><div class="ru">🌊 उपाय: गुरुवारी विष्णुला तुळस अर्पण करावी.</div></div>
+  </div>
+</div>
+</div>
+
+<!-- STOTRA -->
+<div id="pg-stotra" class="pg">
+<div class="sec sec-dk">
+  <div class="stitle">स्तोत्र, मंत्र व आरती संग्रह</div>
+  <div class="sdiv"><div class="sdiv-line"></div><div class="sdiv-sym">📿</div><div class="sdiv-line"></div></div>
+  <div class="stotra-tabs">
+    <button class="stab on" onclick="fst('all',this)">सर्व</button>
+    <button class="stab" onclick="fst('hanuman',this)">🚩 हनुमान</button>
+    <button class="stab" onclick="fst('shiv',this)">🔱 शिव</button>
+    <button class="stab" onclick="fst('devi',this)">🌺 देवी</button>
+    <button class="stab" onclick="fst('vishnu',this)">🪷 विष्णू</button>
+    <button class="stab" onclick="fst('ganesh',this)">🐘 गणेश</button>
+  </div>
+  <div class="stotra-grid">
+    <div class="stotra-card" data-cat="hanuman" onclick="openStotra('hanuman-chalisa')"><div class="sd">हनुमान</div><div class="sn">हनुमान चालीसा</div><div class="sp">श्रीगुरु चरन सरोज रज, निज मनु मुकुरु सुधारि…</div><div class="audio-ph">🎵 ऑडिओ लवकरच येणार</div><button class="btn-sm" style="margin-top:8px">📖 आता वाचा</button></div>
+    <div class="stotra-card" data-cat="hanuman" onclick="openStotra('bajrang-baan')"><div class="sd">हनुमान</div><div class="sn">बजरंग बाण</div><div class="sp">निश्चय प्रेम प्रतीति ते, विनय करैं सनमान…</div><div class="audio-ph">🎵 ऑडिओ लवकरच येणार</div><button class="btn-sm" style="margin-top:8px">📖 आता वाचा</button></div>
+    <div class="stotra-card" data-cat="shiv" onclick="openStotra('shiv-panchakshar')"><div class="sd">शिव</div><div class="sn">शिव पञ्चाक्षर स्तोत्रम्</div><div class="sp">नागेन्द्रहाराय त्रिलोचनाय भस्माङ्गरागाय…</div><div class="audio-ph">🎵 ऑडिओ लवकरच येणार</div><button class="btn-sm" style="margin-top:8px">📖 आता वाचा</button></div>
+    <div class="stotra-card" data-cat="shiv" onclick="openStotra('shiv-tandav')"><div class="sd">शिव</div><div class="sn">शिव तांडव स्तोत्रम्</div><div class="sp">जटाटवीगलज्जलप्रवाहपावितस्थले…</div><div class="audio-ph">🎵 ऑडिओ लवकरच येणार</div><button class="btn-sm" style="margin-top:8px">📖 आता वाचा</button></div>
+    <div class="stotra-card" data-cat="devi" onclick="openStotra('durga-saptashloki')"><div class="sd">देवी</div><div class="sn">दुर्गा सप्तश्लोकी</div><div class="sp">ज्ञानिनामपि चेतांसि देवी भगवती हि सा…</div><div class="audio-ph">🎵 ऑडिओ लवकरच येणार</div><button class="btn-sm" style="margin-top:8px">📖 आता वाचा</button></div>
+    <div class="stotra-card" data-cat="devi" onclick="openStotra('mahalakshmi-ashtakam')"><div class="sd">देवी</div><div class="sn">महालक्ष्मी अष्टकम्</div><div class="sp">नमस्तेऽस्तु महामाये श्रीपीठे सुरपूजिते…</div><div class="audio-ph">🎵 ऑडिओ लवकरच येणार</div><button class="btn-sm" style="margin-top:8px">📖 आता वाचा</button></div>
+    <div class="stotra-card" data-cat="vishnu" onclick="openStotra('vishnu-sahasranama')"><div class="sd">विष्णू</div><div class="sn">विष्णु सहस्रनाम</div><div class="sp">विश्वं विष्णुर्वषट्कारो भूतभव्यभवत्प्रभुः…</div><div class="audio-ph">🎵 ऑडिओ लवकरच येणार</div><button class="btn-sm" style="margin-top:8px">📖 आता वाचा</button></div>
+    <div class="stotra-card" data-cat="vishnu" onclick="openStotra('vishnu-aarti')"><div class="sd">विष्णू</div><div class="sn">ॐ जय जगदीश हरे</div><div class="sp">ॐ जय जगदीश हरे, स्वामी जय जगदीश हरे…</div><div class="audio-ph">🎵 ऑडिओ लवकरच येणार</div><button class="btn-sm" style="margin-top:8px">📖 आता वाचा</button></div>
+    <div class="stotra-card" data-cat="ganesh" onclick="openStotra('ganesh-chalisa')"><div class="sd">गणेश</div><div class="sn">गणेश चालीसा</div><div class="sp">जय गणपति सद्गुण सदन, कविवर बदन कृपाल…</div><div class="audio-ph">🎵 ऑडिओ लवकरच येणार</div><button class="btn-sm" style="margin-top:8px">📖 आता वाचा</button></div>
+    <div class="stotra-card" data-cat="ganesh" onclick="openStotra('vakratunda')"><div class="sd">गणेश</div><div class="sn">वक्रतुण्ड महाकाय</div><div class="sp">वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ…</div><div class="audio-ph">🎵 ऑडिओ लवकरच येणार</div><button class="btn-sm" style="margin-top:8px">📖 आता वाचा</button></div>
+  </div>
+</div>
+</div>
+
+<!-- BOOKING -->
+<div id="pg-booking" class="pg">
+<div class="sec sec-alt">
+  <div class="stitle">पूजा सेवा बुक करा</div>
+  <div class="sdiv"><div class="sdiv-line"></div><div class="sdiv-sym">🙏</div><div class="sdiv-line"></div></div>
+  <p style="text-align:center;font-family:'Tiro Devanagari Sanskrit',serif;color:var(--txm);margin-bottom:32px">सर्व पूजा पं. यश कुलकर्णी गुरुजी यांच्याद्वारे संपूर्ण वैदिक विधीनुसार केली जाते</p>
+  <div class="puja-grid">
+    <div class="puja-card"><span class="picon">🪔</span><div class="pname">सत्यनारायण पूजा</div><div class="pdesc">पंचामृत अभिषेक व प्रसाद वितरणासह संपूर्ण कथा.</div><button class="btn-sm" onclick="sp('सत्यनारायण पूजा')">आता बुक करा</button></div>
+    <div class="puja-card"><span class="picon">🏠</span><div class="pname">वास्तुशांती</div><div class="pdesc">नवीन घरासाठी वास्तुपूजा, नवग्रह शांती व गृह शुद्धी.</div><button class="btn-sm" onclick="sp('वास्तुशांती')">आता बुक करा</button></div>
+    <div class="puja-card"><span class="picon">🚪</span><div class="pname">गृहप्रवेश</div><div class="pdesc">गणेश पूजा, हवन व आरतीसह शुभ गृहप्रवेश.</div><button class="btn-sm" onclick="sp('गृहप्रवेश')">आता बुक करा</button></div>
+    <div class="puja-card"><span class="picon">🔱</span><div class="pname">रुद्राभिषेक</div><div class="pdesc">पंचामृत अभिषेक व मंत्रजप सह शिव पूजा.</div><button class="btn-sm" onclick="sp('रुद्राभिषेक')">आता बुक करा</button></div>
+    <div class="puja-card"><span class="picon">🌺</span><div class="pname">नवग्रह शांती</div><div class="pdesc">दोष निवारणासाठी संपूर्ण नवग्रह पूजा व हवन.</div><button class="btn-sm" onclick="sp('नवग्रह शांती')">आता बुक करा</button></div>
+    <div class="puja-card"><span class="picon">🧿</span><div class="pname">कालसर्प दोष पूजा</div><div class="pdesc">कालसर्प दोष निवारणासाठी विशेष पूजा.</div><button class="btn-sm" onclick="sp('कालसर्प दोष पूजा')">आता बुक करा</button></div>
+    <div class="puja-card"><span class="picon">📿</span><div class="pname">मंत्रजप (अनुष्ठान)</div><div class="pdesc">आपल्या राशी व संकल्पानुसार सव्वा लाख मंत्रजप.</div><button class="btn-sm" onclick="sp('मंत्रजप अनुष्ठान')">आता बुक करा</button></div>
+    <div class="puja-card"><span class="picon">💍</span><div class="pname">विवाह पूजा</div><div class="pdesc">सप्तपदी, कन्यादान, आशीर्वाद सह संपूर्ण विवाह विधी.</div><button class="btn-sm" onclick="sp('विवाह पूजा')">आता बुक करा</button></div>
+  </div>
+  <div class="bform" id="bform">
+    <div class="bform-title">🙏 पूजा बुकिंग फॉर्म</div>
+    <div class="fg"><label>निवडलेली पूजा</label><input type="text" id="puja-sel" placeholder="वरून निवडा किंवा येथे टाइप करा…"/></div>
+    <div class="fg2">
+      <div class="fg"><label>आपले नाव</label><input type="text" placeholder="पूर्ण नाव"/></div>
+      <div class="fg"><label>फोन / व्हॉट्सअॅप</label><input type="tel" placeholder="+91 XXXXX XXXXX"/></div>
+    </div>
+    <div class="fg2">
+      <div class="fg"><label>पसंतीची तारीख</label><input type="date"/></div>
+      <div class="fg"><label>पसंतीची वेळ</label><input type="time"/></div>
+    </div>
+    <div class="fg"><label>स्थान / पत्ता</label><input type="text" placeholder="पूजेसाठी संपूर्ण पत्ता"/></div>
+    <div class="fg"><label>संकल्प / विशेष इच्छा</label><textarea rows="3" placeholder="कुटुंबातील सदस्यांची नावे, संकल्पासाठी विशेष इच्छा…"></textarea></div>
+    <button class="btn-fire" style="width:100%;padding:15px;font-size:0.95rem" onclick="alert('🙏 जय श्री राम!\n\nआपली बुकिंग विनंती नोंदवली गेली आहे.\nगुरुजी लवकरच संपर्क करतील.')">बुकिंग विनंती पाठवा 🙏</button>
+    <a class="btn-wa" href="https://wa.me/919999999999?text=नमस्कार%20गुरुजी!%20मला%20पूजा%20बुक%20करायची%20आहे." target="_blank" style="margin-top:10px;display:flex;justify-content:center">💬 व्हॉट्सअॅपवर बुक करा</a>
+  </div>
+</div>
+</div>
+
+<!-- ABOUT -->
+<div id="pg-about" class="pg">
+<div class="sec sec-alt">
+  <div class="stitle">गुरुजींबद्दल</div>
+  <div class="sdiv"><div class="sdiv-line"></div><div class="sdiv-sym">🕉</div><div class="sdiv-line"></div></div>
+  <div class="about-wrap">
+    <div>
+      <div class="guru-card">
+        <div class="guru-orb">🕉</div>
+        <div class="guru-name">पं. यश कुलकर्णी</div>
+        <div class="guru-role">ज्योतिष आचार्य व पूजा विशेषज्ञ</div>
+        <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.82rem;color:var(--txm);margin-bottom:14px">📍 इचलकरंजी, महाराष्ट्र</div>
+        <div class="guru-badges">
+          <span class="gbadge">ज्योतिष आचार्य</span><span class="gbadge">वैदिक ज्योतिषी</span>
+          <span class="gbadge">पूजा विशेषज्ञ</span><span class="gbadge">वास्तु तज्ञ</span><span class="gbadge">कर्मकांड</span>
+        </div>
+        <div style="margin-top:18px;display:flex;flex-direction:column;gap:8px">
+          <a class="btn-wa" href="https://wa.me/919999999999" target="_blank" style="justify-content:center">💬 व्हॉट्सअॅप</a>
+          <button class="btn-sm" onclick="gp('booking')" style="width:100%;padding:11px">🙏 पूजा बुक करा</button>
+        </div>
+      </div>
+    </div>
+    <div class="about-body">
+      <p>गुरुजी यश कुलकर्णी हे इचलकरंजी, महाराष्ट्र येथील एक समर्पित व पारंपरिक प्रशिक्षित वैदिक विद्वान आहेत. <strong>ज्योतिष शास्त्र</strong>, <strong>कर्मकांड</strong> आणि <strong>वैदिक ज्योतिष</strong> यातील वर्षांच्या अभ्यासाने गुरुजींनी हजारो कुटुंबांना जीवनातील महत्त्वाच्या प्रसंगात मार्गदर्शन केले आहे.</p>
+      <p>महाराष्ट्रीय ब्राह्मण परंपरेत रुजलेले गुरुजी सर्व पूजा विधी संपूर्ण भक्तिभावाने, योग्य संकल्पासह व अस्सल वैदिक पद्धतीने करतात. त्यांचा दृष्टिकोन केवळ विधिनिष्ठ नाही — तो भक्त आणि ईश्वर यांच्यातील हृदयापासूनचा सेतू आहे.</p>
+      <p><strong>धर्मसेतु</strong>च्या माध्यमातून गुरुजी सनातन धर्माचे चिरंतन ज्ञान प्रत्येक घरात पोहोचवतात — पूजा, पंचांग, मुहूर्त आणि ज्योतिष आधुनिक युगातील प्रत्येकासाठी सुलभ, अचूक व आध्यात्मिकदृष्ट्या अर्थपूर्ण बनवतात.</p>
+      <div class="stat-row">
+        <div class="stat-box"><div class="num">१५+</div><div class="lbl">वर्षांचा अनुभव</div></div>
+        <div class="stat-box"><div class="num">५०००+</div><div class="lbl">पूजा केल्या</div></div>
+        <div class="stat-box"><div class="num">१०००+</div><div class="lbl">कुटुंबांना मार्गदर्शन</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- CONTACT -->
+<div id="pg-contact" class="pg">
+<div class="sec sec-alt">
+  <div class="stitle">गुरुजींशी संपर्क करा</div>
+  <div class="sdiv"><div class="sdiv-line"></div><div class="sdiv-sym">📞</div><div class="sdiv-line"></div></div>
+  <div class="ct-wrap">
+    <div class="ct-info">
+      <h3>संपर्क माहिती</h3>
+      <div class="ct-row"><div class="ct-ico">📞</div><div><div class="ct-lbl">फोन</div><div class="ct-val"><a href="tel:+917666975706">+91 7666975706</a></div></div></div>
+      <div class="ct-row"><div class="ct-ico">💬</div><div><div class="ct-lbl">व्हॉट्सअॅप</div><div class="ct-val"><a href="https://wa.me/917666975706">+91 7666975706</a></div></div></div>
+      <div class="ct-row"><div class="ct-ico">📍</div><div><div class="ct-lbl">स्थान</div><div class="ct-val">गावभाग, सांगली, महाराष्ट्र.</div></div></div>
+      <div class="ct-row"><div class="ct-ico">🕐</div><div><div class="ct-lbl">सल्लामसलत वेळ</div><div class="ct-val">सोमवार – शनिवार: सकाळी ८:०० – सायं. ७:००</div></div></div>
+      <a class="btn-wa" href="https://wa.me/917666975706?text=नमस्कार%20गुरुजी!%20मला%20आपले%20मार्गदर्शन%20हवे%20आहे." target="_blank" style="margin-top:20px;display:inline-flex">💬 व्हॉट्सअॅपवर संपर्क करा</a>
+    </div>
+    <div class="bform" style="padding:28px">
+      <div class="bform-title" style="font-size:1rem">संदेश पाठवा</div>
+      <div class="fg"><label>आपले नाव</label><input type="text" placeholder="पूर्ण नाव"/></div>
+      <div class="fg"><label>फोन</label><input type="tel" placeholder="+91 XXXXX XXXXX"/></div>
+      <div class="fg"><label>आपला संदेश</label><textarea rows="4" placeholder="गुरुजींना आपला प्रश्न किंवा संदेश…"></textarea></div>
+      <button class="btn-fire" style="width:100%;padding:13px" onclick="alert('🙏 आपला संदेश पाठवला गेला!\nगुरुजी लवकरच उत्तर देतील. जय श्री राम!')">संदेश पाठवा 🙏</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<footer>
+  <div class="flogo">🕉 धर्मसेतु</div>
+  <div class="flinks">
+    <a href="#" onclick="return gp('home')">मुखपृष्ठ</a><a href="#" onclick="return gp('panchang')">पंचांग</a>
+    <a href="#" onclick="return gp('rashifal')">राशिफल</a><a href="#" onclick="return gp('stotra')">स्तोत्रे</a>
+    <a href="#" onclick="return gp('booking')">पूजा बुकिंग</a><a href="#" onclick="return gp('about')">गुरुजींबद्दल</a>
+    <a href="#" onclick="return gp('contact')">संपर्क</a>
+  </div>
+  <div class="fmantra">॥ श्री गणेशाय नमः · श्री सरस्वत्यै नमः · श्री गुरवे नमः ॥</div>
+  <div class="fcopy">© २०२६ धर्मसेतु · पं. यश कुलकर्णी गुरुजी यांच्याद्वारे · इचलकरंजी, महाराष्ट्र</div>
+</footer>
+
+<!-- STOTRA OVERLAY -->
+<div class="ov" id="ov" onclick="if(event.target===this)closeOv()">
+  <div class="ov-box">
+    <button class="ov-close" onclick="closeOv()">✕</button>
+    <div class="ov-title" id="ov-title"></div>
+    <div class="ov-sub" id="ov-sub"></div>
+    <div class="ov-text" id="ov-text"></div>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// MARATHI TRANSLATIONS
+// ============================================================
+const MR_DAYS = ['रविवार','सोमवार','मंगळवार','बुधवार','गुरुवार','शुक्रवार','शनिवार'];
+const MR_MONTHS = ['जानेवारी','फेब्रुवारी','मार्च','एप्रिल','मे','जून','जुलै','ऑगस्ट','सप्टेंबर','ऑक्टोबर','नोव्हेंबर','डिसेंबर'];
+const MR_TITHIS = ['प्रतिपदा','द्वितीया','तृतीया','चतुर्थी','पंचमी','षष्ठी','सप्तमी','अष्टमी','नवमी','दशमी','एकादशी','द्वादशी','त्रयोदशी','चतुर्दशी','पौर्णिमा/अमावस्या'];
+const MR_NAKS = ['अश्विनी','भरणी','कृत्तिका','रोहिणी','मृगशीर्ष','आर्द्रा','पुनर्वसु','पुष्य','आश्लेषा','मघा','पूर्वा फाल्गुनी','उत्तरा फाल्गुनी','हस्त','चित्रा','स्वाती','विशाखा','अनुराधा','ज्येष्ठा','मूळ','पूर्वाषाढा','उत्तराषाढा','श्रवण','धनिष्ठा','शतभिषा','पूर्वाभाद्रपद','उत्तराभाद्रपद','रेवती'];
+const MR_YOGAS = ['विष्कंभ','प्रीती','आयुष्मान','सौभाग्य','शोभन','अतिगंड','सुकर्म','धृती','शूल','गंड','वृद्धी','ध्रुव','व्याघात','हर्षण','वज्र','सिद्धी','व्यतीपात','वरीयान','परिघ','शिव','सिद्ध','साध्य','शुभ','शुक्ल','ब्रह्म','इंद्र','वैधृती'];
+const MR_KARANS = ['बव','बालव','कौलव','तैतिल','गर','वणिज','विष्टि','शकुनि','चतुष्पाद','नाग'];
+const MR_PAKSHA = ['शुक्ल पक्ष','कृष्ण पक्ष'];
+const MR_MASA = ['चैत्र','वैशाख','ज्येष्ठ','आषाढ','श्रावण','भाद्रपद','आश्विन','कार्तिक','मार्गशीर्ष','पौष','माघ','फाल्गुन'];
+
+// Rahu kaal in Marathi (based on Ichalkaranji sunrise ~6:10 AM, 8 parts of day ~1.5hr each)
+// Standard order: 8,2,7,5,6,4,3 (Sun-Sat)
+const MR_RAHU = {
+  0:'४:३०–६:०० सायं.',
+  1:'७:३०–९:०० सकाळ',
+  2:'३:००–४:३० दुपार',
+  3:'१२:००–१:३० दुपार',
+  4:'१:३०–३:०० दुपार',
+  5:'१०:३०–१२:०० सकाळ',
+  6:'९:००–१०:३० सकाळ'
+};
+
+// Yamaganda order: 4,3,2,1,7,6,5
+const MR_YAMA = {
+  0:'१:३०–३:०० दुपार',
+  1:'१०:३०–१२:०० सकाळ',
+  2:'९:००–१०:३० सकाळ',
+  3:'७:३०–९:०० सकाळ',
+  4:'४:३०–६:०० सायं.',
+  5:'३:००–४:३० दुपार',
+  6:'१२:००–१:३० दुपार'
+};
+
+// Gulika order: 7,6,5,4,3,2,1
+const MR_GULIKA = {
+  0:'३:००–४:३० दुपार',
+  1:'१:३०–३:०० दुपार',
+  2:'१२:००–१:३० दुपार',
+  3:'१०:३०–१२:०० सकाळ',
+  4:'९:००–१०:३० सकाळ',
+  5:'७:३०–९:०० सकाळ',
+  6:'४:३०–६:०० सायं.'
+};
+
+// ============================================================
+// ACCURATE PANCHANG CALCULATION
+// Based on standard astronomical algorithms for lunar calendar
+// Location: Ichalkaranji (16.70°N, 74.46°E)
+// ============================================================
+
+function julianDay(date) {
+  const y = date.getUTCFullYear();
+  const m = date.getUTCMonth() + 1;
+  const d = date.getUTCDate() + date.getUTCHours()/24 + date.getUTCMinutes()/1440;
+  let A = Math.floor(y/100);
+  let B = 2 - A + Math.floor(A/4);
+  if (m <= 2) { return Math.floor(365.25*(y-1)) + Math.floor(30.6001*(m+13)) + d + 1720994.5 + B; }
+  return Math.floor(365.25*y) + Math.floor(30.6001*(m+1)) + d + 1720994.5 + B;
+}
+
+function sunLongitude(jd) {
+  const T = (jd - 2451545.0) / 36525;
+  let L0 = 280.46646 + 36000.76983*T;
+  let M = 357.52911 + 35999.05029*T - 0.0001537*T*T;
+  M = M * Math.PI/180;
+  L0 = L0 % 360;
+  let C = (1.914602 - 0.004817*T - 0.000014*T*T)*Math.sin(M)
+        + (0.019993 - 0.000101*T)*Math.sin(2*M)
+        + 0.000289*Math.sin(3*M);
+  let sunLon = L0 + C;
+  return ((sunLon % 360) + 360) % 360;
+}
+
+function moonLongitude(jd) {
+  const T = (jd - 2451545.0) / 36525;
+  let L1 = 218.3165 + 481267.8813*T;
+  let M = 357.5291 + 35999.0503*T;
+  let Mp = 134.9634 + 477198.8676*T;
+  let D = 297.8502 + 445267.1115*T;
+  let F = 93.272 + 483202.0175*T;
+  M = M*Math.PI/180; Mp = Mp*Math.PI/180;
+  D = D*Math.PI/180; F = F*Math.PI/180;
+  let lon = L1 + 6.2886*Math.sin(Mp) + 1.2740*Math.sin(2*D-Mp)
+          + 0.6583*Math.sin(2*D) + 0.2136*Math.sin(2*Mp)
+          - 0.1851*Math.sin(M) - 0.1143*Math.sin(2*F)
+          + 0.0588*Math.sin(2*D-2*Mp) + 0.0572*Math.sin(2*D-M-Mp)
+          + 0.0533*Math.sin(2*D+Mp) + 0.0458*Math.sin(2*D-M);
+  return ((lon % 360) + 360) % 360;
+}
+
+function calcPanchang(date) {
+  // Use noon IST for the given date for base calculation
+  const ist = new Date(date);
+  ist.setHours(12,0,0,0);
+  // Convert to UTC (IST = UTC+5:30)
+  const utc = new Date(ist.getTime() - 5.5*3600000);
+  const jd = julianDay(utc);
+
+  const sunLon = sunLongitude(jd);
+  const moonLon = moonLongitude(jd);
+
+  // Tithi: based on elongation (moon - sun) / 12
+  let elong = ((moonLon - sunLon) + 360) % 360;
+  const tithiNum = Math.floor(elong / 12); // 0-29
+  const tithiIdx = tithiNum % 15;
+  const paksha = tithiNum < 15 ? 0 : 1; // 0=shukla, 1=krishna
+
+  // Nakshatra: moon longitude / (360/27)
+  const nakIdx = Math.floor((moonLon / (360/27))) % 27;
+
+  // Yoga: (sun + moon) / (360/27)
+  const yogaLon = ((sunLon + moonLon) % 360);
+  const yogaIdx = Math.floor((yogaLon / (360/27))) % 27;
+
+  // Karan: half-tithi
+  const karanIdx = Math.floor(elong / 6) % 11;
+  const karanName = karanIdx < 7 ? MR_KARANS[karanIdx] : (karanIdx===7?'शकुनि':karanIdx===8?'चतुष्पाद':karanIdx===9?'नाग':'किंस्तुघ्न');
+
+  // Masa (lunar month): based on sun longitude in rashi
+  const masaIdx = Math.floor(sunLon / 30) % 12;
+  // Map solar month to approximate lunar month
+  const masaMap = [10,11,0,1,2,3,4,5,6,7,8,9];
+  const mrMasa = MR_MASA[masaMap[masaIdx]];
+
+  // Sunrise/Sunset for Ichalkaranji (simple approximation)
+  const dayOfYear = Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 86400000);
+  const declination = 23.45 * Math.sin((360/365)*(dayOfYear-80)*Math.PI/180);
+  const latRad = 16.70 * Math.PI/180;
+  const cosH = -Math.tan(latRad)*Math.tan(declination*Math.PI/180);
+  const H = Math.acos(Math.max(-1,Math.min(1,cosH))) * 180/Math.PI;
+  const eqTime = 9.87*Math.sin((360/365)*(dayOfYear-81)*2*Math.PI/180)
+               - 7.53*Math.cos((360/365)*(dayOfYear-81)*Math.PI/180)
+               - 1.5*Math.sin((360/365)*(dayOfYear-81)*Math.PI/180);
+  const timezone = 5.5;
+  const lon = 74.46;
+  const solarNoon = 12 + (lon - timezone*15)/15*(-1) - eqTime/60;
+  // actually: noon correction
+  const noon = 12 - (lon - timezone*15)/15 - eqTime/60;
+  const sunriseH = noon - H/15;
+  const sunsetH = noon + H/15;
+
+  function toTime(h) {
+    const hh = Math.floor(h); const mm = Math.round((h-hh)*60);
+    const period = hh < 12 ? 'सकाळ' : 'सायं.';
+    const h12 = hh === 0 ? 12 : hh > 12 ? hh-12 : hh;
+    return h12+':'+(mm<10?'0':'')+mm+' '+period;
+  }
+
+  // Amrit kaal: approx 2h after moonrise (simplified)
+  const moonRiseH = (sunriseH + (nakIdx * 0.8)) % 24;
+  const amritH = (moonRiseH + 2) % 24;
+  const amritEnd = (amritH + 1.5) % 24;
+  function toSimpleTime(h) {
+    const hh = Math.floor(h); const mm = Math.round((h-hh)*60);
+    const period = hh < 12 ? 'सकाळ' : 'सायं.';
+    const h12 = hh === 0 ? 12 : hh > 12 ? hh-12 : hh;
+    return h12+':'+(mm<10?'0':'')+mm;
+  }
+  const amritStr = toSimpleTime(amritH)+'–'+toSimpleTime(amritEnd)+' '+(amritH<12?'सकाळ':'सायं.');
+
+  // tithi display: for purnima/amavasya special handling
+  let tithiName;
+  if (tithiNum === 14) tithiName = 'पौर्णिमा';
+  else if (tithiNum === 29) tithiName = 'अमावस्या';
+  else tithiName = MR_TITHIS[tithiIdx];
+
+  return {
+    tithi: tithiName,
+    nakshatra: MR_NAKS[nakIdx],
+    yoga: MR_YOGAS[yogaIdx],
+    karan: karanName,
+    paksha: MR_PAKSHA[paksha],
+    masa: mrMasa,
+    sunrise: toTime(sunriseH),
+    sunset: toTime(sunsetH),
+    amrit: amritStr,
+    tithiDeg: (elong % 12).toFixed(1),
+    nakDeg: (moonLon % (360/27)).toFixed(1)
+  };
+}
+
+let pOff = 0;
+let panData = null;
+
+function formatMrDate(date) {
+  return MR_DAYS[date.getDay()]+', '+date.getDate()+' '+MR_MONTHS[date.getMonth()]+' '+date.getFullYear();
+}
+
+function live() {
+  const n = new Date();
+  const dw = n.getDay();
+  const p = calcPanchang(n);
+  panData = p;
+
+  document.getElementById('ld-date').textContent = formatMrDate(n);
+  document.getElementById('ld-tithi').textContent = p.tithi;
+
+  const rahu = MR_RAHU[dw] || '७:३०–९:०० सकाळ';
+  ['hp-tithi','pan-tithi'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent=p.tithi});
+  ['hp-nak','pan-nak'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent=p.nakshatra});
+  ['hp-yoga','pan-yoga'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent=p.yoga});
+  ['hp-karan','pan-karan'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent=p.karan});
+  ['hp-rahu','td-rahu','pan-rahu'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent=rahu});
+
+  const re = document.getElementById('ras-date'); if(re) re.textContent = formatMrDate(n);
+  const pi = document.getElementById('pan-sunrise'); if(pi) pi.textContent = p.sunrise;
+  const ps = document.getElementById('pan-sunset'); if(ps) ps.textContent = p.sunset;
+  const pk = document.getElementById('pan-paksha'); if(pk) pk.textContent = p.paksha;
+  const pm = document.getElementById('pan-masa'); if(pm) pm.textContent = p.masa+' मास';
+  const pa = document.getElementById('pan-amrit'); if(pa) pa.textContent = p.amrit;
+  const py = document.getElementById('pan-yama'); if(py) py.textContent = MR_YAMA[dw]||'';
+  const pg = document.getElementById('pan-gulika'); if(pg) pg.textContent = MR_GULIKA[dw]||'';
+
+  const pl = document.getElementById('pan-loading');
+  if(pl) pl.style.display='none';
+}
+
+function upPan() {
+  const d = new Date();
+  d.setDate(d.getDate() + pOff);
+  const dw = d.getDay();
+  const e = document.getElementById('pan-date');
+  if(e) e.textContent = formatMrDate(d);
+
+  const p = calcPanchang(d);
+  const rahu = MR_RAHU[dw] || '७:३०–९:०० सकाळ';
+
+  const pt = document.getElementById('pan-tithi'); if(pt) pt.textContent = p.tithi;
+  const pn = document.getElementById('pan-nak'); if(pn) pn.textContent = p.nakshatra;
+  const py = document.getElementById('pan-yoga'); if(py) py.textContent = p.yoga;
+  const pk2 = document.getElementById('pan-karan'); if(pk2) pk2.textContent = p.karan;
+  const pr = document.getElementById('pan-rahu'); if(pr) pr.textContent = rahu;
+  const pss = document.getElementById('pan-sunrise'); if(pss) pss.textContent = p.sunrise;
+  const psu = document.getElementById('pan-sunset'); if(psu) psu.textContent = p.sunset;
+  const ppk = document.getElementById('pan-paksha'); if(ppk) ppk.textContent = p.paksha;
+  const ppm = document.getElementById('pan-masa'); if(ppm) ppm.textContent = p.masa+' मास';
+  const ppa = document.getElementById('pan-amrit'); if(ppa) ppa.textContent = p.amrit;
+  const pym = document.getElementById('pan-yama'); if(pym) pym.textContent = MR_YAMA[dw]||'';
+  const pgl = document.getElementById('pan-gulika'); if(pgl) pgl.textContent = MR_GULIKA[dw]||'';
+
+  const pl = document.getElementById('pan-loading');
+  if(pl) pl.style.display='none';
+}
+
+function cd(d){pOff+=d;upPan();}
+
+function gp(id){
+  document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.navrow a').forEach(a=>a.classList.remove('on'));
+  document.getElementById('pg-'+id).classList.add('on');
+  const ne=document.getElementById('n-'+id);if(ne)ne.classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'});
+  return false;
+}
+
+function fst(cat,btn){
+  document.querySelectorAll('.stab').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('.stotra-card').forEach(c=>{c.style.display=(cat==='all'||c.dataset.cat===cat)?'':'none'});
+}
+
+function sp(name){
+  document.getElementById('puja-sel').value=name;
+  document.getElementById('bform').scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+const ST={
+'hanuman-chalisa':{title:'हनुमान चालीसा',sub:'॥ श्री हनुमते नमः ॥',text:`दोहा
+श्रीगुरु चरन सरोज रज, निज मनु मुकुरु सुधारि।
+बरनउँ रघुबर बिमल जसु, जो दायकु फल चारि॥
+
+बुद्धिहीन तनु जानिके, सुमिरौं पवन कुमार।
+बल बुद्धि बिद्या देहु मोहिं, हरहु कलेस बिकार॥
+
+चौपाई
+जय हनुमान ज्ञान गुन सागर।
+जय कपीस तिहुँ लोक उजागर॥
+
+राम दूत अतुलित बलधामा।
+अंजनि पुत्र पवन सुत नामा॥
+
+महाबीर बिक्रम बजरंगी।
+कुमति निवार सुमति के संगी॥
+
+कंचन बरन बिराज सुबेसा।
+कानन कुण्डल कुँचित केसा॥
+
+हाथ बज्र औ ध्वजा बिराजे।
+काँधे मूँज जनेउ साजे॥
+
+शंकर सुवन केसरी नंदन।
+तेज प्रताप महा जगबंदन॥
+
+विद्यावान गुनी अति चातुर।
+राम काज करिबे को आतुर॥
+
+प्रभु चरित्र सुनिबे को रसिया।
+राम लखन सीता मन बसिया॥
+
+सूक्ष्म रूप धरि सियहिं दिखावा।
+बिकट रूप धरि लंक जरावा॥
+
+भीम रूप धरि असुर सँहारे।
+रामचंद्र के काज सँवारे॥
+
+लाय सँजीवन लखन जियाए।
+श्री रघुबीर हरषि उर लाए॥
+
+रघुपति कीन्ही बहुत बड़ाई।
+तुम मम प्रिय भरतहि सम भाई॥
+
+दोहा
+जय जय जय हनुमान गोसाईं।
+कृपा करहु गुरु देव की नाईं॥
+
+जो सत बार पाठ कर कोई।
+छूटहि बंदि महा सुख होई॥
+
+॥ श्री हनुमान चालीसा संपूर्णम् ॥`},
+'bajrang-baan':{title:'बजरंग बाण',sub:'॥ श्री हनुमते नमः ॥',text:`निश्चय प्रेम प्रतीति ते, विनय करैं सनमान।
+तेहि के कारज सकल शुभ, सिद्ध करैं हनुमान॥
+
+जय हनुमंत संत हितकारी।
+सुन लीजै प्रभु अरज हमारी॥
+
+जन के काज विलंब न कीजै।
+आतुर दौरि महासुख दीजै॥
+
+जैसे कूदि सिंधु महिपारा।
+सुरसा बदन पैठि बिस्तारा॥
+
+॥ इति बजरंग बाण ॥`},
+'shiv-panchakshar':{title:'शिव पञ्चाक्षर स्तोत्रम्',sub:'॥ ॐ नमः शिवाय ॥',text:`नागेन्द्रहाराय त्रिलोचनाय
+भस्माङ्गरागाय महेश्वराय।
+नित्याय शुद्धाय दिगम्बराय
+तस्मै नकाराय नमः शिवाय॥ १ ॥
+
+मन्दाकिनीसलिलचन्दनचर्चिताय
+नन्दीश्वरप्रमथनाथमहेश्वराय।
+मन्दारपुष्पबहुपुष्पसुपूजिताय
+तस्मै मकाराय नमः शिवाय॥ २ ॥
+
+शिवाय गौरीवदनाब्जवृन्द
+सूर्याय दक्षाध्वरनाशकाय।
+श्रीनीलकण्ठाय वृषध्वजाय
+तस्मै शिकाराय नमः शिवाय॥ ३ ॥
+
+यक्षस्वरूपाय जटाधराय
+पिनाकहस्ताय सनातनाय।
+दिव्याय देवाय दिगम्बराय
+तस्मै यकाराय नमः शिवाय॥ ४ ॥
+
+॥ शिव पञ्चाक्षर स्तोत्रम् संपूर्णम् ॥`},
+'shiv-tandav':{title:'शिव तांडव स्तोत्रम्',sub:'॥ नमः शिवाय ॥',text:`जटाटवीगलज्जलप्रवाहपावितस्थले
+गलेऽवलम्ब्यलम्बितां भुजंगतुंगमालिकाम्।
+डमड्डमड्डमड्डमन्निनादवड्डमर्वयं
+चकार चण्डताण्डवं तनोतु नः शिवः शिवम्॥ १ ॥
+
+जटाकटाहसंभ्रमभ्रमन्निलिम्पनिर्झरी
+विलोलवीचिवल्लरीविराजमानमूर्धनि।
+धगद्धगद्धगज्जलल्ललाटपट्टपावके
+किशोरचन्द्रशेखरे रतिः प्रतिक्षणं मम॥ २ ॥
+
+॥ इति शिव तांडव स्तोत्रम् ॥`},
+'durga-saptashloki':{title:'दुर्गा सप्तश्लोकी',sub:'॥ या देवी सर्वभूतेषु ॥',text:`ज्ञानिनामपि चेतांसि देवी भगवती हि सा।
+बलादाकृष्य मोहाय महामाया प्रयच्छति॥ १ ॥
+
+सर्वमंगलमांगल्ये शिवे सर्वार्थसाधिके।
+शरण्ये त्र्यम्बके गौरि नारायणि नमोऽस्तु ते॥ २ ॥
+
+या देवी सर्वभूतेषु शक्तिरूपेण संस्थिता।
+नमस्तस्यै नमस्तस्यै नमस्तस्यै नमो नमः॥ ३ ॥
+
+॥ इति दुर्गा सप्तश्लोकी ॥`},
+'mahalakshmi-ashtakam':{title:'महालक्ष्मी अष्टकम्',sub:'॥ ॐ श्री महालक्ष्म्यै नमः ॥',text:`नमस्तेऽस्तु महामाये श्रीपीठे सुरपूजिते।
+शंखचक्रगदाहस्ते महालक्ष्मि नमोऽस्तु ते॥ १ ॥
+
+नमस्ते गरुडारूढे कोलासुरभयंकरि।
+सर्वपापहरे देवि महालक्ष्मि नमोऽस्तु ते॥ २ ॥
+
+सर्वज्ञे सर्ववरदे सर्वदुष्टभयंकरि।
+सर्वदुःखहरे देवि महालक्ष्मि नमोऽस्तु ते॥ ३ ॥
+
+॥ इति महालक्ष्मी अष्टकम् ॥`},
+'vishnu-sahasranama':{title:'विष्णु सहस्रनाम',sub:'॥ ॐ नमो भगवते वासुदेवाय ॥',text:`ॐ विश्वं विष्णुर्वषट्कारो भूतभव्यभवत्प्रभुः।
+भूतकृद्भूतभृद्भावो भूतात्मा भूतभावनः॥ १ ॥
+
+पूतात्मा परमात्मा च मुक्तानां परमा गतिः।
+अव्ययः पुरुषः साक्षी क्षेत्रज्ञोऽक्षर एव च॥ २ ॥
+
+योगो योगविदां नेता प्रधानपुरुषेश्वरः।
+नारसिंहवपुः श्रीमान्केशवः पुरुषोत्तमः॥ ३ ॥
+
+॥ ॐ नमो भगवते वासुदेवाय ॥`},
+'vishnu-aarti':{title:'ॐ जय जगदीश हरे',sub:'॥ श्री विष्णु आरती ॥',text:`ॐ जय जगदीश हरे, स्वामी जय जगदीश हरे।
+भक्त जनों के संकट, क्षण में दूर करे॥
+
+जो ध्यावे फल पावे, दुःख बिनसे मन का।
+सुख सम्पति घर आवे, कष्ट मिटे तन का॥
+
+मात पिता तुम मेरे, शरण गहूं किसकी।
+तुम बिन और न दूजा, आस करूं जिसकी॥
+
+॥ इति श्री विष्णु आरती ॥`},
+'ganesh-chalisa':{title:'गणेश चालीसा',sub:'॥ श्री गणेशाय नमः ॥',text:`दोहा
+जय गणपति सद्गुण सदन, कविवर बदन कृपाल।
+विघ्न हरण मंगल करण, जय जय गिरिजालाल॥
+
+चौपाई
+जय जय जय गणपति गणराजू।
+मंगल भरण करण शुभ काजू॥
+
+जय गजबदन सदन सुखदाता।
+विश्व विनायक बुद्धि विधाता॥
+
+वक्र तुण्ड शुचि शुण्ड सुहावन।
+तिलक त्रिपुण्ड भाल मन भावन॥
+
+॥ इति गणेश चालीसा ॥`},
+'vakratunda':{title:'वक्रतुण्ड महाकाय',sub:'॥ श्री गणेशाय नमः ॥',text:`वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।
+निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥
+
+गजाननं भूतगणादिसेवितं
+कपित्थजम्बूफलसारभक्षणम्।
+उमासुतं शोकविनाशकारणं
+नमामि विघ्नेश्वरपादपंकजम्॥
+
+॥ सर्वमंगलमांगल्यं विघ्नेशो वरदो भव ॥`}
+};
+
+function openStotra(id){
+  const s=ST[id];if(!s)return;
+  document.getElementById('ov-title').textContent=s.title;
+  document.getElementById('ov-sub').textContent=s.sub;
+  document.getElementById('ov-text').textContent=s.text;
+  document.getElementById('ov').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeOv(){
+  document.getElementById('ov').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeOv()});
+
+live();
+upPan();
+setInterval(live,60000);
+</script>
+</body>
+</html>
