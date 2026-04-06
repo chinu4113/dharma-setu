@@ -732,10 +732,20 @@ function gp(id){
   return false;
 }
 
-function fst(cat,btn){
-  document.querySelectorAll('.stab').forEach(b=>b.classList.remove('on'));
+function fst(cat, btn){
+  // remove active from all buttons
+  document.querySelectorAll('.stab').forEach(b => b.classList.remove('on'));
   btn.classList.add('on');
-  document.querySelectorAll('.stotra-card').forEach(c=>{c.style.display=(cat==='all'||c.dataset.cat===cat)?'':'none'});
+
+  // hide all cards first
+  document.querySelectorAll('.stotra-card').forEach(c => {
+    c.style.display = 'none';
+  });
+
+  // show only selected category
+  document.querySelectorAll(`.stotra-card[data-cat="${cat}"]`).forEach(c => {
+    c.style.display = 'block';
+  });
 }
 
 function sp(name){
