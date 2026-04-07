@@ -176,6 +176,15 @@ footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:
   .navrow.show {
     display: flex;   /* 🔥 FIXED */
   }
+}.menu-btn {
+  display: block !important;   /* 🔥 FORCE SHOW */
+  font-size: 26px;
+  color: #F5C842;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 9999;
 }
 </style>
 </head>
@@ -188,6 +197,7 @@ target="_blank">💬</a>
 <div id="topbar">
   <div class="tb-inner">
     <div class="logo" onclick="gp('home')">
+      
   <img src="logo.jpg" class="logo-img" />
   <div>
     <div class="logo-t">DharmaSetu</div>
@@ -195,7 +205,6 @@ target="_blank">💬</a>
   </div>
 </div>
 
-<!
 <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
 <div class="live-pill">
