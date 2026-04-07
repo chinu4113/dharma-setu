@@ -162,33 +162,27 @@ footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:
   display: block;   /* ALWAYS visible */
 }
 
-@media(max-width:768px){
-  .navrow {
-    display: none;
-    flex-direction: column;
-    background: #2D1200;
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 100%;
-    z-index: 999;
-  }
+/* 🔥 NEW CLEAN CODE */
+.navrow {
+  display: none;
+  flex-direction: column;
+  background: #2D1200;
+  width: 100%;
+  padding: 10px;
+}
 
-  .navrow.show {
-    display: flex;
-  }
+.navrow.show {
+  display: flex;
 }
 
 /* ✅ CORRECT */
 .menu-btn {
-  display: block !important;
-  font-size: 28px;
+  display: block;
+  font-size: 26px;
   color: #F5C842;
   cursor: pointer;
-  position: fixed;
-  right: 20px;
-  top: 20px;
-  z-index: 99999;
+  margin-top: 5px;
+  margin-left: 10px;   /* 🔥 left side */
 }
 </style>
 </head>
@@ -200,16 +194,18 @@ target="_blank">💬</a>
 
 <div id="topbar">
   <div class="tb-inner">
-    <div class="logo" onclick="gp('home')">
-      
+<div class="logo" onclick="gp('home')">
   <img src="logo.jpg" class="logo-img" />
+
   <div>
     <div class="logo-t">DharmaSetu</div>
     <div class="logo-s">Your bridge to dharma puja & panchang</div>
+
+    <!-- 🔥 ADD HERE -->
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
   </div>
 </div>
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
-
 <div class="live-pill">
   <div class="live-dot"></div>
   <span id="ld-date">लोड होत आहे…</span>
