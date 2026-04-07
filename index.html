@@ -158,7 +158,8 @@ footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:
   font-size: 22px;
   color: #F5C842;
   cursor: pointer;
-  display: block; /* keep block for now */
+  margin-left: 10px;
+  display: block;   /* ALWAYS visible */
 }
 
 @media(max-width:768px){
@@ -173,12 +174,9 @@ footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:
   }
 
   .navrow.show {
-    display: flex;
+    display: flex;   /* 🔥 FIXED */
   }
 }
-
-</style>
-</style>
 </style>
 </head>
 <body>
@@ -974,6 +972,11 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeOv()});
 live();
 upPan();
 setInterval(live,60000);
+</script>
+  <script>
+function toggleMenu() {
+  document.querySelector('.navrow').classList.toggle('show');
+}
 </script>
 </body>
 </html>
