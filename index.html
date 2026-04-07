@@ -149,7 +149,35 @@ footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:
   border: 2px solid #D4A017;
   box-shadow: 0 0 10px rgba(212,160,23,0.6);
 }
+<style>
 
+/* your existing CSS above */
+
+/* 🔥 ADD THIS AT THE VERY BOTTOM */
+.menu-btn {
+  font-size: 22px;
+  color: #F5C842;
+  cursor: pointer;
+  display: block; /* keep block for now */
+}
+
+@media(max-width:768px){
+  .navrow {
+    display: none;
+    flex-direction: column;
+    background: #2D1200;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 100%;
+  }
+
+  .navrow.show {
+    display: flex;
+  }
+}
+
+</style>
 </style>
 </style>
 </head>
