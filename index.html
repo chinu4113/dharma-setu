@@ -149,7 +149,7 @@ footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:
   border: 2px solid #D4A017;
   box-shadow: 0 0 10px rgba(212,160,23,0.6);
 }
-<style>
+
 
 /* your existing CSS above */
 
@@ -184,47 +184,65 @@ footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:
   margin-top: 5px;
   margin-left: 10px;   /* 🔥 left side */
 }
+
+
 </style>
 </head>
 <body>
 
-<a class="fwa" 
-href="https://wa.me/917666098688?text=नमस्कार%20गुरुजी!%20मला%20पूजा%20विषयी%20माहिती%20हवी%20आहे." 
-target="_blank">💬</a>
-
-<div id="topbar">
-  <div class="tb-inner">
-<div class="logo" onclick="gp('home')">
-  <img src="logo.jpg" class="logo-img" />
-
-  <div>
-    <div class="logo-t">DharmaSetu</div>
-    <div class="logo-s">Your bridge to dharma puja & panchang</div>
-
-    <!-- 🔥 ADD HERE -->
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
-
-  </div>
-</div>
-<div class="live-pill">
-  <div class="live-dot"></div>
-  <span id="ld-date">लोड होत आहे…</span>
-      <span>·</span>
-      <span id="ld-tithi">—</span>
+  <a class="fwa" 
+  href="https://wa.me/917666098688?text=नमस्कार%20गुरुजी!%20मला%20पूजा%20विषयी%20माहिती%20हवी%20आहे." 
+  target="_blank" style="position:fixed;bottom:20px;right:20px;z-index:9999;background:#25d366;color:#fff;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,0.25);">💬</a>
+  
+  <!-- OVERLAY -->
+  <div id="menu-overlay" onclick="toggleMenu()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:1000;"></div>
+  
+  <!-- LEFT DRAWER -->
+  <div id="left-drawer" style="position:fixed;top:0;left:-280px;width:280px;height:100vh;background:#fff;z-index:1001;transition:left 0.3s ease;box-shadow:2px 0 16px rgba(0,0,0,0.15);padding:0;overflow-y:auto;">
+    <div style="background:#8B0000;padding:20px 16px;display:flex;align-items:center;gap:12px;">
+      <img src="logo.jpg" style="width:44px;height:44px;border-radius:50%;object-fit:cover;" />
+      <div>
+        <div style="color:#fff;font-size:16px;font-weight:700;">DharmaSetu</div>
+        <div style="color:rgba(255,255,255,0.75);font-size:11px;">पूजा, पंचांग व मुहूर्त</div>
+      </div>
     </div>
+    <nav style="padding:8px 0;">
+      <a href="#" onclick="gp('home');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#333;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;">🏠 <span>मुखपृष्ठ</span></a>
+      <a href="#" onclick="gp('panchang');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#333;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;">📅 <span>पंचांग</span></a>
+      <a href="#" onclick="gp('muhurat');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#333;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;">⭐ <span>मुहूर्त</span></a>
+      <a href="#" onclick="gp('rashifal');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#333;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;">♈ <span>राशिफल</span></a>
+      <a href="#" onclick="gp('stotra');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#333;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;">📿 <span>स्तोत्र व मंत्र</span></a>
+      <a href="#" onclick="gp('booking');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#333;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;">🙏 <span>पूजा बुकिंग</span></a>
+      <a href="#" onclick="gp('about');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#333;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;">👤 <span>गुरुजींबद्दल</span></a>
+      <a href="#" onclick="gp('contact');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#333;text-decoration:none;font-size:15px;">📞 <span>संपर्क</span></a>
+    </nav>
   </div>
-  <div class="navrow">
-    <a href="#" id="n-home" class="on" onclick="return gp('home')"><span class="ni">🏠</span> मुखपृष्ठ</a>
-    <a href="#" id="n-panchang" onclick="return gp('panchang')"><span class="ni">📅</span> पंचांग</a>
-    <a href="#" id="n-muhurat" onclick="return gp('muhurat')"><span class="ni">⭐</span> मुहूर्त</a>
-    <a href="#" id="n-rashifal" onclick="return gp('rashifal')"><span class="ni">♈</span> राशिफल</a>
-    <a href="#" id="n-stotra" onclick="return gp('stotra')"><span class="ni">📿</span> स्तोत्र व मंत्र</a>
-    <a href="#" id="n-booking" onclick="return gp('booking')"><span class="ni">🙏</span> पूजा बुकिंग</a>
-    <a href="#" id="n-about" onclick="return gp('about')"><span class="ni">👤</span> गुरुजींबद्दल</a>
-    <a href="#" id="n-contact" onclick="return gp('contact')"><span class="ni">📞</span> संपर्क</a>
-  </div>
-</div>
 
+  <div id="topbar" style="position:sticky;top:0;z-index:500;background:#8B0000;box-shadow:0 2px 8px rgba(0,0,0,0.3);">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;gap:12px;">
+      
+      <!-- Hamburger on LEFT -->
+      <button onclick="toggleMenu()" style="background:none;border:none;color:#fff;font-size:22px;cursor:pointer;padding:4px 8px;flex-shrink:0;line-height:1;">☰</button>
+  
+      <!-- Logo + Title (center-left) -->
+      <div style="display:flex;align-items:center;gap:10px;cursor:pointer;flex:1;" onclick="gp('home')">
+        <img src="logo.jpg" style="width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.4);" />
+        <div>
+          <div style="color:#fff;font-size:17px;font-weight:700;line-height:1.2;">DharmaSetu</div>
+          <div style="color:rgba(255,255,255,0.75);font-size:10px;line-height:1.3;">Your bridge to dharma puja & panchang</div>
+        </div>
+      </div>
+  
+      <!-- Live pill on RIGHT -->
+      <div style="display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.15);border-radius:20px;padding:5px 10px;flex-shrink:0;">
+        <div style="width:7px;height:7px;border-radius:50%;background:#4ade80;animation:pulse 1.5s infinite;"></div>
+        <span id="ld-date" style="color:#fff;font-size:11px;white-space:nowrap;">लोड होत आहे…</span>
+        <span style="color:rgba(255,255,255,0.5);font-size:11px;">·</span>
+        <span id="ld-tithi" style="color:#fff;font-size:11px;white-space:nowrap;">—</span>
+      </div>
+    </div>
+  
+  </div>
 <!-- HOME -->
 <div id="pg-home" class="pg on">
 <div class="hero">
@@ -395,6 +413,11 @@ target="_blank">💬</a>
     <div class="stotra-card" data-cat="vishnu" onclick="openStotra('vishnu-aarti')"><div class="sd">विष्णू</div><div class="sn">ॐ जय जगदीश हरे</div><div class="sp">ॐ जय जगदीश हरे, स्वामी जय जगदीश हरे…</div><div class="audio-ph">🎵 ऑडिओ लवकरच येणार</div><button class="btn-sm" style="margin-top:8px">📖 आता वाचा</button></div>
     <div class="stotra-card" data-cat="ganesh" onclick="openStotra('ganesh-chalisa')"><div class="sd">गणेश</div><div class="sn">गणेश चालीसा</div><div class="sp">जय गणपति सद्गुण सदन, कविवर बदन कृपाल…</div><div class="audio-ph">🎵 ऑडिओ लवकरच येणार</div><button class="btn-sm" style="margin-top:8px">📖 आता वाचा</button></div>
     <div class="stotra-card" data-cat="ganesh" onclick="openStotra('vakratunda')"><div class="sd">गणेश</div><div class="sn">वक्रतुण्ड महाकाय</div><div class="sp">वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ…</div><div class="audio-ph">🎵 ऑडिओ लवकरच येणार</div><button class="btn-sm" style="margin-top:8px">📖 आता वाचा</button></div>
+    <div class="stotra-card" data-cat="ganesh" onclick="openStotra('atharva-sheersh')"><div class="sd">गणेश</div><div class="sn">श्री गणपति अथर्वशीर्ष</div><div class="sp">ॐ नमस्ते गणपतये…</div><div class="audio-ph">🎵 ऑडिओ लवकरच येणार</div><button class="btn-sm" style="margin-top:8px">📖 आता वाचा</button></div>
+    <div class="stotra-card" data-cat="ganesh" onclick="openStotra('ganesh-panchratna')"><div class="sd">गणेश</div><div class="sn">श्री गणेश पंच रत्न स्तोत्र</div><div class="sp">मुदा करात्त मोदकं…</div><div class="audio-ph">🎵 ऑडिओ लवकरच येणार</div><button class="btn-sm" style="margin-top:8px">📖 आता वाचा</button></div>
+    <div class="stotra-card" data-cat="ganesh" onclick="openStotra('sankatnashan-ganesh')"><div class="sd">गणेश</div><div class="sn">संकटनाशन गणेश स्तोत्र</div><div class="sp">प्रणम्य शिरसा देवं…</div><div class="audio-ph">🎵 ऑडिओ लवकरच येणार</div><button class="btn-sm" style="margin-top:8px">📖 आता वाचा</button></div>
+    <div class="stotra-card" data-cat="ganesh" onclick="openStotra('ganapati-stotra')"><div class="sd">गणेश</div><div class="sn">गणपती स्तोत्र</div><div class="sp">साष्टांग नमन हे माझे…</div><div class="audio-ph">🎵 ऑडिओ लवकरच येणार</div><button class="btn-sm" style="margin-top:8px">📖 आता वाचा</button></div>
+
   </div>
 </div>
 </div>
@@ -775,25 +798,23 @@ function gp(id){
   return false;
 }
 
-function fst(cat, btn){
+function fst(cat, btn) {
+  const isActive = btn.classList.contains('on');
 
-  document.getElementById('empty-msg').style.display = 'none';
+  // Deselect: show all cards
+  if (isActive) {
+    btn.classList.remove('on');
+    document.querySelectorAll('.stotra-card').forEach(c => c.style.display = 'flex');
+    return;
+  }
 
+  // Select: filter by category
   document.querySelectorAll('.stab').forEach(b => b.classList.remove('on'));
   btn.classList.add('on');
 
-  // hide all
-  document.querySelectorAll('.stotra-card').forEach(c => {
-    c.style.display = 'none';
-  });
-
-  // show selected
-  document.querySelectorAll(`.stotra-card[data-cat="${cat}"]`).forEach(c => {
-    c.style.display = 'flex'; // 👈 THIS LINE FIXED
-  });
-
+  document.querySelectorAll('.stotra-card').forEach(c => c.style.display = 'none');
+  document.querySelectorAll(`.stotra-card[data-cat="${cat}"]`).forEach(c => c.style.display = 'flex');
 }
-
 function sp(name){
   document.getElementById('puja-sel').value=name;
   document.getElementById('bform').scrollIntoView({behavior:'smooth',block:'center'});
@@ -852,19 +873,7 @@ const ST={
 छूटहि बंदि महा सुख होई॥
 
 ॥ श्री हनुमान चालीसा संपूर्णम् ॥`},
-'bajrang-baan':{title:'बजरंग बाण',sub:'॥ श्री हनुमते नमः ॥',text:`निश्चय प्रेम प्रतीति ते, विनय करैं सनमान।
-तेहि के कारज सकल शुभ, सिद्ध करैं हनुमान॥
-
-जय हनुमंत संत हितकारी।
-सुन लीजै प्रभु अरज हमारी॥
-
-जन के काज विलंब न कीजै।
-आतुर दौरि महासुख दीजै॥
-
-जैसे कूदि सिंधु महिपारा।
-सुरसा बदन पैठि बिस्तारा॥
-
-॥ इति बजरंग बाण ॥`},
+'bajrang-baan':{title:'बजरंग बाण',sub:'॥ श्री हनुमते नमः ॥',text:`|| श्री बजरंग बाण || निश्चय प्रेम प्रतीति ते, बिनय करैं सनमान तेहि के कारज सकल शुभ, सिद्ध करैं हनुमान जय हनुमंत संत हितकार, सुन लीजै प्रभु अरज हमारी जन के काज बिलंब न कीजै, आतुर दौरि महा सुख दीजै जैसे कूदि सिंधु महिपारा, सुरसा बदन पैठि बिस्तारा आगे जाय लंकिनी रोका, मारेहु लात गई सुरलोका जाय बिभीषन को सुख दीन्हा, सीता निरखि परमपद लीन्हा बाग उजारि सिंधु महँ बोरा, अति आतुर जमकातर तोरा अक्षय कुमार मारि संहारा, लूम लपेटि लंक को जारा लाह समान लंक जरि गई, जय-जय धुनि सुरपुर नभ भई अब बिलंब केहि कारन स्वामी, कृपा करहु उर अंतरयामी जय-जय लखन प्रान के दाता, आतुर ह्वै दुख करहु निपाता जय हनुमान जयति बल-सागर, सुर-समूह-समरथ भट-नागर ॐ हनु-हनु-हनु हनुमंत हठीले, बैरिहि मारु बज्र की कीले ॐ ह्नीं ह्नीं ह्नीं हनुमंत कपीसा, ॐ हुं हुं हुं हनु अरि उर सीसा जय अंजनि कुमार बलवंता, शंकरसुवन बीर हनुमंता बदन कराल काल-कुल-घालक, राम सहाय सदा प्रतिपालक भूत, प्रेत, पिसाच निसाच, र अगिन बेताल काल मारी मर इन्हें मारु, तोहि सपथ राम की, राखु नाथ मरजाद नाम की सत्य होहु हरि सपथ पाइ कै, राम दूत धरु मारु धाइ कै जय-जय-जय हनुमंत अगाधा, दुख पावत जन केहि अपराधा पूजा जप तप नेम अचारा, नहिं जानत कछु दास तुम्हारा बन उपबन मग गिरि गृह माहीं, तुम्हरे बल हौं डरपत नाहीं जनकसुता हरि दास कहावौ, ताकी सपथ बिलंब न लावौ जै जै जै धुनि होत अकासा, सुमिरत होय दुसह दुख नासा चरन पकरि, कर जोरि मनावौं, यहि औसर अब केहि गोहरावौं उठु, उठु, चलु, तोहि राम दुहाई, पायँ परौं, कर जोरि मनाई ॐ चं चं चं चं चपल चलंता, ॐ हनु हनु हनु हनु हनुमंता ॐ हं हं हाँक देत कपि चंचल, ॐ सं सं सहमि पराने खल-दल अपने जन को तुरत उबारौ, सुमिरत होय आनंद हमारौ यह बजरंग-बाण जेहि मारै, ताहि कहौ फिरि कवन उबारै पाठ करै बजरंग-बाण की, हनुमत रक्षा करै प्रान की यह बजरंग बाण जो जापैं, तासों भूत-प्रेत सब कापैं धूप देय जो जपै हमेसा, ताके तन नहिं रहै कलेसा ताके तन नहिं रहै कलेसा उर प्रतीति दृढ़, सरन ह्वै, पाठ करै धरि ध्यान बाधा सब हर, करैं सब काम सफल हनुमान`},
 'shiv-panchakshar':{title:'शिव पञ्चाक्षर स्तोत्रम्',sub:'॥ ॐ नमः शिवाय ॥',text:`नागेन्द्रहाराय त्रिलोचनाय
 भस्माङ्गरागाय महेश्वराय।
 नित्याय शुद्धाय दिगम्बराय
@@ -886,17 +895,7 @@ const ST={
 तस्मै यकाराय नमः शिवाय॥ ४ ॥
 
 ॥ शिव पञ्चाक्षर स्तोत्रम् संपूर्णम् ॥`},
-'shiv-tandav':{title:'शिव तांडव स्तोत्रम्',sub:'॥ नमः शिवाय ॥',text:`जटाटवीगलज्जलप्रवाहपावितस्थले
-गलेऽवलम्ब्यलम्बितां भुजंगतुंगमालिकाम्।
-डमड्डमड्डमड्डमन्निनादवड्डमर्वयं
-चकार चण्डताण्डवं तनोतु नः शिवः शिवम्॥ १ ॥
-
-जटाकटाहसंभ्रमभ्रमन्निलिम्पनिर्झरी
-विलोलवीचिवल्लरीविराजमानमूर्धनि।
-धगद्धगद्धगज्जलल्ललाटपट्टपावके
-किशोरचन्द्रशेखरे रतिः प्रतिक्षणं मम॥ २ ॥
-
-॥ इति शिव तांडव स्तोत्रम् ॥`},
+'shiv-tandav':{title:'शिव तांडव स्तोत्रम्',sub:'॥ नमः शिवाय ॥',text:`|| श्री शिव तांडव स्तोत्र || जटाटवीगलज्जल प्रवाहपावितस्थले गलेऽवलम्ब्य लम्बितां भुजंगतुंगमालिकाम्‌। डमड्डमड्डमड्डमनिनादवड्डमर्वयं चकार चंडतांडवं तनोतु नः शिवः शिवम ॥1॥ जटा कटा हसंभ्रम भ्रमन्निलिंपनिर्झरी । विलोलवी चिवल्लरी विराजमानमूर्धनि । धगद्धगद्ध गज्ज्वलल्ललाट पट्टपावके किशोरचंद्रशेखरे रतिः प्रतिक्षणं ममं ॥2॥ धरा धरेंद्र नंदिनी विलास बंधुवंधुर- स्फुरदृगंत संतति प्रमोद मानमानसे । कृपाकटा क्षधारणी निरुद्धदुर्धरापदि कवचिद्विगम्बरे मनो विनोदमेतु वस्तुनि ॥3॥ जटा भुजं गपिंगल स्फुरत्फणामणिप्रभा- कदंबकुंकुम द्रवप्रलिप्त दिग्वधूमुखे । मदांध सिंधु रस्फुरत्वगुत्तरीयमेदुरे मनो विनोदद्भुतं बिंभर्तु भूतभर्तरि ॥4॥ सहस्र लोचन प्रभृत्य शेषलेखशेखर- प्रसून धूलिधोरणी विधूसरांघ्रिपीठभूः । भुजंगराज मालया निबद्धजाटजूटकः श्रिये चिराय जायतां चकोर बंधुशेखरः ॥5॥ ललाट चत्वरज्वलद्धनंजयस्फुरिगभा- निपीतपंचसायकं निमन्निलिंपनायम्‌ । सुधा मयुख लेखया विराजमानशेखरं महा कपालि संपदे शिरोजयालमस्तू नः ॥6॥ कराल भाल पट्टिकाधगद्धगद्धगज्ज्वल- द्धनंजया धरीकृतप्रचंडपंचसायके । धराधरेंद्र नंदिनी कुचाग्रचित्रपत्रक- प्रकल्पनैकशिल्पिनि त्रिलोचने मतिर्मम ॥7॥ नवीन मेघ मंडली निरुद्धदुर्धरस्फुर- त्कुहु निशीथिनीतमः प्रबंधबंधुकंधरः । निलिम्पनिर्झरि धरस्तनोतु कृत्ति सिंधुरः कलानिधानबंधुरः श्रियं जगंद्धुरंधरः ॥8॥ प्रफुल्ल नील पंकज प्रपंचकालिमच्छटा- विडंबि कंठकंध रारुचि प्रबंधकंधरम्‌ स्मरच्छिदं पुरच्छिंद भवच्छिदं मखच्छिदं गजच्छिदांधकच्छिदं तमंतकच्छिदं भजे ॥9॥ अगर्वसर्वमंगला कलाकदम्बमंजरी- रसप्रवाह माधुरी विजृंभणा मधुव्रतम्‌ । स्मरांतकं पुरातकं भावंतकं मखांतकं गजांतकांधकांतकं तमंतकांतकं भजे ॥10॥ जयत्वदभ्रविभ्रम भ्रमद्भुजंगमस्फुर- द्धगद्धगद्वि निर्गमत्कराल भाल हव्यवाट्- धिमिद्धिमिद्धिमि नन्मृदंगतुंगमंगल- ध्वनिक्रमप्रवर्तित प्रचण्ड ताण्डवः शिवः ॥11॥ दृषद्विचित्रतल्पयोर्भुजंग मौक्तिकमस्रजो- र्गरिष्ठरत्नलोष्टयोः सुहृद्विपक्षपक्षयोः । तृणारविंदचक्षुषोः प्रजामहीमहेन्द्रयोः समं प्रवर्तयन्मनः कदा सदाशिवं भजे ॥12॥ कदा निलिंपनिर्झरी निकुजकोटरे वसन्‌ विमुक्तदुर्मतिः सदा शिरःस्थमंजलिं वहन्‌। विमुक्तलोललोचनो ललामभाललग्नकः शिवेति मंत्रमुच्चरन्‌कदा सुखी भवाम्यहम्‌॥13॥ निलिम्प नाथनागरी कदम्ब मौलमल्लिका- निगुम्फनिर्भक्षरन्म धूष्णिकामनोहरः । तनोतु नो मनोमुदं विनोदिनींमहनिशं परिश्रय परं पदं तदंगजत्विषां चयः ॥14॥ प्रचण्ड वाडवानल प्रभाशुभप्रचारणी महाष्टसिद्धिकामिनी जनावहूत जल्पना । विमुक्त वाम लोचनो विवाहकालिकध्वनिः शिवेति मन्त्रभूषगो जगज्जयाय जायताम्‌ ॥15॥ इमं हि नित्यमेव मुक्तमुक्तमोत्तम स्तवं पठन्स्मरन्‌ ब्रुवन्नरो विशुद्धमेति संततम्‌। हरे गुरौ सुभक्तिमाशु याति नांयथा गतिं विमोहनं हि देहना तु शंकरस्य चिंतनम ॥16॥ पूजाऽवसानसमये दशवक्रत्रगीतं यः शम्भूपूजनमिदं पठति प्रदोषे । तस्य स्थिरां रथगजेंद्रतुरंगयुक्तां लक्ष्मी सदैव सुमुखीं प्रददाति शम्भुः ॥17॥ ॥ इति शिव तांडव स्तोत्रं संपूर्णम्‌॥ `},
 'durga-saptashloki':{title:'दुर्गा सप्तश्लोकी',sub:'॥ या देवी सर्वभूतेषु ॥',text:`ज्ञानिनामपि चेतांसि देवी भगवती हि सा।
 बलादाकृष्य मोहाय महामाया प्रयच्छति॥ १ ॥
 
@@ -960,7 +959,19 @@ const ST={
 उमासुतं शोकविनाशकारणं
 नमामि विघ्नेश्वरपादपंकजम्॥
 
-॥ सर्वमंगलमांगल्यं विघ्नेशो वरदो भव ॥`}
+॥ सर्वमंगलमांगल्यं विघ्नेशो वरदो भव ॥`},
+
+
+'atharva-sheersh':{title:'श्री गणपति अथर्वशीर्ष',sub:'॥ ॐ नमस्ते गणपतये ॥',text:`।। ॐ नमस्ते गणपतये। त्वमेव प्रत्यक्षं तत्वमसि त्वमेव केवलं कर्ताऽसि त्वमेव केवलं धर्ताऽसि त्वमेव केवलं हर्ताऽसि त्वमेव सर्वं खल्विदं ब्रह्मासि त्व साक्षादात्माऽसि नित्यम्।।1।। ऋतं वच्मि। सत्यं वच्मि।।2।। अव त्व मां। अव वक्तारं। अव श्रोतारं। अव दातारं। अव धातारं। अवानूचानमव शिष्यं। अव पश्चातात। अव पुरस्तात। अवोत्तरात्तात। अव दक्षिणात्तात्। अवचोर्ध्वात्तात्।। अवाधरात्तात्।। सर्वतो मां पाहि-पाहि समंतात्।।3।। त्वं वाङ्‍मयस्त्वं चिन्मय:। त्वमानंदमसयस्त्वं ब्रह्ममय:। त्वं सच्चिदानंदाद्वितीयोऽसि। त्वं प्रत्यक्षं ब्रह्मासि। त्वं ज्ञानमयो विज्ञानमयोऽसि।।4।। सर्वं जगदिदं त्वत्तो जायते। सर्वं जगदिदं त्वत्तस्तिष्ठति। सर्वं जगदिदं त्वयि लयमेष्यति। सर्वं जगदिदं त्वयि प्रत्येति। त्वं भूमिरापोऽनलोऽनिलो नभ:। त्वं चत्वारिवाक्पदानि।।5।। त्वं गुणत्रयातीत: त्वमवस्थात्रयातीत:। त्वं देहत्रयातीत:। त्वं कालत्रयातीत:। त्वं मूलाधारस्थितोऽसि नित्यं। त्वं शक्तित्रयात्मक:। त्वां योगिनो ध्यायंति नित्यं। त्वं ब्रह्मा त्वं विष्णुस्त्वं रूद्रस्त्वं इंद्रस्त्वं अग्निस्त्वं वायुस्त्वं सूर्यस्त्वं चंद्रमास्त्वं ब्रह्मभूर्भुव:स्वरोम्।।6।। गणादि पूर्वमुच्चार्य वर्णादिं तदनंतरं। अनुस्वार: परतर:। अर्धेन्दुलसितं। तारेण ऋद्धं। एतत्तव मनुस्वरूपं। गकार: पूर्वरूपं। अकारो मध्यमरूपं। अनुस्वारश्चान्त्यरूपं। बिन्दुरूत्तररूपं। नाद: संधानं। सं हितासंधि: सैषा गणेश विद्या। गणकऋषि: निचृद्गायत्रीच्छंद:। गणपतिर्देवता। ॐ गं गणपतये नम:।।7।। एकदंताय विद्‍महे। वक्रतुण्डाय धीमहि। तन्नो दंती प्रचोदयात।।8।। एकदंतं चतुर्हस्तं पाशमंकुशधारिणम्। रदं च वरदं हस्तैर्विभ्राणं मूषकध्वजम्। रक्तं लंबोदरं शूर्पकर्णकं रक्तवाससम्। रक्तगंधाऽनुलिप्तांगं रक्तपुष्पै: सुपुजितम्।। भक्तानुकंपिनं देवं जगत्कारणमच्युतम्। आविर्भूतं च सृष्टयादौ प्रकृ‍ते पुरुषात्परम्। एवं ध्यायति यो नित्यं स योगी योगिनां वर:।।9।। नमो व्रातपतये। नमो गणपतये। नम: प्रमथपतये। नमस्तेऽस्तु लंबोदरायैकदंताय। विघ्ननाशिने शिवसुताय। श्रीवरदमूर्तये नमो नम:।।10।। एतदथर्वशीर्ष योऽधीते। स ब्रह्मभूयाय कल्पते। स सर्व विघ्नैर्नबाध्यते। स सर्वत: सुखमेधते। स पञ्चमहापापात्प्रमुच्यते।।11।। सायमधीयानो दिवसकृतं पापं नाशयति। प्रातरधीयानो रात्रिकृतं पापं नाशयति। सायंप्रात: प्रयुंजानोऽपापो भवति। सर्वत्राधीयानोऽपविघ्नो भवति। धर्मार्थकाममोक्षं च विंदति।।12।। इदमथर्वशीर्षमशिष्याय न देयम्। यो यदि मोहाद्‍दास्यति स पापीयान् भवति। सहस्रावर्तनात् यं यं काममधीते तं तमनेन साधयेत्।13।। अनेन गणपतिमभिषिंचति स वाग्मी भवति चतुर्थ्यामनश्र्नन जपति स विद्यावान भवति। इत्यथर्वणवाक्यं। ब्रह्माद्यावरणं विद्यात् न बिभेति कदाचनेति।।14।। यो दूर्वांकुरैंर्यजति स वैश्रवणोपमो भवति। यो लाजैर्यजति स यशोवान भवति स मेधावान भवति। यो मोदकसहस्रेण यजति स वाञ्छित फलमवाप्रोति। य: साज्यसमिद्भिर्यजति स सर्वं लभते स सर्वं लभते।।15।। अष्टौ ब्राह्मणान् सम्यग्ग्राहयित्वा सूर्यवर्चस्वी भवति। सूर्यग्रहे महानद्यां प्रतिमासंनिधौ वा जप्त्वा सिद्धमंत्रों भवति। महाविघ्नात्प्रमुच्यते। महादोषात्प्रमुच्यते। महापापात् प्रमुच्यते। स सर्वविद्भवति से सर्वविद्भवति। य एवं वेद इत्युपनिषद्‍।।16।। ॐ सहनाव वतु सहनो भुनक्तु सहवीर्यंकरवावहे तेजस्वी नावधितमस्तु मा विद्विषामहे।।`},
+
+
+'ganesh-panchratna':{title:'श्री गणेश पंच रत्न',sub:'॥ मुदा करात्त मोदकं  ॥',text:`श्री गणेश पंच रत्न स्तोत्र! मुदा करात्त मोदकं सदा विमुक्ति साधकम् । कलाधरावतंसकं विलासिलोक रक्षकम् । अनायकैक नायकं विनाशितेभ दैत्यकम् । नताशुभाशु नाशकं नमामि तं विनायकम् ॥ 1 ॥ नतेतराति भीकरं नवोदितार्क भास्वरम् । नमत्सुरारि निर्जरं नताधिकापदुद्ढरम् । सुरेश्वरं निधीश्वरं गजेश्वरं गणेश्वरम् । महेश्वरं तमाश्रये परात्परं निरन्तरम् ॥ 2 ॥ समस्त लोक शङ्करं निरस्त दैत्य कुञ्जरम् । दरेतरोदरं वरं वरेभ वक्त्रमक्षरम् । कृपाकरं क्षमाकरं मुदाकरं यशस्करम् । मनस्करं नमस्कृतां नमस्करोमि भास्वरम् ॥ 3 ॥ अकिञ्चनार्ति मार्जनं चिरन्तनोक्ति भाजनम् । पुरारि पूर्व नन्दनं सुरारि गर्व चर्वणम् । प्रपञ्च नाश भीषणं धनञ्जयादि भूषणम् । कपोल दानवारणं भजे पुराण वारणम् ॥ 4 ॥ नितान्त कान्ति दन्त कान्ति मन्त कान्ति कात्मजम् । अचिन्त्य रूपमन्त हीन मन्तराय कृन्तनम् । हृदन्तरे निरन्तरं वसन्तमेव योगिनाम् । तमेकदन्तमेव तं विचिन्तयामि सन्ततम् ॥ 5 ॥ महागणेश पञ्चरत्नमादरेण योऽन्वहं । प्रजल्पति प्रभातके हृदि स्मरन् गणेश्वरम् । अरोगतामदोषतां सुसाहितीं सुपुत्रताम् । समाहितायु रष्टभूति मभ्युपैति सोऽचिरात् ॥ 6 ॥ श्रीमत् शंकर भगित्पादकृत श्रीगणेशपञ्चरत्न स्तोत्रम् संपूणकम्।`},
+
+
+'sankatnashan-ganesh':{title:'संकटनाशन गणेश स्तोत्र',sub:'॥ प्रणम्य शिरसा देवं ॥',text:`|| संकटनाशन गणेश स्तोत्र || प्रणम्य शिरसा देवं गौरी विनायकम् । भक्तावासं स्मेर नित्यमाय्ः कामार्थसिद्धये ॥1॥ प्रथमं वक्रतुडं च एकदंत द्वितीयकम् । तृतियं कृष्णपिंगात्क्षं गजववत्रं चतुर्थकम् ॥2॥ लंबोदरं पंचम च पष्ठं विकटमेव च । सप्तमं विघ्नराजेंद्रं धूम्रवर्ण तथाष्टमम् ॥3॥ नवमं भाल चंद्रं च दशमं तु विनायकम् । एकादशं गणपतिं द्वादशं तु गजानन् ॥4॥ द्वादशैतानि नामानि त्रिसंघ्यंयः पठेन्नरः । न च विघ्नभयं तस्य सर्वसिद्धिकरं प्रभो ॥5॥ विद्यार्थी लभते विद्यां धनार्थी लभते धनम् । पुत्रार्थी लभते पुत्रान्मो क्षार्थी लभते गतिम् ॥6॥ जपेद्णपतिस्तोत्रं षडिभर्मासैः फलं लभते । संवत्सरेण सिद्धिंच लभते नात्र संशयः ॥7॥ अष्टभ्यो ब्राह्मणे भ्यश्र्च लिखित्वा फलं लभते । तस्य विद्या भवेत्सर्वा गणेशस्य प्रसादतः ॥8॥ ॥ इति श्री नारद पुराणे संकष्टनाशनं नाम श्री गणपति स्तोत्रं संपूर्णम् ॥ `},
+
+'ganapati-stotra':{title:'गणपती स्तोत्र',sub:'॥ साष्टांग नमन हे माझे ॥',text:`|| गणपती स्तोत्र || साष्टांग नमन हे माझे गौरीपुत्र विनायका | भक्तिने स्मरतां नित्य आयु:कामार्थ साधती ||१|| प्रथम नाव वक्रतुंड दुसरे एकदंत तें | तीसरेकृष्णपिंगाक्ष चवथे गजवक्त्र तें ||२|| पाचवेश्रीलंबोदर सहावे विकट नाव तें | सातवेविघ्नाराजेंद्र आठवे धुम्रवर्ण तें ||३|| नववेश्रीभालाचंद्र दहावे श्रीविनायक | अकरावेगणपति बारावे श्रीगजानन ||४|| देवनावे अशीबारा तीनसंध्या म्हणे नर | विघ्नाभिती नसेत्याला प्रभो ! तू सर्वसिद्धिद ||५|| विद्यार्थ्यालामिळे विद्या धनार्थ्याला मिळे धन | पुत्रर्थ्यालामिळे पुत्र मोक्षर्थ्याला मिळे गति ||६|| जपतागणपति गणपतिस्तोत्र सहामासात हे फळ| एकवर्ष पूर्ण होता मिळे सिद्धि न संशय ||७|| नारदांनी रचिलेले झाले संपूर्ण स्तोत्र हे | श्रीधाराने मराठीत पठान्या अनुवादिले ||८||`},
+
 };
 
 function openStotra(id){
@@ -983,7 +994,11 @@ setInterval(live,60000);
 </script>
   <script>
 function toggleMenu() {
-  document.querySelector('.navrow').classList.toggle('show');
+  var drawer = document.getElementById('left-drawer');
+  var overlay = document.getElementById('menu-overlay');
+  var isOpen = drawer.style.left === '0px';
+  drawer.style.left = isOpen ? '-280px' : '0px';
+  overlay.style.display = isOpen ? 'none' : 'block';
 }
 </script>
 </body>
