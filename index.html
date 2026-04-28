@@ -139,6 +139,50 @@ footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:
 .pan-loading{text-align:center;padding:24px;font-family:'Tiro Devanagari Sanskrit',serif;color:var(--txm);font-size:0.9rem}
 .pan-source{text-align:center;margin-top:18px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.75rem;color:var(--txm);font-style:italic}
 @media(max-width:640px){.about-wrap{grid-template-columns:1fr}.ct-wrap{grid-template-columns:1fr}.fg2{grid-template-columns:1fr}.stat-row{grid-template-columns:repeat(2,1fr)}.pband{grid-template-columns:repeat(2,1fr)}.guru-card{max-width:280px;margin:0 auto}}
+
+/* ====== USER ACCOUNT & PERSONALIZATION STYLES ====== */
+.profile-btn{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:5px 12px;cursor:pointer;color:#fff;font-family:'Tiro Devanagari Sanskrit',serif;font-size:11px;transition:background .2s;text-decoration:none;}
+.profile-btn:hover{background:rgba(255,255,255,0.25)}
+.profile-avatar{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--sl),var(--sd));display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;flex-shrink:0}
+.auth-modal{display:none;position:fixed;inset:0;z-index:10000;background:rgba(10,4,0,0.85);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:16px}
+.auth-modal.open{display:flex}
+.auth-box{background:linear-gradient(145deg,var(--cream),var(--ivory));border:1.5px solid var(--bd);border-radius:var(--rt);max-width:420px;width:100%;padding:36px 28px;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.4)}
+.auth-tab-row{display:flex;gap:0;margin-bottom:24px;border-bottom:2px solid var(--bd)}
+.auth-tab{flex:1;background:none;border:none;padding:10px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.88rem;cursor:pointer;color:var(--txm);border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .2s}
+.auth-tab.on{color:var(--sd);border-bottom-color:var(--sd);font-weight:600}
+.profile-page{max-width:900px;margin:0 auto}
+.profile-hero{background:linear-gradient(135deg,var(--dk2),#5C2400);border:1.5px solid var(--g);border-radius:var(--rt);padding:28px;display:flex;align-items:center;gap:20px;margin-bottom:28px;flex-wrap:wrap}
+.profile-avatar-lg{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--sl),var(--sd));display:flex;align-items:center;justify-content:center;font-size:2rem;border:3px solid var(--g);flex-shrink:0}
+.profile-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.ptab{background:transparent;border:1.5px solid var(--bd);color:var(--txm);padding:9px 20px;border-radius:20px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.85rem;cursor:pointer;transition:all .2s}
+.ptab.on,.ptab:hover{background:var(--s);color:#fff;border-color:var(--s)}
+.saved-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.saved-card{background:#fff;border:1px solid var(--bd);border-radius:var(--r);padding:18px;box-shadow:0 2px 10px var(--sh);position:relative}
+.saved-card .sc-tag{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.68rem;color:var(--txm);margin-bottom:4px}
+.saved-card .sc-name{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;color:var(--sd);margin-bottom:8px;font-weight:600}
+.saved-card .sc-del{position:absolute;top:12px;right:12px;background:none;border:none;cursor:pointer;font-size:16px;color:var(--txm)}
+.saved-card .sc-del:hover{color:#c00}
+.wa-setup-box{background:linear-gradient(145deg,#f0fff4,#e8f5e9);border:1.5px solid #4CAF50;border-radius:var(--rt);padding:28px;max-width:560px;margin:0 auto;text-align:center}
+.wa-feature-row{display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid #c8e6c9;border-radius:var(--r);padding:14px;margin-bottom:10px;text-align:left}
+.wa-ico{font-size:1.5rem;flex-shrink:0;margin-top:2px}
+.wa-title{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.92rem;color:#1B5E20;font-weight:600}
+.wa-desc{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.82rem;color:#4CAF50;margin-top:2px}
+.suggestion-strip{background:linear-gradient(135deg,var(--gp),var(--ivory));border:1px solid var(--bd);border-radius:var(--r);padding:14px 18px;display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.sugg-ico{font-size:1.4rem;flex-shrink:0}
+.sugg-txt .st{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.92rem;color:var(--sd);font-weight:600}
+.sugg-txt .sd2{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.8rem;color:var(--txm)}
+.history-row{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--bd);border-left:4px solid var(--s);border-radius:var(--r);padding:14px 18px;margin-bottom:10px}
+.hist-date{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.72rem;color:var(--txm);min-width:90px}
+.hist-name{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.95rem;color:var(--tx);flex:1}
+.hist-status{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.72rem;padding:3px 10px;border-radius:10px;background:#E8F5E9;color:#1B5E20}
+.ritual-card{background:#fff;border:1px solid var(--bd);border-radius:var(--r);padding:18px;box-shadow:0 2px 10px var(--sh)}
+.ritual-card .rtag{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.68rem;color:var(--txm);margin-bottom:4px}
+.ritual-card .rname{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;color:var(--sd);margin-bottom:8px;font-weight:600}
+.ritual-card .rdesc{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.82rem;color:var(--txm);line-height:1.6}
+.empty-state{text-align:center;padding:40px 20px;font-family:'Tiro Devanagari Sanskrit',serif;color:var(--txm)}
+.empty-state .ei{font-size:3rem;margin-bottom:12px}
+.empty-state .et{font-size:1rem;color:var(--sd);margin-bottom:6px}
+.empty-state .es{font-size:0.85rem}
 /* your existing CSS above */
 .muh-section{display:flex;flex-direction:column;gap:12px;max-width:820px;margin:0 auto;}
 
@@ -215,12 +259,14 @@ footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:
       <a href="#" onclick="gp('panchang');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#333;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;">📅 <span>Panchang <span style="font-size:12px;color:#888;margin-left:4px">पंचांग</span></span></a>
       <a href="#" onclick="gp('muhurat');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#333;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;">⭐ <span>Muhurta <span style="font-size:12px;color:#888;margin-left:4px">मुहूर्त</span></span></a>
       <a href="#" onclick="gp('rashifal');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#333;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;">♈ <span>Horoscope <span style="font-size:12px;color:#888;margin-left:4px">राशिफल</span></span></a>
-      <a href="#" onclick="gp('kundali');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#8B0000;font-weight:600;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;background:#fff8f0;">🔯 <span>Kundali <span style="font-size:12px;color:#888;margin-left:4px">कुंडली</span></span></a>
+      <a href="#" onclick="gp('kundali');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#8B0000;font-weight:600;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;background:#fff8f0;">🔯 <span>Kundali Maker <span style="font-size:12px;color:#888;margin-left:4px">कुंडली</span></span></a>
       <a href="#" onclick="gp('stotra');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#333;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;">📿 <span>Stotra &amp; Mantra <span style="font-size:12px;color:#888;margin-left:4px">स्तोत्र व मंत्र</span></span></a>
       <a href="#" onclick="gp('aarti');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#b45309;font-weight:600;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;background:#fffbf0;">🪔 <span>Aarti Sangraha <span style="font-size:12px;color:#888;margin-left:4px">आरती संग्रह</span></span></a>
       <a href="#" onclick="gp('booking');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#333;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;">🙏 <span>Puja Booking <span style="font-size:12px;color:#888;margin-left:4px">पूजा बुकिंग</span></span></a>
       <a href="#" onclick="gp('about');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#333;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;">👤 <span>About Guruji <span style="font-size:12px;color:#888;margin-left:4px">गुरुजींबद्दल</span></span></a>
       <a href="#" onclick="gp('contact');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#333;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;">📞 <span>Contact <span style="font-size:12px;color:#888;margin-left:4px">संपर्क</span></span></a>
+      <a href="#" onclick="openAuthOrProfile();toggleMenu();return false;" id="drawer-profile-link" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#8B0000;font-weight:600;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;background:#fff8f0;">👤 <span id="drawer-profile-label">माझे प्रोफाईल <span style="font-size:12px;color:#888;margin-left:4px;font-weight:400">साइन इन / My Account</span></span></a>
+      <a href="#" onclick="openWASetup();toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#1B5E20;font-weight:600;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;background:#f0fff4;">💬 <span>WhatsApp Updates <span style="font-size:12px;color:#888;margin-left:4px;font-weight:400">व्हॉट्सअॅप सूचना</span></span></a>
       <a href="https://www.instagram.com/yash_guruji_?igsh=enF4bWh5MGloczVn" target="_blank" style="display:flex;align-items:center;gap:12px;padding:14px 20px;text-decoration:none;font-size:15px;background:linear-gradient(90deg,#f9f0ff,#fff0f9);border-bottom:0.5px solid #f0f0f0;">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ig1" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#f09433"/><stop offset="25%" style="stop-color:#e6683c"/><stop offset="50%" style="stop-color:#dc2743"/><stop offset="75%" style="stop-color:#cc2366"/><stop offset="100%" style="stop-color:#bc1888"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="url(#ig1)"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="white" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="white"/></svg>
         <span style="background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:600;">Instagram / Connect <span style="font-size:12px;font-weight:400;-webkit-text-fill-color:#888;margin-left:4px">इन्स्टाग्राम</span></span>
@@ -243,8 +289,13 @@ footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:
         </div>
       </div>
   
-      <!-- Instagram + Live pill on RIGHT -->
+      <!-- Instagram + Live pill + Profile on RIGHT -->
       <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;">
+        <!-- Profile button -->
+        <button onclick="openAuthOrProfile()" id="profile-topbtn" class="profile-btn">
+          <div id="profile-topavatar" class="profile-avatar">👤</div>
+          <span id="profile-topname" style="max-width:60px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">साइन इन</span>
+        </button>
         <a href="https://www.instagram.com/yash_guruji_?igsh=enF4bWh5MGloczVn" target="_blank" title="Instagram / Connect" style="display:flex;align-items:center;gap:5px;text-decoration:none;background:linear-gradient(135deg,#f09433,#dc2743,#bc1888);border-radius:20px;padding:5px 10px;">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="white" fill-opacity="0.25"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="white" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="white"/></svg>
           <span style="color:#fff;font-size:11px;font-weight:600;white-space:nowrap;">Connect</span>
@@ -568,7 +619,7 @@ footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:
     <div class="puja-card"><span class="picon">🌺</span><div class="pname">नवग्रह शांती</div><div class="pdesc">व नवग्रह शांती केली जाईल.</div><button class="btn-sm" onclick="sp('नवग्रह शांती')">आता बुक करा</button></div>
     <div class="puja-card"><span class="picon">🧿</span><div class="pname">कालसर्प दोष पूजा</div><div class="pdesc">कालसर्प दोष निवारणासाठी पूजा.</div><button class="btn-sm" onclick="sp('कालसर्प दोष पूजा')">आता बुक करा</button></div>
     <div class="puja-card"><span class="picon">📿</span><div class="pname">मंत्रजप (अनुष्ठान)</div><div class="pdesc">आपल्या राशी व संकल्पानुसार जप व अनुष्ठाने केली जातील..</div><button class="btn-sm" onclick="sp('मंत्रजप अनुष्ठान')">आता बुक करा</button></div>
-    <div class="puja-card"><span class="picon">💍</span><div class="pname">विवाह संस्कार </div><div class="pdesc"> कन्यादान,सप्तपदी होम-हवन सह संपूर्ण विवाह विधी.</div><button class="btn-sm" onclick="sp('विवाह')">आता बुक करा</button></div>
+    <div class="puja-card"><span class="picon">💍</span><div class="pname">विवाह संस्कार </div><div class="pdesc"> कन्यादान,सप्तपदी होम-हवन सह संपूर्ण विवाह विधी.</div><button class="btn-sm" onclick="sp('विवाह पूजा')">आता बुक करा</button></div>
   </div>
   <div class="bform" id="bform">
     <div class="bform-title">🙏 पूजा बुकिंग फॉर्म</div>
@@ -723,6 +774,176 @@ footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:
     </div>
   </div>
 </div>
+</div>
+
+<!-- PROFILE PAGE -->
+<div id="pg-profile" class="pg">
+<div class="sec sec-alt">
+  <div class="profile-page">
+    <!-- Profile Hero -->
+    <div class="profile-hero">
+      <div class="profile-avatar-lg" id="pa-lg">👤</div>
+      <div style="flex:1">
+        <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.72rem;color:var(--g);letter-spacing:1px;margin-bottom:4px;">माझे खाते – MY ACCOUNT</div>
+        <div id="pa-name" style="font-family:'Cinzel Decorative',serif;font-size:1.4rem;color:var(--gl);margin-bottom:4px;"></div>
+        <div id="pa-phone" style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.85rem;color:rgba(255,248,200,0.7);margin-bottom:12px;"></div>
+        <div id="pa-rashi-badge" style="display:inline-block;background:rgba(212,160,23,0.2);border:1px solid rgba(212,160,23,0.4);color:var(--gl);font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.78rem;padding:4px 14px;border-radius:14px;margin-right:8px;"></div>
+        <div id="pa-wa-badge" style="display:inline-block;background:rgba(37,211,102,0.2);border:1px solid rgba(37,211,102,0.4);color:#4ade80;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.78rem;padding:4px 14px;border-radius:14px;"></div>
+      </div>
+      <button onclick="logoutUser()" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);color:rgba(255,248,200,0.7);padding:8px 16px;border-radius:14px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.8rem;cursor:pointer;">साइन आउट</button>
+    </div>
+
+    <!-- Personalized Suggestions -->
+    <div style="background:#fff;border:1px solid var(--bd);border-radius:var(--r);padding:20px;margin-bottom:24px;box-shadow:0 2px 10px var(--sh);">
+      <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;color:var(--sd);margin-bottom:14px;">✨ आजच्या शिफारसी – Today's Suggestions</div>
+      <div id="suggestions-list"></div>
+    </div>
+
+    <!-- Profile Tabs -->
+    <div class="profile-tabs">
+      <button class="ptab on" onclick="showPTab('kundalis',this)">🔯 माझ्या कुंडल्या</button>
+      <button class="ptab" onclick="showPTab('bookings',this)">🗓️ बुकिंग इतिहास</button>
+      <button class="ptab" onclick="showPTab('rituals',this)">📿 जतन केलेल्या विधी</button>
+      <button class="ptab" onclick="showPTab('whatsapp',this)">💬 WhatsApp</button>
+    </div>
+
+    <!-- Saved Kundalis -->
+    <div id="ptab-kundalis">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px;">
+        <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;color:var(--sd);">जतन केलेल्या कुंडल्या</div>
+        <button class="btn-sm" onclick="gp('kundali')">+ नवी कुंडली तयार करा</button>
+      </div>
+      <div class="saved-grid" id="kundali-saved-list"></div>
+    </div>
+
+    <!-- Booking History -->
+    <div id="ptab-bookings" style="display:none;">
+      <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;color:var(--sd);margin-bottom:16px;">पूजा बुकिंग इतिहास</div>
+      <div id="bookings-list"></div>
+      <div style="margin-top:18px;text-align:center;">
+        <button class="btn-sm" onclick="gp('booking')">+ नवी पूजा बुक करा</button>
+      </div>
+    </div>
+
+    <!-- Saved Rituals -->
+    <div id="ptab-rituals" style="display:none;">
+      <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;color:var(--sd);margin-bottom:16px;">जतन केलेल्या विधी व स्तोत्रे</div>
+      <div class="saved-grid" id="rituals-list"></div>
+    </div>
+
+    <!-- WhatsApp Setup -->
+    <div id="ptab-whatsapp" style="display:none;">
+      <div class="wa-setup-box">
+        <div style="font-size:2.5rem;margin-bottom:10px;">💬</div>
+        <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:1.2rem;color:#1B5E20;margin-bottom:6px;">WhatsApp Updates चालू करा</div>
+        <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.85rem;color:#4CAF50;margin-bottom:20px;">दैनिक पंचांग, पूजा रिमाइंडर, बुकिंग पुष्टी – थेट WhatsApp वर</div>
+        
+        <div id="wa-features-list" style="margin-bottom:20px;text-align:left;">
+          <div class="wa-feature-row">
+            <div class="wa-ico">📅</div>
+            <div><div class="wa-title">दैनिक पंचांग अपडेट</div><div class="wa-desc">रोज सकाळी ७ वाजता तिथी, नक्षत्र, राहुकाळ</div>
+            <div style="margin-top:8px;"><button onclick="sendWAMessage('daily')" class="btn-sm">📲 WhatsApp वर मिळवा</button></div></div>
+          </div>
+          <div class="wa-feature-row">
+            <div class="wa-ico">🙏</div>
+            <div><div class="wa-title">पूजा रिमाइंडर</div><div class="wa-desc">एकादशी, सोमवती अमावस्या, सण – आधीच माहिती</div>
+            <div style="margin-top:8px;"><button onclick="sendWAMessage('reminder')" class="btn-sm">📲 WhatsApp वर मिळवा</button></div></div>
+          </div>
+          <div class="wa-feature-row">
+            <div class="wa-ico">✅</div>
+            <div><div class="wa-title">बुकिंग पुष्टी</div><div class="wa-desc">बुकिंग झाल्यावर लगेच WhatsApp वर पुष्टी</div>
+            <div style="margin-top:8px;"><button onclick="sendWAMessage('booking_confirm')" class="btn-sm">📲 WhatsApp वर मिळवा</button></div></div>
+          </div>
+          <div class="wa-feature-row">
+            <div class="wa-ico">🔮</div>
+            <div><div class="wa-title">आपल्या राशीचे दैनिक भविष्य</div><div class="wa-desc">आपल्या राशीनुसार वैयक्तिक राशिफल रोज</div>
+            <div style="margin-top:8px;"><button onclick="sendWAMessage('rashifal')" class="btn-sm">📲 WhatsApp वर मिळवा</button></div></div>
+          </div>
+        </div>
+
+        <div id="wa-status-msg" style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.85rem;color:#1B5E20;margin-bottom:16px;display:none;"></div>
+
+        <a id="wa-main-btn" href="https://wa.me/917666098688?text=नमस्कार%20गुरुजी!%20मला%20WhatsApp%20updates%20सुरू%20करायचे%20आहेत.%20कृपया%20मला%20दैनिक%20पंचांग%20अपडेट%20पाठवा." target="_blank" class="btn-wa" style="justify-content:center;width:100%;font-size:1rem;padding:14px;">
+          💬 गुरुजींना WhatsApp करा – Updates सुरू करा
+        </a>
+        <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.75rem;color:#4CAF50;margin-top:10px;">
+          ✅ गुरुजींचा नंबर: +91 7666098688 · विनामूल्य सेवा
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- AUTH MODAL -->
+<div class="auth-modal" id="auth-modal" onclick="if(event.target===this)closeAuthModal()">
+  <div class="auth-box">
+    <button onclick="closeAuthModal()" style="position:absolute;top:14px;right:18px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--txm);">✕</button>
+    <div style="text-align:center;margin-bottom:20px;">
+      <div style="font-size:2.5rem;margin-bottom:8px;">🕉</div>
+      <div style="font-family:'Cinzel Decorative',serif;font-size:1.2rem;color:var(--sd);">धर्मसेतु खात्यात या</div>
+      <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.8rem;color:var(--txm);">कुंडली, बुकिंग इतिहास व WhatsApp Updates जतन करा</div>
+    </div>
+
+    <div class="auth-tab-row">
+      <button class="auth-tab on" onclick="switchAuthTab('login',this)">साइन इन</button>
+      <button class="auth-tab" onclick="switchAuthTab('register',this)">नोंदणी करा</button>
+    </div>
+
+    <!-- Login Tab -->
+    <div id="auth-login">
+      <div class="fg"><label>फोन नंबर (व्हॉट्सअॅप)</label><input type="tel" id="login-phone" placeholder="+91 XXXXX XXXXX" oninput="this.value=this.value.replace(/[^0-9+]/g,'')"/></div>
+      <div class="fg"><label>नाव (OTP ऐवजी सोपी सुरुवात)</label><input type="text" id="login-name" placeholder="आपले पूर्ण नाव"/></div>
+      <button class="btn-fire" style="width:100%;padding:14px;margin-bottom:10px;" onclick="doLogin()">🙏 साइन इन करा</button>
+      <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.75rem;color:var(--txm);text-align:center;">या साईटवरील डेटा फक्त आपल्या डिव्हाइसवर साठवला जातो</div>
+    </div>
+
+    <!-- Register Tab -->
+    <div id="auth-register" style="display:none;">
+      <div class="fg"><label>पूर्ण नाव</label><input type="text" id="reg-name" placeholder="आपले पूर्ण नाव"/></div>
+      <div class="fg"><label>फोन / व्हॉट्सअॅप</label><input type="tel" id="reg-phone" placeholder="+91 XXXXX XXXXX"/></div>
+      <div class="fg"><label>आपली राशी</label>
+        <select id="reg-rashi">
+          <option value="">— राशी निवडा —</option>
+          <option value="मेष">♈ मेष (Aries)</option>
+          <option value="वृषभ">♉ वृषभ (Taurus)</option>
+          <option value="मिथुन">♊ मिथुन (Gemini)</option>
+          <option value="कर्क">♋ कर्क (Cancer)</option>
+          <option value="सिंह">♌ सिंह (Leo)</option>
+          <option value="कन्या">♍ कन्या (Virgo)</option>
+          <option value="तुला">♎ तुला (Libra)</option>
+          <option value="वृश्चिक">♏ वृश्चिक (Scorpio)</option>
+          <option value="धनु">♐ धनु (Sagittarius)</option>
+          <option value="मकर">♑ मकर (Capricorn)</option>
+          <option value="कुंभ">♒ कुंभ (Aquarius)</option>
+          <option value="मीन">♓ मीन (Pisces)</option>
+        </select>
+      </div>
+      <div class="fg" style="display:flex;align-items:center;gap:10px;">
+        <input type="checkbox" id="reg-wa" style="width:auto;accent-color:var(--s)"/>
+        <label style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.85rem;color:var(--tx);cursor:pointer;" for="reg-wa">💬 WhatsApp updates चालू करा</label>
+      </div>
+      <button class="btn-fire" style="width:100%;padding:14px;margin-bottom:10px;" onclick="doRegister()">🙏 खाते तयार करा</button>
+    </div>
+  </div>
+</div>
+
+<!-- WHATSAPP SETUP MODAL (standalone) -->
+<div class="auth-modal" id="wa-modal" onclick="if(event.target===this)closeWAModal()">
+  <div class="auth-box" style="max-width:480px;">
+    <button onclick="closeWAModal()" style="position:absolute;top:14px;right:18px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--txm);">✕</button>
+    <div style="text-align:center;margin-bottom:20px;">
+      <div style="font-size:2.5rem;margin-bottom:8px;">💬</div>
+      <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:1.2rem;color:#1B5E20;">WhatsApp Updates</div>
+      <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.82rem;color:#4CAF50;">गुरुजींकडून थेट WhatsApp वर अपडेट मिळवा</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">
+      <a href="https://wa.me/917666098688?text=नमस्कार%20गुरुजी!%20मला%20दैनिक%20पंचांग%20WhatsApp%20वर%20हवे%20आहे." target="_blank" class="btn-wa" style="justify-content:center;">📅 दैनिक पंचांग हवे आहे</a>
+      <a href="https://wa.me/917666098688?text=नमस्कार%20गुरुजी!%20मला%20सण%20व%20पूजा%20रिमाइंडर%20WhatsApp%20वर%20हवे%20आहेत." target="_blank" class="btn-wa" style="justify-content:center;">🙏 पूजा रिमाइंडर हवे आहेत</a>
+      <a href="https://wa.me/917666098688?text=नमस्कार%20गुरुजी!%20मला%20माझ्या%20राशीचे%20दैनिक%20भविष्य%20WhatsApp%20वर%20हवे%20आहे." target="_blank" class="btn-wa" style="justify-content:center;">🔮 दैनिक राशिफल हवे आहे</a>
+    </div>
+    <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.78rem;color:var(--txm);text-align:center;">गुरुजींचा नंबर: +91 7666098688 · सोमवार ते शनिवार</div>
+  </div>
 </div>
 
 <footer>
@@ -2358,6 +2579,337 @@ function toggleMenu() {
   drawer.style.left = isOpen ? '-280px' : '0px';
   overlay.style.display = isOpen ? 'none' : 'block';
 }
+</script>
+
+<script>
+// ============================================================
+// USER ACCOUNT & PERSONALIZATION SYSTEM
+// ============================================================
+
+const DS_KEY = 'dharmasetu_user';
+const DS_KUNDALIS_KEY = 'dharmasetu_kundalis';
+const DS_BOOKINGS_KEY = 'dharmasetu_bookings';
+const DS_RITUALS_KEY = 'dharmasetu_rituals';
+
+function getCurrentUser() {
+  try { return JSON.parse(localStorage.getItem(DS_KEY)); } catch(e) { return null; }
+}
+function saveUser(u) { localStorage.setItem(DS_KEY, JSON.stringify(u)); }
+function getSavedKundalis() { try { return JSON.parse(localStorage.getItem(DS_KUNDALIS_KEY)) || []; } catch(e) { return []; } }
+function getSavedBookings() { try { return JSON.parse(localStorage.getItem(DS_BOOKINGS_KEY)) || []; } catch(e) { return []; } }
+function getSavedRituals() { try { return JSON.parse(localStorage.getItem(DS_RITUALS_KEY)) || []; } catch(e) { return []; } }
+
+function updateTopbarProfile() {
+  const u = getCurrentUser();
+  const btn = document.getElementById('profile-topbtn');
+  const av = document.getElementById('profile-topavatar');
+  const nm = document.getElementById('profile-topname');
+  const dlbl = document.getElementById('drawer-profile-label');
+  if (!btn || !av || !nm) return;
+  if (u) {
+    const initials = (u.name||'?').split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
+    av.textContent = initials;
+    av.style.fontSize = '10px';
+    nm.textContent = u.name.split(' ')[0];
+    if (dlbl) dlbl.innerHTML = `${u.name} <span style="font-size:12px;color:#888;margin-left:4px;font-weight:400">माझे खाते</span>`;
+  } else {
+    av.textContent = '👤';
+    av.style.fontSize = '';
+    nm.textContent = 'साइन इन';
+    if (dlbl) dlbl.innerHTML = `माझे प्रोफाईल <span style="font-size:12px;color:#888;margin-left:4px;font-weight:400">साइन इन / My Account</span>`;
+  }
+}
+
+function openAuthOrProfile() {
+  const u = getCurrentUser();
+  if (u) { gp('profile'); renderProfilePage(); }
+  else { document.getElementById('auth-modal').classList.add('open'); }
+}
+function closeAuthModal() { document.getElementById('auth-modal').classList.remove('open'); }
+function openWASetup() { document.getElementById('wa-modal').classList.add('open'); }
+function closeWAModal() { document.getElementById('wa-modal').classList.remove('open'); }
+
+function switchAuthTab(tab, btn) {
+  document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('on'));
+  btn.classList.add('on');
+  document.getElementById('auth-login').style.display = tab==='login' ? '' : 'none';
+  document.getElementById('auth-register').style.display = tab==='register' ? '' : 'none';
+}
+
+function doLogin() {
+  const phone = document.getElementById('login-phone').value.trim();
+  const name = document.getElementById('login-name').value.trim();
+  if (!name) { alert('कृपया आपले नाव टाका'); return; }
+  const u = { name, phone, rashi: '', waEnabled: false, joinedAt: new Date().toISOString() };
+  saveUser(u);
+  closeAuthModal();
+  updateTopbarProfile();
+  gp('profile');
+  renderProfilePage();
+}
+
+function doRegister() {
+  const name = document.getElementById('reg-name').value.trim();
+  const phone = document.getElementById('reg-phone').value.trim();
+  const rashi = document.getElementById('reg-rashi').value;
+  const waEnabled = document.getElementById('reg-wa').checked;
+  if (!name) { alert('कृपया आपले नाव टाका'); return; }
+  const u = { name, phone, rashi, waEnabled, joinedAt: new Date().toISOString() };
+  saveUser(u);
+  closeAuthModal();
+  updateTopbarProfile();
+  if (waEnabled && phone) {
+    const msg = encodeURIComponent(`नमस्कार गुरुजी! माझे नाव ${name} आहे. मला WhatsApp updates सुरू करायचे आहेत. ${rashi ? `माझी राशी ${rashi} आहे.` : ''}`);
+    window.open(`https://wa.me/917666098688?text=${msg}`, '_blank');
+  }
+  gp('profile');
+  renderProfilePage();
+}
+
+function logoutUser() {
+  if (confirm('साइन आउट करायचे आहे का?')) {
+    localStorage.removeItem(DS_KEY);
+    updateTopbarProfile();
+    gp('home');
+  }
+}
+
+function renderProfilePage() {
+  const u = getCurrentUser();
+  if (!u) return;
+  const initials = (u.name||'?').split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
+  document.getElementById('pa-lg').textContent = initials;
+  document.getElementById('pa-lg').style.fontSize = '1.4rem';
+  document.getElementById('pa-name').textContent = u.name;
+  document.getElementById('pa-phone').textContent = u.phone ? `📱 ${u.phone}` : '📱 फोन नाही';
+  document.getElementById('pa-rashi-badge').textContent = u.rashi ? `🔮 ${u.rashi} राशी` : '🔮 राशी सेट करा';
+  document.getElementById('pa-wa-badge').textContent = u.waEnabled ? '💬 WhatsApp Active' : '💬 WhatsApp Off';
+
+  renderSuggestions(u);
+  renderSavedKundalis();
+  renderBookingHistory();
+  renderSavedRituals();
+}
+
+const SUGGESTIONS = {
+  'मेष': [
+    { icon: '🔥', title: 'मंगळवारी हनुमान चालीसा', desc: 'मेष राशीसाठी शुभ – आज करा' },
+    { icon: '🪔', title: 'रुद्राभिषेक शिफारस', desc: 'शिव कृपेसाठी उत्तम काळ आहे' }
+  ],
+  'वृषभ': [
+    { icon: '🌸', title: 'शुक्रवारी देवी पूजा', desc: 'वृषभ राशीसाठी अत्यंत शुभ' },
+    { icon: '💚', title: 'महालक्ष्मी अष्टकम् पाठ', desc: 'आर्थिक समृद्धीसाठी' }
+  ],
+  'default': [
+    { icon: '🕉', title: 'आजचे पंचांग तपासा', desc: 'शुभ मुहूर्त व राहुकाळ जाणून घ्या' },
+    { icon: '🙏', title: 'पूजा बुकिंग उपलब्ध', desc: 'सत्यनारायण, वास्तुशांती व अधिक' }
+  ]
+};
+
+function renderSuggestions(u) {
+  const list = document.getElementById('suggestions-list');
+  if (!list) return;
+  const suggs = SUGGESTIONS[u.rashi] || SUGGESTIONS['default'];
+  const defaultSuggs = SUGGESTIONS['default'];
+  const allSuggs = [...suggs, ...defaultSuggs.filter(d => !suggs.find(s => s.title === d.title))];
+  list.innerHTML = allSuggs.slice(0,3).map(s => `
+    <div class="suggestion-strip">
+      <div class="sugg-ico">${s.icon}</div>
+      <div class="sugg-txt">
+        <div class="st">${s.title}</div>
+        <div class="sd2">${s.desc}</div>
+      </div>
+      <button class="btn-sm" onclick="gp('booking')" style="margin-left:auto;flex-shrink:0">बुक करा</button>
+    </div>
+  `).join('');
+}
+
+function renderSavedKundalis() {
+  const list = document.getElementById('kundali-saved-list');
+  if (!list) return;
+  const ks = getSavedKundalis();
+  if (!ks.length) {
+    list.innerHTML = `<div class="empty-state"><div class="ei">🔯</div><div class="et">कोणतीही कुंडली जतन केली नाही</div><div class="es">कुंडली तयार करा आणि जतन करा</div></div>`;
+    return;
+  }
+  list.innerHTML = ks.map((k,i) => `
+    <div class="saved-card">
+      <button class="sc-del" onclick="deleteKundali(${i})" title="हटवा">🗑️</button>
+      <div class="sc-tag">जतन केले: ${new Date(k.savedAt).toLocaleDateString('mr-IN')}</div>
+      <div class="sc-name">${k.name}</div>
+      <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.82rem;color:var(--txm);">📅 ${k.dob} · ⏰ ${k.tob}</div>
+      <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.82rem;color:var(--txm);margin-top:4px;">📍 ${k.place}</div>
+      ${k.lagna ? `<div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap;"><span style="background:var(--gp);border:1px solid var(--bd);color:var(--sd);padding:2px 8px;border-radius:8px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.7rem;">लग्न: ${k.lagna}</span>${k.chandra ? `<span style="background:var(--gp);border:1px solid var(--bd);color:var(--sd);padding:2px 8px;border-radius:8px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.7rem;">चंद्र: ${k.chandra}</span>` : ''}</div>` : ''}
+      <div style="margin-top:12px;display:flex;gap:8px;">
+        <a class="btn-wa" href="https://wa.me/917666098688?text=${encodeURIComponent(`नमस्कार गुरुजी! ${k.name} यांची कुंडली (${k.dob}, ${k.place}) याचे विश्लेषण हवे आहे.`)}" target="_blank" style="padding:7px 14px;font-size:0.78rem;">💬 गुरुजींना पाठवा</a>
+      </div>
+    </div>
+  `).join('');
+}
+
+function deleteKundali(i) {
+  const ks = getSavedKundalis();
+  ks.splice(i,1);
+  localStorage.setItem(DS_KUNDALIS_KEY, JSON.stringify(ks));
+  renderSavedKundalis();
+}
+
+function saveKundaliToProfile(name, dob, tob, place, lagna, chandra) {
+  const u = getCurrentUser();
+  if (!u) { document.getElementById('auth-modal').classList.add('open'); return; }
+  const ks = getSavedKundalis();
+  ks.unshift({ name, dob, tob, place, lagna, chandra, savedAt: new Date().toISOString() });
+  localStorage.setItem(DS_KUNDALIS_KEY, JSON.stringify(ks.slice(0,20)));
+  alert('✅ कुंडली जतन केली! माझ्या प्रोफाईलमध्ये पाहा.');
+}
+
+function renderBookingHistory() {
+  const list = document.getElementById('bookings-list');
+  if (!list) return;
+  const bs = getSavedBookings();
+  if (!bs.length) {
+    list.innerHTML = `<div class="empty-state"><div class="ei">🗓️</div><div class="et">कोणतेही बुकिंग नाही</div><div class="es">पूजा बुक केल्यावर इथे दिसेल</div></div>`;
+    return;
+  }
+  list.innerHTML = bs.map(b => `
+    <div class="history-row">
+      <div class="hist-date">${new Date(b.bookedAt).toLocaleDateString('mr-IN')}</div>
+      <div class="hist-name">${b.puja}</div>
+      <div class="hist-status">${b.status || 'विचाराधीन'}</div>
+      <a class="btn-wa" href="https://wa.me/917666098688?text=${encodeURIComponent(`नमस्कार गुरुजी! माझे ${b.puja} बुकिंग (${new Date(b.bookedAt).toLocaleDateString('mr-IN')}) याबद्दल माहिती हवी आहे.`)}" target="_blank" style="padding:6px 12px;font-size:0.75rem;">💬 चौकशी</a>
+    </div>
+  `).join('');
+}
+
+function addBookingToHistory(puja) {
+  const u = getCurrentUser();
+  if (!u) return;
+  const bs = getSavedBookings();
+  bs.unshift({ puja, bookedAt: new Date().toISOString(), status: 'विचाराधीन' });
+  localStorage.setItem(DS_BOOKINGS_KEY, JSON.stringify(bs.slice(0,50)));
+}
+
+function renderSavedRituals() {
+  const list = document.getElementById('rituals-list');
+  if (!list) return;
+  const rs = getSavedRituals();
+  if (!rs.length) {
+    list.innerHTML = `<div class="empty-state"><div class="ei">📿</div><div class="et">कोणतेही विधी जतन केले नाहीत</div><div class="es">स्तोत्र किंवा आरती उघडा आणि जतन करा</div></div>`;
+    return;
+  }
+  list.innerHTML = rs.map((r,i) => `
+    <div class="ritual-card">
+      <button class="sc-del" onclick="deleteRitual(${i})" title="हटवा">🗑️</button>
+      <div class="rtag">${r.category || 'स्तोत्र'}</div>
+      <div class="rname">${r.name}</div>
+      <div class="rdesc">${r.desc || ''}</div>
+      <button class="btn-sm" style="margin-top:10px" onclick="openStotra('${r.key}')">📖 आता वाचा</button>
+    </div>
+  `).join('');
+}
+
+function saveRitualToProfile(key, name, category, desc) {
+  const u = getCurrentUser();
+  if (!u) { document.getElementById('auth-modal').classList.add('open'); return; }
+  const rs = getSavedRituals();
+  if (rs.find(r => r.key === key)) { alert('हे आधीच जतन केलेले आहे!'); return; }
+  rs.unshift({ key, name, category, desc, savedAt: new Date().toISOString() });
+  localStorage.setItem(DS_RITUALS_KEY, JSON.stringify(rs.slice(0,30)));
+  alert('✅ जतन केले!');
+}
+
+function deleteRitual(i) {
+  const rs = getSavedRituals();
+  rs.splice(i,1);
+  localStorage.setItem(DS_RITUALS_KEY, JSON.stringify(rs));
+  renderSavedRituals();
+}
+
+function showPTab(tab, btn) {
+  ['kundalis','bookings','rituals','whatsapp'].forEach(t => {
+    const el = document.getElementById(`ptab-${t}`);
+    if (el) el.style.display = 'none';
+  });
+  document.querySelectorAll('.ptab').forEach(b => b.classList.remove('on'));
+  const el = document.getElementById(`ptab-${tab}`);
+  if (el) el.style.display = '';
+  btn.classList.add('on');
+}
+
+function sendWAMessage(type) {
+  const u = getCurrentUser();
+  const name = u ? u.name : 'एक भक्त';
+  const rashi = u ? u.rashi : '';
+  const msgs = {
+    daily: `नमस्कार गुरुजी! माझे नाव ${name} आहे. मला दररोज सकाळी पंचांग WhatsApp वर हवे आहे. ${rashi ? `माझी राशी ${rashi} आहे.` : ''}`,
+    reminder: `नमस्कार गुरुजी! माझे नाव ${name} आहे. मला एकादशी, सोमवती अमावस्या व महत्त्वाच्या सणांचे रिमाइंडर WhatsApp वर हवे आहेत.`,
+    booking_confirm: `नमस्कार गुरुजी! माझे नाव ${name} आहे. मला पूजा बुकिंग झाल्यावर WhatsApp वर पुष्टी संदेश हवा आहे.`,
+    rashifal: `नमस्कार गुरुजी! माझे नाव ${name} आहे. ${rashi ? `माझी राशी ${rashi} आहे. ` : ''}मला दैनिक राशिफल WhatsApp वर हवे आहे.`
+  };
+  const msg = encodeURIComponent(msgs[type] || msgs.daily);
+  window.open(`https://wa.me/917666098688?text=${msg}`, '_blank');
+  const statusEl = document.getElementById('wa-status-msg');
+  if (statusEl) { statusEl.textContent = '✅ WhatsApp उघडत आहे…'; statusEl.style.display = ''; setTimeout(() => statusEl.style.display='none', 3000); }
+}
+
+// Hook into the Kundali generator to add save button
+const _origGenerateKundali = typeof generateKundali === 'function' ? generateKundali : null;
+document.addEventListener('DOMContentLoaded', () => {
+  // Patch Kundali output to add save button
+  const origBtn = document.querySelector('[onclick="generateKundali()"]');
+  if (origBtn) {
+    origBtn.addEventListener('click', () => {
+      setTimeout(() => {
+        const outDiv = document.getElementById('kundali-output');
+        if (outDiv && outDiv.style.display !== 'none' && !document.getElementById('save-kundali-btn')) {
+          const saveDiv = document.createElement('div');
+          saveDiv.style.textAlign = 'center';
+          saveDiv.style.marginBottom = '16px';
+          saveDiv.id = 'save-kundali-btn';
+          saveDiv.innerHTML = `<button class="btn-ring" style="font-size:0.9rem;padding:11px 24px" onclick="saveCurrentKundali()">💾 कुंडली माझ्या खात्यात जतन करा</button>`;
+          outDiv.querySelector('div[style*="display:flex;gap:12px"]')?.before(saveDiv);
+        }
+      }, 500);
+    });
+  }
+
+  // Add save-to-profile buttons on stotra cards
+  document.querySelectorAll('.stotra-card .btn-sm').forEach(btn => {
+    const card = btn.closest('.stotra-card');
+    if (!card) return;
+    const sname = card.querySelector('.sn')?.textContent || '';
+    const scat = card.querySelector('.sd')?.textContent || 'स्तोत्र';
+    const skey = card.getAttribute('onclick')?.match(/'([^']+)'/)?.[1] || '';
+    const sp = card.querySelector('.sp')?.textContent || '';
+    const saveBtn = document.createElement('button');
+    saveBtn.className = 'btn-sm';
+    saveBtn.style.marginTop = '6px';
+    saveBtn.style.background = 'rgba(212,160,23,0.25)';
+    saveBtn.textContent = '🔖 जतन करा';
+    saveBtn.onclick = (e) => { e.stopPropagation(); saveRitualToProfile(skey, sname, scat, sp.slice(0,60)); };
+    btn.after(saveBtn);
+  });
+
+  updateTopbarProfile();
+});
+
+function saveCurrentKundali() {
+  const name = document.getElementById('k-name')?.value.trim();
+  const dob = document.getElementById('k-dob')?.value;
+  const tob = document.getElementById('k-tob')?.value;
+  const place = document.getElementById('k-place')?.value.trim();
+  const lagnaEl = document.querySelector('#kout-panchang .pi-val.pi-grn');
+  const lagna = lagnaEl ? lagnaEl.textContent : '';
+  saveKundaliToProfile(name, dob, tob, place, lagna, '');
+}
+
+// Also intercept booking form submit to log booking
+document.addEventListener('click', function(e) {
+  if (e.target && e.target.textContent && e.target.textContent.includes('बुकिंग विनंती पाठवा')) {
+    const pujaEl = document.getElementById('puja-sel');
+    if (pujaEl && pujaEl.value) addBookingToHistory(pujaEl.value);
+  }
+});
 </script>
 </body>
 </html>
