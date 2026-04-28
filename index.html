@@ -7,8 +7,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Tiro+Devanagari+Sanskrit&display=swap" rel="stylesheet">
 <style>
 :root{--s:#E85D04;--sl:#F48C06;--sd:#C44B00;--g:#D4A017;--gl:#F5C842;--gp:#FFF8E8;--cr:#9B1B30;--cream:#FDF6E3;--ivory:#FFFAF0;--dk:#1A0800;--dk2:#2D1200;--tx:#3A1500;--txm:#7A5C3A;--bd:#E0C060;--sh:rgba(180,100,0,0.15);--r:12px;--rt:20px}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{font-family:'Cormorant Garamond',Georgia,serif;background:var(--cream);color:var(--tx);overflow-x:hidden;min-height:100vh}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Cormorant Garamond',Georgia,serif;background:var(--cream);color:var(--tx);overflow-x:hidden;min-height:100vh;max-width:100vw}
+@media(max-width:480px){.topbar-live-pill{display:none!important}.topbar-right{gap:5px!important}}
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--cream)}::-webkit-scrollbar-thumb{background:var(--g);border-radius:3px}
 #topbar{position:sticky;top:0;z-index:999;background:linear-gradient(135deg,var(--dk2),#3D1800,var(--dk2));border-bottom:1.5px solid var(--g);box-shadow:0 3px 24px rgba(0,0,0,0.5)}
 .tb-inner{display:flex;align-items:center;justify-content:space-between;padding:10px 20px;border-bottom:1px solid rgba(212,160,23,0.25);flex-wrap:wrap;gap:6px}
@@ -274,23 +275,23 @@ footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:
     </nav>
   </div>
 
-  <div id="topbar" style="position:sticky;top:0;z-index:500;background:#8B0000;box-shadow:0 2px 8px rgba(0,0,0,0.3);">
-    <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;gap:12px;">
+  <div id="topbar" style="position:sticky;top:0;z-index:500;background:#8B0000;box-shadow:0 2px 8px rgba(0,0,0,0.3);overflow:hidden;">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;gap:12px;min-width:0;">
       
       <!-- Hamburger on LEFT -->
       <button onclick="toggleMenu()" style="background:none;border:none;color:#fff;font-size:22px;cursor:pointer;padding:4px 8px;flex-shrink:0;line-height:1;">☰</button>
   
       <!-- Logo + Title (center-left) -->
-      <div style="display:flex;align-items:center;gap:10px;cursor:pointer;flex:1;" onclick="gp('home')">
-        <img src="logo.jpg" style="width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.4);" />
-        <div>
-          <div style="color:#fff;font-size:17px;font-weight:700;line-height:1.2;">DharmaSetu</div>
-          <div style="color:rgba(255,255,255,0.75);font-size:10px;line-height:1.3;">Your bridge to dharma puja & panchang</div>
+      <div style="display:flex;align-items:center;gap:10px;cursor:pointer;flex:1;min-width:0;" onclick="gp('home')">
+        <img src="logo.jpg" style="width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.4);flex-shrink:0;" />
+        <div style="min-width:0;">
+          <div style="color:#fff;font-size:17px;font-weight:700;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">DharmaSetu</div>
+          <div style="color:rgba(255,255,255,0.75);font-size:10px;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Your bridge to dharma puja & panchang</div>
         </div>
       </div>
   
       <!-- Instagram + Live pill + Profile on RIGHT -->
-      <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;">
+      <div class="topbar-right" style="display:flex;align-items:center;gap:8px;flex-shrink:0;">
         <!-- Profile button -->
         <button onclick="openAuthOrProfile()" id="profile-topbtn" class="profile-btn">
           <div id="profile-topavatar" class="profile-avatar">👤</div>
@@ -300,7 +301,7 @@ footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="white" fill-opacity="0.25"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="white" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="white"/></svg>
           <span style="color:#fff;font-size:11px;font-weight:600;white-space:nowrap;">Connect</span>
         </a>
-        <div style="display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.15);border-radius:20px;padding:5px 10px;">
+        <div class="topbar-live-pill" style="display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.15);border-radius:20px;padding:5px 10px;">
           <div style="width:7px;height:7px;border-radius:50%;background:#4ade80;animation:pulse 1.5s infinite;"></div>
           <span id="ld-date" style="color:#fff;font-size:11px;white-space:nowrap;">लोड होत आहे…</span>
           <span style="color:rgba(255,255,255,0.5);font-size:11px;">·</span>
