@@ -275,41 +275,51 @@ footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:
  </div>
 
  <div id="topbar" style="position:sticky;top:0;z-index:500;background:#8B0000;box-shadow:0 2px 8px rgba(0,0,0,0.3);">
- <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;gap:12px;">
+ <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 12px;gap:8px;">
  
  <!-- Hamburger on LEFT -->
- <button onclick="toggleMenu()" style="background:none;border:none;color:#fff;font-size:22px;cursor:pointer;padding:4px 8px;flex-shrink:0;line-height:1;">&#9776;</button>
+ <button onclick="toggleMenu()" style="background:none;border:none;color:#fff;font-size:24px;cursor:pointer;padding:4px 6px;flex-shrink:0;line-height:1;">&#9776;</button>
  
- <!-- Logo + Title (center-left) -->
- <div style="display:flex;align-items:center;gap:10px;cursor:pointer;flex:1;" onclick="gp('home')" id="logo-area">
- <img src="logo.jpg" id="logo-img" style="width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.4);" onclick="handleLogoTap(event)" />
- <div>
- <div style="color:#fff;font-size:17px;font-weight:700;line-height:1.2;">DharmaSetu</div>
- <div style="color:rgba(255,255,255,0.75);font-size:10px;line-height:1.3;">Your bridge to dharma puja & panchang</div>
+ <!-- Logo + Title -->
+ <div style="display:flex;align-items:center;gap:8px;cursor:pointer;flex:1;min-width:0;" onclick="gp('home')" id="logo-area">
+ <img src="logo.jpg" id="logo-img" style="width:38px;height:38px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.4);flex-shrink:0;" onclick="handleLogoTap(event)" />
+ <div style="min-width:0;">
+ <div style="color:#fff;font-size:15px;font-weight:700;line-height:1.2;white-space:nowrap;">DharmaSetu</div>
+ <div style="color:rgba(255,255,255,0.65);font-size:9px;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Your bridge to dharma puja &amp; panchang</div>
  </div>
  </div>
  
- <!-- Instagram + Live pill + Profile on RIGHT -->
- <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;">
- <!-- Profile button -->
- <button onclick="openAuthOrProfile()" id="profile-topbtn" class="profile-btn">
- <div id="profile-topavatar" class="profile-avatar"></div>
- <span id="profile-topname" style="max-width:60px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">साइन इन</span>
+ <!-- RIGHT: Profile button only on mobile, more items on wider screens -->
+ <div style="display:flex;align-items:center;gap:6px;flex-shrink:0;">
+ <!-- Profile button - always shown, compact -->
+ <button onclick="openAuthOrProfile()" id="profile-topbtn" class="profile-btn" style="padding:6px 10px;gap:5px;">
+ <div id="profile-topavatar" class="profile-avatar" style="width:24px;height:24px;font-size:10px;">U</div>
+ <span id="profile-topname" style="font-size:11px;max-width:52px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">साइन इन</span>
  </button>
- <a href="https://www.instagram.com/yash_guruji_?igsh=enF4bWh5MGloczVn" target="_blank" title="Instagram / Connect" style="display:flex;align-items:center;gap:5px;text-decoration:none;background:linear-gradient(135deg,#f09433,#dc2743,#bc1888);border-radius:20px;padding:5px 10px;">
- <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="white" fill-opacity="0.25"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="white" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="white"/></svg>
- <span style="color:#fff;font-size:11px;font-weight:600;white-space:nowrap;">Connect</span>
+ <!-- Instagram - hidden on small phones -->
+ <a href="https://www.instagram.com/yash_guruji_?igsh=enF4bWh5MGloczVn" target="_blank" title="Instagram" class="tb-ig-link" style="display:none;align-items:center;gap:4px;text-decoration:none;background:linear-gradient(135deg,#f09433,#dc2743,#bc1888);border-radius:16px;padding:5px 8px;">
+ <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" fill="white" fill-opacity="0.25"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="white" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="white"/></svg>
+ <span style="color:#fff;font-size:10px;font-weight:600;white-space:nowrap;">IG</span>
  </a>
- <div style="display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.15);border-radius:20px;padding:5px 10px;">
- <div style="width:7px;height:7px;border-radius:50%;background:#4ade80;animation:pulse 1.5s infinite;"></div>
- <span id="ld-date" style="color:#fff;font-size:11px;white-space:nowrap;">लोड होत आहे…</span>
- <span style="color:rgba(255,255,255,0.5);font-size:11px;">·</span>
- <span id="ld-tithi" style="color:#fff;font-size:11px;white-space:nowrap;">—</span>
+ <!-- Live pill - hidden on small phones -->
+ <div class="tb-live-pill" style="display:none;align-items:center;gap:5px;background:rgba(255,255,255,0.12);border-radius:14px;padding:4px 8px;">
+ <div style="width:6px;height:6px;border-radius:50%;background:#4ade80;flex-shrink:0;"></div>
+ <span id="ld-date" style="color:#fff;font-size:10px;white-space:nowrap;"></span>
+ <span id="ld-tithi" style="color:rgba(255,255,255,0.7);font-size:10px;white-space:nowrap;"></span>
  </div>
  </div>
  </div>
- 
- </div>
+
+ <style>
+ @media(min-width:500px){
+   .tb-ig-link{ display:flex !important; }
+ }
+ @media(min-width:640px){
+   .tb-live-pill{ display:flex !important; }
+   #profile-topbtn{ padding:6px 14px !important; }
+   #profile-topname{ max-width:80px !important; }
+ }
+ </style>
 <!-- HOME -->
 <div id="pg-home" class="pg on">
 <div class="hero">
