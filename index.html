@@ -369,6 +369,7 @@ footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:
  <button class="btn-fire" onclick="gp('booking')"> पूजा बुक करा</button>
  <button class="btn-ring" onclick="gp('panchang')"> पंचांग पाहा</button>
  <button class="btn-ring" onclick="gp('rashifal')"> आजचे राशिफल</button>
+ <button class="btn-ring" onclick="openSankalpModal()" style="border-color:#D4A017;color:#F5C842;"> संकल्प मंत्र</button>
  </div>
  <div class="pband">
  <div class="pband-cell"><div class="lbl">तिथी</div><div class="val" id="hp-tithi">—</div></div>
@@ -1013,6 +1014,27 @@ footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:
  <button onclick="clearAdminLog()" style="background:none;border:1.5px solid #e00;border-radius:12px;padding:5px 14px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.78rem;cursor:pointer;color:#c00;">सर्व नोंदी साफ करा</button>
  </div>
  </div>
+ </div>
+</div>
+
+<!-- SANKALP MANTRA MODAL -->
+<div class="auth-modal" id="sankalp-modal" onclick="if(event.target===this)closeSankalpModal()">
+ <div class="auth-box" style="max-width:480px;padding:0;overflow:hidden;border-radius:var(--rt);">
+  <div style="background:linear-gradient(135deg,var(--dk2),#3D1800);padding:20px 24px 16px;position:relative;border-bottom:1.5px solid var(--g);">
+   <button onclick="closeSankalpModal()" style="position:absolute;top:14px;right:16px;background:none;border:none;font-size:1.3rem;cursor:pointer;color:rgba(255,248,200,0.7);line-height:1;">&#x2715;</button>
+   <div style="font-family:'Cinzel Decorative',serif;font-size:1.05rem;color:var(--gl);margin-bottom:4px;">संकल्प मंत्र</div>
+   <div id="sankalp-date-line" style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.78rem;color:rgba(255,248,200,0.6);"></div>
+  </div>
+  <div style="padding:20px 24px;max-height:68vh;overflow-y:auto;">
+   <div id="sankalp-text" style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;color:var(--sd);line-height:2.4;letter-spacing:0.3px;"></div>
+   <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;">
+    <button onclick="copySankalp()" class="btn-fire" style="flex:1;padding:12px;font-size:0.88rem;">कॉपी करा</button>
+    <button onclick="closeSankalpModal()" class="btn-ring" style="flex:1;padding:12px;font-size:0.88rem;">बंद करा</button>
+   </div>
+   <div style="margin-top:14px;background:var(--gp);border:1px solid var(--bd);border-radius:8px;padding:12px 14px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.75rem;color:var(--txm);line-height:1.7;">
+    हा संकल्प मंत्र आजच्या पंचांगावर आधारित आहे. पूजा सुरू करण्यापूर्वी गुरुजींकडून शुद्ध उच्चारण करून घ्यावे.
+   </div>
+  </div>
  </div>
 </div>
 
@@ -2642,7 +2664,141 @@ function printKundali() {
 }
 </script>
  <script>
-// Secret admin access: tap logo 5 times quickly
+// ─── SANKALP MANTRA ──────────────────────────────────────────
+const SAMVAT_NAMES = [
+  'प्रभव','विभव','शुक्ल','प्रमोद','प्रजापती','अंगिरस','श्रीमुख','भाव','युव','धाता',
+  'ईश्वर','बहुधान्य','प्रमाथी','विक्रम','वृष','चित्रभानू','सुभानू','तारण','पार्थिव','व्यय',
+  'सर्वजित','सर्वधारी','विरोधी','विकृती','खर','नंदन','विजय','जय','मन्मथ','दुर्मुखी',
+  'हेवळंबी','विळंबी','विकारी','शार्वरी','प्लव','शुभकृत','शोभकृत','क्रोधी','विश्वावसू','पराभव',
+  'प्लवंग','कीलक','सौम्य','साधारण','विरोधकृत','परिधावी','प्रमादीच','आनंद','राक्षस','नळ',
+  'पिंगळ','काळयुक्त','सिद्धार्थी','रौद्र','दुर्मती','दुंदुभी','रुधिरोद्गारी','रक्ताक्षी','क्रोधन','अक्षय'
+];
+
+const RITU_NAMES = ['वसंत','ग्रीष्म','वर्षा','शरद','हेमंत','शिशिर'];
+const AYANA_NAMES = ['उत्तरायण','दक्षिणायन'];
+
+const GRAHA_RASHI = {
+  surya:  ['मेष','वृषभ','मिथुन','कर्क','सिंह','कन्या','तुला','वृश्चिक','धनु','मकर','कुंभ','मीन'],
+  chandra:['मेष','वृषभ','मिथुन','कर्क','सिंह','कन्या','तुला','वृश्चिक','धनु','मकर','कुंभ','मीन'],
+  guru:   ['मेष','वृषभ','मिथुन','कर्क','सिंह','कन्या','तुला','वृश्चिक','धनु','मकर','कुंभ','मीन']
+};
+
+function getSankalpData(){
+  const n   = new Date();
+  const p   = calcPanchang(n);
+
+  // Vikram Samvat = Gregorian + 57 (approx, before Chaitra new year add/subtract)
+  const month = n.getMonth(); // 0=Jan
+  const vikramYear = n.getFullYear() + 56 + (month >= 3 ? 1 : 0); // rough: after April +57
+  const samvatIdx  = (vikramYear - 1) % 60;
+  const samvatName = SAMVAT_NAMES[samvatIdx] || '';
+
+  // Shaka Samvat
+  const shakaYear  = n.getFullYear() - 78 + (month >= 3 ? 1 : 0);
+
+  // Ayana: Uttarayan = ~Jan 14 to Jul 14, Dakshinayan = Jul 14 to Jan 14
+  const dayOfYear  = Math.floor((n - new Date(n.getFullYear(), 0, 0)) / 86400000);
+  const ayana      = (dayOfYear >= 14 && dayOfYear < 196) ? 'उत्तरायण' : 'दक्षिणायन';
+
+  // Ritu (season): each 2 months of lunar calendar → 6 ritus
+  // Based on masa index
+  const masaList   = ['चैत्र','वैशाख','ज्येष्ठ','आषाढ','श्रावण','भाद्रपद','आश्विन','कार्तिक','मार्गशीर्ष','पौष','माघ','फाल्गुन'];
+  const masaIdx    = masaList.indexOf(p.masa);
+  const rituIdx    = masaIdx >= 0 ? Math.floor(masaIdx / 2) % 6 : Math.floor(month / 2) % 6;
+  const ritu       = RITU_NAMES[rituIdx];
+
+  // Sun rashi (sidereal) – rough from month
+  const sunRashiIdx = ((month + 2) % 12); // approx Mesha from Apr
+  const sunRashi   = GRAHA_RASHI.surya[sunRashiIdx];
+
+  // Moon rashi from nakshatra (each nakshatra spans 13.3°, 9 nakshatras per sign)
+  const nakList    = ['अश्विनी','भरणी','कृत्तिका','रोहिणी','मृगशीर्ष','आर्द्रा','पुनर्वसु','पुष्य','आश्लेषा','मघा','पूर्वा फाल्गुनी','उत्तरा फाल्गुनी','हस्त','चित्रा','स्वाती','विशाखा','अनुराधा','ज्येष्ठा','मूळ','पूर्वाषाढा','उत्तराषाढा','श्रवण','धनिष्ठा','शतभिषा','पूर्वाभाद्रपद','उत्तराभाद्रपद','रेवती'];
+  const nakIdx2    = nakList.indexOf(p.nakshatra);
+  const moonRashiIdx = nakIdx2 >= 0 ? Math.floor(nakIdx2 * 9 / 27) % 12 : 0;
+  const moonRashi  = GRAHA_RASHI.chandra[moonRashiIdx];
+
+  // Guru (Jupiter) rashi – approx 1 year per rashi, cycles ~12 yrs
+  const guruBase   = 2023; // Guru in Mesha in 2023
+  const guruRashiIdx = ((n.getFullYear() - guruBase) + 12) % 12;
+  const guruRashi  = GRAHA_RASHI.guru[guruRashiIdx];
+
+  // Day name
+  const vasaraNames = ['रविवार','सोमवार','मंगळवार','बुधवार','गुरुवार','शुक्रवार','शनिवार'];
+  const vasara = vasaraNames[n.getDay()];
+
+  return { p, vikramYear, samvatName, shakaYear, ayana, ritu, sunRashi, moonRashi, guruRashi, vasara, n };
+}
+
+function buildSankalpText(d){
+  const { p, vikramYear, samvatName, shakaYear, ayana, ritu, sunRashi, moonRashi, guruRashi, vasara } = d;
+  const lines = [
+    `वीर विक्रमादित्यनृपते ${vikramYear} ${samvatName} नाम संवत्सरे`,
+    `${ayana}`,
+    `${ritu} ऋतौ`,
+    `${p.masa} मासे`,
+    `${p.paksha}`,
+    `${p.tithi} शुभतिथौ`,
+    `${vasara} शुभवासरे`,
+    `${p.nakshatra} शुभनक्षत्रे`,
+    `${p.yoga} शुभयोगे`,
+    `${p.karan} शुभकरणे`,
+    `---`,
+    `${moonRashi} राशि स्थिते चन्द्रे`,
+    `${sunRashi} राशि स्थिते सूर्ये`,
+    `${guruRashi} राशि स्थिते देवगुरौ बृहस्पतौ`,
+    `---`,
+    `एवं गुण विशेषण विशिष्टायां`,
+    `शुभपुण्य तिथौ मम सकल पाप क्षयपूर्वक`,
+    `श्रुति स्मृति पुराणोक्त फल प्राप्त्यर्थं`,
+    `श्री परमेश्वर प्रीत्यर्थं च`,
+    `---`,
+    `इदं (पूजाचे नाव) कर्म अहं करिष्ये ॥`
+  ];
+  return lines;
+}
+
+function openSankalpModal(){
+  const d = getSankalpData();
+  const lines = buildSankalpText(d);
+
+  // Date line in header
+  const dl = document.getElementById('sankalp-date-line');
+  if(dl) dl.textContent = formatMrDate(d.n) + ' · ' + d.p.tithi;
+
+  // Render lines
+  const el = document.getElementById('sankalp-text');
+  if(el){
+    el.innerHTML = lines.map(l =>
+      l === '---'
+        ? `<div style="border-top:1px solid var(--bd);margin:8px 0;"></div>`
+        : `<div style="padding:1px 0;">${l}</div>`
+    ).join('');
+  }
+
+  document.getElementById('sankalp-modal').classList.add('open');
+}
+
+function closeSankalpModal(){
+  document.getElementById('sankalp-modal').classList.remove('open');
+}
+
+function copySankalp(){
+  const d   = getSankalpData();
+  const lines = buildSankalpText(d).filter(l => l !== '---');
+  const text = `|| संकल्प मंत्र ||\n${formatMrDate(d.n)}\n\n` + lines.join('\n');
+  navigator.clipboard?.writeText(text).then(()=>{
+    alert('संकल्प मंत्र कॉपी केला!');
+  }).catch(()=>{
+    // Fallback
+    const ta = document.createElement('textarea');
+    ta.value = text; document.body.appendChild(ta);
+    ta.select(); document.execCommand('copy');
+    document.body.removeChild(ta);
+    alert('संकल्प मंत्र कॉपी केला!');
+  });
+}
+
+// ─── Secret admin access: tap logo 5 times ───────────────────
 let _logoTaps = 0, _logoTimer = null;
 function handleLogoTap(e){
   e.stopPropagation();
