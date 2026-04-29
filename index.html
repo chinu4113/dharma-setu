@@ -274,7 +274,161 @@ footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:
  margin-top: 5px;
  margin-left: 10px; /* left side */
 }
+/* ── DARK MODE ─────────────────────────────────────── */
+body.dark-mode {
+  --ivory:  #181818;
+  --cream:  #222;
+  --gp:     #252525;
+  --bd:     #3a3a3a;
+  --sh:     rgba(0,0,0,0.6);
+  --tx:     #F0E6D3;
+  --txm:    #B8A898;
+  --sd:     #F5C842;
+  --sl:     #F5C842;
+  --g:      #D4A017;
+  --gl:     #FFE57A;
+  --cr:     #ff8a8a;
+  background:#181818;
+  color:#F0E6D3;
+}
+/* Sections */
+body.dark-mode .sec  { background:#1e1e1e; }
+body.dark-mode .sec-alt { background:#222; }
 
+/* All white-background cards → dark */
+body.dark-mode .bform,
+body.dark-mode .saved-card,
+body.dark-mode .ritual-card,
+body.dark-mode .history-row,
+body.dark-mode .rahu-card,
+body.dark-mode .muh-month-card,
+body.dark-mode .stotra-card,
+body.dark-mode .photo-link-card,
+body.dark-mode .auth-box,
+body.dark-mode .wa-setup-box,
+body.dark-mode .suggestion-strip,
+body.dark-mode .wa-feature-row,
+body.dark-mode .feat-box        { background:#2a2a2a !important; border-color:#3a3a3a !important; color:#F0E6D3 !important; }
+
+/* Text in cards */
+body.dark-mode .sn,
+body.dark-mode .sc-name,
+body.dark-mode .rname,
+body.dark-mode .plc-title,
+body.dark-mode .mc-month,
+body.dark-mode .hist-name,
+body.dark-mode .sugg-txt .st,
+body.dark-mode .wa-title        { color:#F5C842 !important; }
+
+body.dark-mode .sd,
+body.dark-mode .sc-tag,
+body.dark-mode .rdesc,
+body.dark-mode .plc-sub,
+body.dark-mode .mc-dates,
+body.dark-mode .sugg-txt .sd2,
+body.dark-mode .sp,
+body.dark-mode .hist-date,
+body.dark-mode .wa-desc         { color:#B8A898 !important; }
+
+body.dark-mode p,
+body.dark-mode .fb-verse        { color:#D4C4B0 !important; }
+
+/* Forms */
+body.dark-mode .fg input,
+body.dark-mode .fg select,
+body.dark-mode .fg textarea     { background:#2a2a2a; border-color:#444; color:#F0E6D3; }
+body.dark-mode .fg label        { color:#B8A898; }
+body.dark-mode .pin-box         { background:#2a2a2a; border-color:#444; color:#F5C842; }
+
+/* Drawer */
+body.dark-mode #left-drawer                { background:#1a1a1a; }
+body.dark-mode #left-drawer nav a          { color:#D4C4B0 !important; border-color:#2a2a2a !important; background:transparent !important; }
+body.dark-mode #left-drawer nav a:hover    { background:#2a2a2a !important; }
+body.dark-mode #left-drawer .drawer-header { background:#0d0000; }
+body.dark-mode #dark-mode-row              { background:#222 !important; border-color:#2a2a2a !important; }
+body.dark-mode #dark-mode-row > div > div  { color:#D4C4B0 !important; }
+
+/* Tabs */
+body.dark-mode .stab            { border-color:#444 !important; color:#B8A898 !important; background:transparent !important; }
+body.dark-mode .stab.on         { background:var(--s) !important; color:#fff !important; border-color:var(--s) !important; }
+body.dark-mode .ptab            { border-color:#444 !important; color:#B8A898 !important; background:transparent !important; }
+body.dark-mode .ptab.on         { background:var(--s) !important; color:#fff !important; }
+body.dark-mode .auth-tab        { color:#B8A898 !important; border-color:#3a3a3a !important; }
+body.dark-mode .auth-tab.on     { color:#F5C842 !important; border-color:#F5C842 !important; }
+body.dark-mode .auth-tab-row    { border-color:#3a3a3a !important; }
+
+/* Buttons */
+body.dark-mode .btn-ring        { border-color:#666; color:#D4C4B0; background:transparent; }
+body.dark-mode .btn-sm          { background:#2a2a2a; border-color:#444; color:#D4C4B0; }
+
+/* Panchang */
+body.dark-mode .pan-nav button  { background:#2a2a2a; color:#D4C4B0; border-color:#444; }
+body.dark-mode .pdate           { color:#F5C842; }
+body.dark-mode .pan-source      { background:#1e1e1e; color:#888; border-color:#333; }
+
+/* Muhurat rows */
+body.dark-mode .muh-row         { background:#2a2a2a !important; border-color:#3a3a3a !important; }
+body.dark-mode .muh-date        { color:#F5C842 !important; }
+body.dark-mode .muh-name        { color:#D4C4B0 !important; }
+body.dark-mode .muh-time        { color:#F5C842 !important; }
+body.dark-mode .muh-tag         { background:#3a2000 !important; color:#F5C842 !important; }
+
+/* Profile page */
+body.dark-mode .profile-hero    { background:linear-gradient(135deg,#1a0800,#2d1200); }
+body.dark-mode .pa-rashi-badge,
+body.dark-mode .pa-wa-badge     { border-color:#444 !important; }
+
+/* Admin */
+body.dark-mode #admin-content .history-row { background:#2a2a2a; border-color:#3a3a3a; }
+body.dark-mode .stat-box        { background:#2a2a2a; border-color:#3a3a3a; }
+body.dark-mode .stat-box .num   { color:#F5C842; }
+body.dark-mode .stat-box .lbl   { color:#B8A898; }
+
+/* Rahu cards */
+body.dark-mode .rahu-card .rc-day  { color:#B8A898; }
+body.dark-mode .rahu-card .rc-time { color:#F5C842; }
+body.dark-mode .rahu-card .rc-type { color:#aaa; }
+
+/* Stotra reader */
+body.dark-mode .stotra-reader-box { background:#1e1e1e !important; border-color:#3a3a3a !important; }
+body.dark-mode .stotra-reader-box p,
+body.dark-mode .stotra-reader-box div { color:#D4C4B0 !important; }
+
+/* Photo cards */
+body.dark-mode .plc-icon        { background:#2a2a2a; border-color:#444; }
+body.dark-mode .plc-arrow       { border-color:#555; color:#F5C842; }
+
+/* Booking/contact form */
+body.dark-mode .bform-title     { color:#F5C842 !important; }
+body.dark-mode .bform           { border-color:#3a3a3a !important; }
+
+/* Modals */
+body.dark-mode .auth-modal      { background:rgba(0,0,0,0.92); }
+body.dark-mode .auth-box        { background:#222 !important; border-color:#3a3a3a !important; }
+
+/* Section titles & dividers */
+body.dark-mode .stitle          { color:#F5C842; }
+body.dark-mode .sdiv-line       { background:#3a3a3a; }
+
+/* Footer */
+body.dark-mode footer           { background:#0d0d0d; border-color:#222; }
+body.dark-mode .flinks a        { color:#B8A898 !important; }
+body.dark-mode .fmantra,
+body.dark-mode .fcopy           { color:#666 !important; }
+
+/* Scrollbar */
+body.dark-mode::-webkit-scrollbar-track { background:#1a1a1a; }
+body.dark-mode::-webkit-scrollbar-thumb { background:#444; }
+
+/* Inline hardcoded color overrides */
+body.dark-mode [style*="color:var(--sd)"],
+body.dark-mode [style*="color:var(--tx)"] { color:#F5C842 !important; }
+body.dark-mode [style*="color:var(--txm)"] { color:#B8A898 !important; }
+body.dark-mode [style*="background:#fff"],
+body.dark-mode [style*="background: #fff"] { background:#2a2a2a !important; }
+body.dark-mode [style*="background:var(--cream)"],
+body.dark-mode [style*="background:var(--ivory)"],
+body.dark-mode [style*="background:var(--gp)"]  { background:#252525 !important; }
 
 </style>
 </head>
@@ -350,6 +504,18 @@ footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:
   </div>
  </div>
  <a href="#" id="admin-drawer-link" onclick="openAdminPanel();toggleMenu();return false;" style="display:none;align-items:center;gap:12px;padding:14px 20px;color:#5C0000;font-weight:600;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;background:#fff0f0;"> <span>Admin Panel <span style="font-size:12px;color:#888;margin-left:4px;font-weight:400">गुरुजी – व्यवस्थापन</span></span></a>
+
+ <!-- Dark Mode Toggle -->
+ <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:0.5px solid #f0f0f0;background:#f9f9f9;" id="dark-mode-row">
+  <div>
+   <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:15px;color:#333;font-weight:600;">Dark Mode</div>
+   <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:12px;color:#888;margin-top:1px;">डार्क मोड</div>
+  </div>
+  <button onclick="toggleDarkMode()" id="dark-toggle-btn" style="width:48px;height:26px;border-radius:13px;border:none;background:#ccc;position:relative;cursor:pointer;transition:background .3s;flex-shrink:0;padding:0;">
+   <span id="dark-toggle-knob" style="position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:left .3s;box-shadow:0 1px 4px rgba(0,0,0,0.3);display:block;"></span>
+  </button>
+ </div>
+
  <a href="https://www.instagram.com/yash_guruji_?igsh=enF4bWh5MGloczVn" target="_blank" style="display:flex;align-items:center;gap:12px;padding:14px 20px;text-decoration:none;font-size:15px;background:linear-gradient(90deg,#f9f0ff,#fff0f9);border-bottom:0.5px solid #f0f0f0;">
  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ig1" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#f09433"/><stop offset="25%" style="stop-color:#e6683c"/><stop offset="50%" style="stop-color:#dc2743"/><stop offset="75%" style="stop-color:#cc2366"/><stop offset="100%" style="stop-color:#bc1888"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="url(#ig1)"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="white" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="white"/></svg>
  <span style="background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:600;">Instagram / Connect <span style="font-size:12px;font-weight:400;-webkit-text-fill-color:#888;margin-left:4px">इन्स्टाग्राम</span></span>
@@ -2870,7 +3036,31 @@ function copySankalp(){
   });
 }
 
-// Drawer photos accordion
+// ─── DARK MODE ────────────────────────────────────────────────
+function toggleDarkMode(){
+  const isDark = document.body.classList.toggle('dark-mode');
+  localStorage.setItem('dharmasetu_dark', isDark ? '1' : '0');
+  updateDarkToggleUI(isDark);
+}
+function updateDarkToggleUI(isDark){
+  const btn   = document.getElementById('dark-toggle-btn');
+  const knob  = document.getElementById('dark-toggle-knob');
+  const row   = document.getElementById('dark-mode-row');
+  if(!btn) return;
+  btn.style.background  = isDark ? '#D4A017' : '#ccc';
+  if(knob) knob.style.left = isDark ? '25px' : '3px';
+}
+// Apply on load
+(function(){
+  const saved = localStorage.getItem('dharmasetu_dark');
+  if(saved === '1'){
+    document.body.classList.add('dark-mode');
+    // Defer UI update until DOM ready
+    document.addEventListener('DOMContentLoaded', () => updateDarkToggleUI(true));
+  }
+})();
+
+// ─── Drawer photos accordion ──────────────────────────────────
 function toggleDrawerPhotos(){
   const list  = document.getElementById('drawer-photos-list');
   const arrow = document.getElementById('drawer-photos-arrow');
