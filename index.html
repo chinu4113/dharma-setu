@@ -5,6 +5,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>धर्मसेतु – पं. यश कुलकर्णी गुरुजी</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Tiro+Devanagari+Sanskrit&display=swap" rel="stylesheet">
+<!-- Firebase -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+  import { getFirestore, collection, addDoc, getDocs, query, orderBy, limit, serverTimestamp }
+    from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCjapOgJkKVSMl5m0Qn5ko-EIyY0qrIC7k",
+    authDomain: "dharmasetu-app.firebaseapp.com",
+    projectId: "dharmasetu-app",
+    storageBucket: "dharmasetu-app.firebasestorage.app",
+    messagingSenderId: "985151553526",
+    appId: "1:985151553526:web:d05f7a8c8daae65b3211d7"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db  = getFirestore(app);
+
+  // Expose to global scope so non-module scripts can call them
+  window._fbDb = db;
+  window._fbAddDoc       = addDoc;
+  window._fbCollection   = collection;
+  window._fbGetDocs      = getDocs;
+  window._fbQuery        = query;
+  window._fbOrderBy      = orderBy;
+  window._fbLimit        = limit;
+  window._fbServerTs     = serverTimestamp;
+  window._fbReady        = true;
+  document.dispatchEvent(new Event('firebase-ready'));
+</script>
 <style>
 :root{--s:#E85D04;--sl:#F48C06;--sd:#C44B00;--g:#D4A017;--gl:#F5C842;--gp:#FFF8E8;--cr:#9B1B30;--cream:#FDF6E3;--ivory:#FFFAF0;--dk:#1A0800;--dk2:#2D1200;--tx:#3A1500;--txm:#7A5C3A;--bd:#E0C060;--sh:rgba(180,100,0,0.15);--r:12px;--rt:20px}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
@@ -2655,13 +2685,24 @@ function getSavedKundalis(){ return getJSON(getKey('ds_kundalis'), []); }
 function getSavedBookings(){ return getJSON(getKey('ds_bookings'), []); }
 function getSavedRituals(){ return getJSON(getKey('ds_rituals'), []); }
 
-// ─── Activity Logging ────────────────────────────────────────
-function logActivity(type, data){
+// ─── Activity Logging → Firebase + localStorage fallback ─────
+async function logActivity(type, data){
+  // Always save locally first (instant, offline-safe)
   const key = type==='login'?DS_LOG_LOGIN : type==='enquiry'?DS_LOG_ENQ : DS_LOG_BOOK;
   const logs = getJSON(key, []);
-  const entry = { ...data, time: new Date().toLocaleString('mr-IN'), isoTime: new Date().toISOString() };
+  const entry = { ...data, type, time: new Date().toLocaleString('mr-IN'), isoTime: new Date().toISOString() };
   logs.unshift(entry);
   setJSON(key, logs.slice(0, 500));
+
+  // Also push to Firebase so ALL devices can see it
+  try {
+    if(window._fbReady && window._fbDb){
+      await window._fbAddDoc(
+        window._fbCollection(window._fbDb, 'activity'),
+        { ...entry, createdAt: window._fbServerTs() }
+      );
+    }
+  } catch(e){ console.warn('Firebase log failed (offline?):', e.message); }
 }
 
 // ─── Topbar update ───────────────────────────────────────────
@@ -2879,8 +2920,7 @@ function doAdminLogin(){
     const adl=document.getElementById('admin-drawer-link');
     if(adl) adl.style.display='flex';
     renderAdminStats();
-    showAdminTab('logins', document.querySelector('#admin-modal .ptab'));
-  } else {
+    showAdminTab('logins', document.querySelector('#admin-modal .ptab'));  } else {
     errEl.style.display='';
     document.getElementById('admin-pass').value='';
   }
@@ -2896,10 +2936,10 @@ function doAdminLogout(){
   closeAdminModal();
 }
 
-function renderAdminStats(){
-  const logins = getAllLogs('login');
-  const enqs   = getAllLogs('enquiry');
-  const books  = getAllLogs('booking');
+async function renderAdminStats(){
+  const [logins, enqs, books] = await Promise.all([
+    getAllLogs('login'), getAllLogs('enquiry'), getAllLogs('booking')
+  ]);
   const users  = getAllUsers();
   const statsEl = document.getElementById('admin-stats-row');
   if(!statsEl) return;
@@ -2910,76 +2950,67 @@ function renderAdminStats(){
   ].map(s=>`<div class="stat-box"><div class="num">${s.n}</div><div class="lbl">${s.l}</div></div>`).join('');
 }
 
-// Gather ALL logs across all keys (scrapes full localStorage for this domain)
-function getAllLogs(type){
+// ─── Fetch logs: Firebase first, localStorage fallback ────────
+async function getAllLogs(type){
+  // Try Firebase first
+  if(window._fbReady && window._fbDb){
+    try {
+      const q = window._fbQuery(
+        window._fbCollection(window._fbDb, 'activity'),
+        window._fbOrderBy('createdAt', 'desc'),
+        window._fbLimit(300)
+      );
+      const snap = await window._fbGetDocs(q);
+      const all = [];
+      snap.forEach(doc => all.push(doc.data()));
+      // Filter by type if requested
+      const filtered = type === 'all' ? all : all.filter(l => l.type === type);
+      return filtered;
+    } catch(e){ console.warn('Firebase fetch failed:', e.message); }
+  }
+  // Fallback: localStorage
   const primary = type==='login'?DS_LOG_LOGIN : type==='enquiry'?DS_LOG_ENQ : DS_LOG_BOOK;
-  let all = getJSON(primary, []);
-  // Also scan every localStorage key for any extra logs stored under variant keys
-  try {
-    for(let i=0;i<localStorage.length;i++){
-      const k = localStorage.key(i);
-      if(!k) continue;
-      if(k===primary) continue;
-      const match = (type==='login' && k.includes('log_login')) ||
-                    (type==='enquiry' && k.includes('log_enq')) ||
-                    (type==='booking' && k.includes('log_book'));
-      if(match){
-        const extra = getJSON(k,[]);
-        all = all.concat(extra);
-      }
-    }
-  } catch(e){}
-  // Dedupe by time+name and sort newest first
-  const seen = new Set();
-  return all.filter(l=>{
-    const key = (l.time||'')+(l.name||'')+(l.phone||'');
-    if(seen.has(key)) return false;
-    seen.add(key); return true;
-  }).sort((a,b)=> new Date(b.isoTime||0) - new Date(a.isoTime||0));
+  return getJSON(primary, []);
 }
 
 let _currentAdminTab = 'logins';
-function showAdminTab(tab, btn){
+async function showAdminTab(tab, btn){
   _currentAdminTab = tab;
   document.querySelectorAll('#admin-modal .ptab').forEach(b=>b.classList.remove('on'));
   btn && btn.classList.add('on');
   const content=document.getElementById('admin-content');
   if(!content) return;
-  renderAdminStats();
 
-  const emptyHtml = (msg) => `<div class="empty-state" style="padding:24px;">
-    <div class="et" style="margin-bottom:8px;">${msg}</div>
-    <div class="es" style="font-size:0.78rem;color:var(--txm);line-height:1.6;">
-      नोंदी तेव्हाच दिसतात जेव्हा त्याच डिव्हाइसवर / ब्राउझरमध्ये कोणी साइन इन करते.<br>
-      <b>हे साइट एकाच डिव्हाइसवर वापरल्यास सर्व नोंदी दिसतील.</b>
-    </div>
-  </div>`;
+  content.innerHTML = `<div style="text-align:center;padding:30px;font-family:'Tiro Devanagari Sanskrit',serif;color:var(--txm);">लोड होत आहे...</div>`;
+  await renderAdminStats();
+
+  const emptyHtml = (msg) => `<div class="empty-state" style="padding:24px;"><div class="et">${msg}</div></div>`;
 
   if(tab==='logins'){
-    const logs = getAllLogs('login');
+    const logs = await getAllLogs('login');
     content.innerHTML = logs.length ? logs.map(l=>`
       <div class="history-row" style="flex-wrap:wrap;gap:6px;margin-bottom:8px;">
-        <div class="hist-date" style="min-width:140px;font-size:0.75rem;">${l.time}</div>
+        <div class="hist-date" style="min-width:140px;font-size:0.75rem;">${l.time||''}</div>
         <div class="hist-name" style="flex:1;">${l.name||'—'}</div>
         <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.78rem;color:var(--txm);">${l.phone?'+91 '+l.phone:''}</div>
         <div class="hist-status">${l.action||'साइन इन'}</div>
       </div>`).join('') : emptyHtml('कोणत्याही साइन इन नोंदी नाहीत');
 
   } else if(tab==='enquiries'){
-    const logs = getAllLogs('enquiry');
+    const logs = await getAllLogs('enquiry');
     content.innerHTML = logs.length ? logs.map(l=>`
       <div class="history-row" style="flex-wrap:wrap;gap:6px;margin-bottom:8px;">
-        <div class="hist-date" style="min-width:140px;font-size:0.75rem;">${l.time}</div>
+        <div class="hist-date" style="min-width:140px;font-size:0.75rem;">${l.time||''}</div>
         <div class="hist-name" style="flex:1;">${l.puja||l.subject||'—'}</div>
         <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.78rem;color:var(--txm);">${l.name||''} ${l.phone?'· +91 '+l.phone:''}</div>
         <div class="hist-status">${l.status||'नवीन'}</div>
       </div>`).join('') : emptyHtml('कोणत्याही चौकशी नाहीत');
 
   } else if(tab==='bookings'){
-    const logs = getAllLogs('booking');
+    const logs = await getAllLogs('booking');
     content.innerHTML = logs.length ? logs.map(l=>`
       <div class="history-row" style="flex-wrap:wrap;gap:6px;margin-bottom:8px;">
-        <div class="hist-date" style="min-width:140px;font-size:0.75rem;">${l.time}</div>
+        <div class="hist-date" style="min-width:140px;font-size:0.75rem;">${l.time||''}</div>
         <div class="hist-name" style="flex:1;">${l.puja||'—'}</div>
         <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.78rem;color:var(--txm);">${l.name||''} ${l.phone?'· +91 '+l.phone:''}</div>
         <div class="hist-status">${l.status||'विचाराधीन'}</div>
