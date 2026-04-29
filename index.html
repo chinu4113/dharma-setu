@@ -559,19 +559,19 @@ footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:
  <button onclick="cd(1)">पुढील दिवस →</button>
  </div>
  <div id="pan-loading" class="pan-loading"> पंचांग माहिती मिळवत आहे…</div>
- <div class="pan-grid" id="pan-grid-main">
- <div class="pan-item"><div class="pi-lbl">तिथी</div><div class="pi-val" id="pan-tithi">—</div><div class="pi-t" id="pan-tithi-end">—</div></div>
- <div class="pan-item"><div class="pi-lbl">नक्षत्र</div><div class="pi-val" id="pan-nak">—</div><div class="pi-t" id="pan-nak-end">—</div></div>
- <div class="pan-item"><div class="pi-lbl">योग</div><div class="pi-val" id="pan-yoga">—</div><div class="pi-t" id="pan-yoga-end">—</div></div>
- <div class="pan-item"><div class="pi-lbl">करण</div><div class="pi-val" id="pan-karan">—</div><div class="pi-t">—</div></div>
- <div class="pan-item"><div class="pi-lbl">पक्ष</div><div class="pi-val" id="pan-paksha">—</div><div class="pi-t" id="pan-masa">—</div></div>
- <div class="pan-item"><div class="pi-lbl">सूर्योदय</div><div class="pi-val pi-grn" id="pan-sunrise">—</div><div class="pi-t">सांगली</div></div>
- <div class="pan-item"><div class="pi-lbl">सूर्यास्त</div><div class="pi-val" style="color:#E65100" id="pan-sunset">—</div><div class="pi-t">सांगली</div></div>
- <div class="pan-item"><div class="pi-lbl">राहुकाळ</div><div class="pi-val pi-red" id="pan-rahu">—</div><div class="pi-t">नवे कार्य टाळावे</div></div>
- <div class="pan-item"><div class="pi-lbl">यमगंड</div><div class="pi-val pi-red" id="pan-yama">—</div><div class="pi-t">अशुभ काळ</div></div>
- <div class="pan-item"><div class="pi-lbl">गुलिक काळ</div><div class="pi-val pi-red" id="pan-gulika">—</div><div class="pi-t">अशुभ काळ</div></div>
- <div class="pan-item"><div class="pi-lbl">अभिजित</div><div class="pi-val pi-grn">११:४८–१२:३६</div><div class="pi-t"> शुभ वेळ</div></div>
- <div class="pan-item"><div class="pi-lbl">अमृत काळ</div><div class="pi-val pi-grn" id="pan-amrit">—</div><div class="pi-t"> शुभ वेळ</div></div>
+ <div class="pband" id="pan-grid-main" style="grid-template-columns:repeat(3,1fr);max-width:780px;">
+ <div class="pband-cell"><div class="lbl">तिथी</div><div class="val" id="pan-tithi">—</div><div class="lbl" id="pan-tithi-end" style="margin-top:4px;font-size:0.62rem;"></div></div>
+ <div class="pband-cell"><div class="lbl">नक्षत्र</div><div class="val" id="pan-nak">—</div><div class="lbl" id="pan-nak-end" style="margin-top:4px;font-size:0.62rem;"></div></div>
+ <div class="pband-cell"><div class="lbl">योग</div><div class="val" id="pan-yoga">—</div><div class="lbl" id="pan-yoga-end" style="margin-top:4px;font-size:0.62rem;"></div></div>
+ <div class="pband-cell"><div class="lbl">करण</div><div class="val" id="pan-karan">—</div></div>
+ <div class="pband-cell"><div class="lbl">पक्ष</div><div class="val" id="pan-paksha">—</div><div class="lbl" id="pan-masa" style="margin-top:4px;font-size:0.62rem;"></div></div>
+ <div class="pband-cell"><div class="lbl">सूर्योदय</div><div class="val" id="pan-sunrise" style="color:#4ade80;">—</div><div class="lbl" style="margin-top:4px;font-size:0.62rem;">सांगली</div></div>
+ <div class="pband-cell"><div class="lbl">सूर्यास्त</div><div class="val" id="pan-sunset" style="color:#fb923c;">—</div><div class="lbl" style="margin-top:4px;font-size:0.62rem;">सांगली</div></div>
+ <div class="pband-cell" style="border-top:2px solid #dc2626;"><div class="lbl" style="color:#fca5a5;">राहुकाळ</div><div class="val" id="pan-rahu" style="color:#fca5a5;">—</div><div class="lbl" style="margin-top:4px;font-size:0.62rem;color:#fca5a5;">नवे कार्य टाळावे</div></div>
+ <div class="pband-cell" style="border-top:2px solid #dc2626;"><div class="lbl" style="color:#fca5a5;">यमगंड</div><div class="val" id="pan-yama" style="color:#fca5a5;">—</div><div class="lbl" style="margin-top:4px;font-size:0.62rem;color:#fca5a5;">अशुभ काळ</div></div>
+ <div class="pband-cell" style="border-top:2px solid #dc2626;"><div class="lbl" style="color:#fca5a5;">गुलिक काळ</div><div class="val" id="pan-gulika" style="color:#fca5a5;">—</div><div class="lbl" style="margin-top:4px;font-size:0.62rem;color:#fca5a5;">अशुभ काळ</div></div>
+ <div class="pband-cell" style="border-top:2px solid #16a34a;"><div class="lbl" style="color:#86efac;">अभिजित</div><div class="val" style="color:#86efac;">११:४८–१२:३६</div><div class="lbl" style="margin-top:4px;font-size:0.62rem;color:#86efac;">शुभ वेळ</div></div>
+ <div class="pband-cell" style="border-top:2px solid #16a34a;"><div class="lbl" style="color:#86efac;">अमृत काळ</div><div class="val" id="pan-amrit" style="color:#86efac;">—</div><div class="lbl" style="margin-top:4px;font-size:0.62rem;color:#86efac;">शुभ वेळ</div></div>
  </div>
  <div class="pan-source">पंचांग माहिती: सांगली (१६.७°उ, ७४.४६°पू) यावर आधारित गणना</div>
 </div>
