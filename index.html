@@ -2687,22 +2687,23 @@ function getSavedRituals(){ return getJSON(getKey('ds_rituals'), []); }
 
 // ─── Activity Logging → Firebase + localStorage fallback ─────
 async function logActivity(type, data){
-  // Always save locally first (instant, offline-safe)
+  // Save locally first (instant)
   const key = type==='login'?DS_LOG_LOGIN : type==='enquiry'?DS_LOG_ENQ : DS_LOG_BOOK;
   const logs = getJSON(key, []);
   const entry = { ...data, type, time: new Date().toLocaleString('mr-IN'), isoTime: new Date().toISOString() };
   logs.unshift(entry);
   setJSON(key, logs.slice(0, 500));
 
-  // Also push to Firebase so ALL devices can see it
+  // Push to Firebase (wait for it to be ready)
   try {
-    if(window._fbReady && window._fbDb){
+    const ready = await waitForFirebase();
+    if(ready && window._fbDb){
       await window._fbAddDoc(
         window._fbCollection(window._fbDb, 'activity'),
         { ...entry, createdAt: window._fbServerTs() }
       );
     }
-  } catch(e){ console.warn('Firebase log failed (offline?):', e.message); }
+  } catch(e){ console.warn('Firebase write failed:', e.message); }
 }
 
 // ─── Topbar update ───────────────────────────────────────────
@@ -2951,21 +2952,28 @@ async function renderAdminStats(){
 }
 
 // ─── Fetch logs: Firebase first, localStorage fallback ────────
+// Wait for Firebase to be ready (module loads async)
+function waitForFirebase(timeout=8000){
+  return new Promise((resolve) => {
+    if(window._fbReady) return resolve(true);
+    const t = setTimeout(() => resolve(false), timeout);
+    document.addEventListener('firebase-ready', () => { clearTimeout(t); resolve(true); }, { once: true });
+  });
+}
+
 async function getAllLogs(type){
-  // Try Firebase first
-  if(window._fbReady && window._fbDb){
+  const ready = await waitForFirebase();
+  if(ready && window._fbDb){
     try {
       const q = window._fbQuery(
         window._fbCollection(window._fbDb, 'activity'),
         window._fbOrderBy('createdAt', 'desc'),
-        window._fbLimit(300)
+        window._fbLimit(500)
       );
       const snap = await window._fbGetDocs(q);
       const all = [];
       snap.forEach(doc => all.push(doc.data()));
-      // Filter by type if requested
-      const filtered = type === 'all' ? all : all.filter(l => l.type === type);
-      return filtered;
+      return type === 'all' ? all : all.filter(l => l.type === type);
     } catch(e){ console.warn('Firebase fetch failed:', e.message); }
   }
   // Fallback: localStorage
