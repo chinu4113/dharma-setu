@@ -109,6 +109,13 @@ body{font-family:'Cormorant Garamond',Georgia,serif;background:var(--cream);colo
 .muh-time{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.85rem;color:var(--txm)}
 .muh-month-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;max-width:900px;margin:0 auto}
 .photo-panel{max-width:700px;margin:0 auto;padding:28px 20px;background:#fff;border:1px solid var(--bd);border-radius:var(--rt);box-shadow:0 2px 14px var(--sh)}
+.photo-link-card{display:flex;flex-direction:column;align-items:center;text-align:center;background:#fff;border:1.5px solid var(--bd);border-radius:var(--r);padding:24px 16px;text-decoration:none;box-shadow:0 2px 10px var(--sh);transition:transform .2s,box-shadow .2s,border-color .2s;}
+.photo-link-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px var(--sh);border-color:var(--s);}
+.photo-link-card:hover .plc-icon{background:var(--s);color:#fff;}
+.plc-icon{width:56px;height:56px;border-radius:50%;background:var(--gp);border:1.5px solid var(--bd);display:flex;align-items:center;justify-content:center;color:var(--s);margin-bottom:12px;transition:background .2s,color .2s;}
+.plc-title{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;color:var(--sd);font-weight:600;margin-bottom:3px;}
+.plc-sub{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.75rem;color:var(--txm);margin-bottom:10px;}
+.plc-arrow{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.78rem;color:var(--s);font-weight:600;border:1px solid var(--s);border-radius:12px;padding:4px 12px;}
 .muh-month-card{background:#fff;border:1px solid var(--bd);border-radius:var(--r);padding:18px 20px;box-shadow:0 2px 10px var(--sh);border-top:3px solid var(--g);transition:transform .2s}
 .muh-month-card:hover{transform:translateY(-3px)}
 .muh-month-card .mc-month{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.78rem;color:var(--sd);font-weight:600;letter-spacing:0.5px;margin-bottom:10px;display:flex;align-items:center;gap:6px}
@@ -305,13 +312,43 @@ footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:
  <a href="#" onclick="gp('panchang');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#333;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;"> <span>Panchang <span style="font-size:12px;color:#888;margin-left:4px">पंचांग</span></span></a>
  <a href="#" onclick="gp('muhurat');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#333;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;"> <span>Muhurta <span style="font-size:12px;color:#888;margin-left:4px">मुहूर्त</span></span></a>
  <a href="#" onclick="gp('rashifal');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#333;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;"> <span>Horoscope <span style="font-size:12px;color:#888;margin-left:4px">राशिफल</span></span></a>
- <a href="#" onclick="gp('kundali');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#333;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;"> <span>Kundali Maker <span style="font-size:12px;color:#888;margin-left:4px">कुंडली</span> <span style="font-size:10px;background:#FFF3CD;color:#856404;border:1px solid #FFECB5;border-radius:8px;padding:2px 7px;margin-left:4px;font-weight:600;">⏳ In Progress</span></span></a>
+ <a href="#" onclick="gp('kundali');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#333;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;"> <span>Kundali Maker <span style="font-size:12px;color:#888;margin-left:4px">कुंडली</span> <span style="font-size:10px;background:#FFF3CD;color:#856404;border:1px solid #FFECB5;border-radius:8px;padding:2px 7px;margin-left:4px;font-weight:600;"> In Progress</span></span></a>
  <a href="#" onclick="gp('stotra');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#333;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;"> <span>Stotra &amp; Mantra <span style="font-size:12px;color:#888;margin-left:4px">स्तोत्र व मंत्र</span></span></a>
  <a href="#" onclick="gp('aarti');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#333;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;"> <span>Aarti Sangraha <span style="font-size:12px;color:#888;margin-left:4px">आरती संग्रह</span></span></a>
  <a href="#" onclick="gp('booking');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#333;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;"> <span>Puja Booking <span style="font-size:12px;color:#888;margin-left:4px">पूजा बुकिंग</span></span></a>
  <a href="#" onclick="gp('about');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#333;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;"> <span>About Guruji <span style="font-size:12px;color:#888;margin-left:4px">गुरुजींबद्दल</span></span></a>
  <a href="#" onclick="gp('contact');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#333;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;"> <span>Contact <span style="font-size:12px;color:#888;margin-left:4px">संपर्क</span></span></a>
  <a href="#" onclick="openAuthOrProfile();toggleMenu();return false;" id="drawer-profile-link" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#8B0000;font-weight:600;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;background:#fff8f0;"> <span id="drawer-profile-label">माझे प्रोफाईल <span style="font-size:12px;color:#888;margin-left:4px;font-weight:400">साइन इन / My Account</span></span></a>
+
+ <!-- Pooja Photos accordion in drawer -->
+ <div style="border-bottom:0.5px solid #f0f0f0;">
+  <button onclick="toggleDrawerPhotos()" id="drawer-photos-btn" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 20px;color:#5C2000;font-weight:600;text-decoration:none;font-size:15px;background:#fff5ee;border:none;cursor:pointer;font-family:'Tiro Devanagari Sanskrit',serif;">
+   <span>Pooja Photos <span style="font-size:12px;color:#888;margin-left:4px;font-weight:400">पूजा फोटो</span></span>
+   <svg id="drawer-photos-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B0000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transition:transform .25s;flex-shrink:0;"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div id="drawer-photos-list" style="display:none;background:#fdf8f4;">
+   <a href="https://photos.app.goo.gl/bZojaqYhh51PfDas7" target="_blank" style="display:flex;align-items:center;gap:10px;padding:11px 20px 11px 28px;color:#5C2000;text-decoration:none;font-family:'Tiro Devanagari Sanskrit',serif;font-size:14px;border-top:0.5px solid #f0e8e0;">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="#8B0000"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+    वास्तुशांती होम
+   </a>
+   <a href="https://photos.app.goo.gl/dcsCnZyED95h5KRHA" target="_blank" style="display:flex;align-items:center;gap:10px;padding:11px 20px 11px 28px;color:#5C2000;text-decoration:none;font-family:'Tiro Devanagari Sanskrit',serif;font-size:14px;border-top:0.5px solid #f0e8e0;">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="#8B0000"><circle cx="12" cy="12" r="10"/></svg>
+    उदकशांती
+   </a>
+   <a href="https://photos.app.goo.gl/hax5iqpb4pzPD5DKA" target="_blank" style="display:flex;align-items:center;gap:10px;padding:11px 20px 11px 28px;color:#5C2000;text-decoration:none;font-family:'Tiro Devanagari Sanskrit',serif;font-size:14px;border-top:0.5px solid #f0e8e0;">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="#8B0000"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/></svg>
+    लग्न विधी
+   </a>
+   <a href="https://photos.app.goo.gl/UVso5bNdQBdZxpdC6" target="_blank" style="display:flex;align-items:center;gap:10px;padding:11px 20px 11px 28px;color:#5C2000;text-decoration:none;font-family:'Tiro Devanagari Sanskrit',serif;font-size:14px;border-top:0.5px solid #f0e8e0;">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="#8B0000"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5"/></svg>
+    नवग्रह / दोष शांती
+   </a>
+   <a href="https://photos.app.goo.gl/PQ9PePsHWDuX1BN18" target="_blank" style="display:flex;align-items:center;gap:10px;padding:11px 20px 11px 28px;color:#5C2000;text-decoration:none;font-family:'Tiro Devanagari Sanskrit',serif;font-size:14px;border-top:0.5px solid #f0e8e0;">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="#8B0000"><path d="M3.5 18.5l6-6 4 4L17 10l3.5 8.5z"/></svg>
+    गंगा पूजन
+   </a>
+  </div>
+ </div>
  <a href="#" id="admin-drawer-link" onclick="openAdminPanel();toggleMenu();return false;" style="display:none;align-items:center;gap:12px;padding:14px 20px;color:#5C0000;font-weight:600;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;background:#fff0f0;"> <span>Admin Panel <span style="font-size:12px;color:#888;margin-left:4px;font-weight:400">गुरुजी – व्यवस्थापन</span></span></a>
  <a href="https://www.instagram.com/yash_guruji_?igsh=enF4bWh5MGloczVn" target="_blank" style="display:flex;align-items:center;gap:12px;padding:14px 20px;text-decoration:none;font-size:15px;background:linear-gradient(90deg,#f9f0ff,#fff0f9);border-bottom:0.5px solid #f0f0f0;">
  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ig1" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#f09433"/><stop offset="25%" style="stop-color:#e6683c"/><stop offset="50%" style="stop-color:#dc2743"/><stop offset="75%" style="stop-color:#cc2366"/><stop offset="100%" style="stop-color:#bc1888"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="url(#ig1)"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="white" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="white"/></svg>
@@ -454,40 +491,49 @@ footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:
 <div class="sec sec-alt">
  <div class="stitle">पूजा फोटो</div>
  <div class="sdiv"><div class="sdiv-line"></div><div class="sdiv-sym"></div><div class="sdiv-line"></div></div>
+ <p style="text-align:center;font-family:'Tiro Devanagari Sanskrit',serif;color:var(--txm);margin-bottom:24px;font-size:0.9rem">गुरुजींनी केलेल्या विविध पूजा व विधींचे फोटो पाहण्यासाठी खालील विभाग निवडा</p>
 
- <!-- Photo Category Tabs -->
- <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:28px;" id="photo-tabs">
- <button class="stab on" onclick="showPhotoTab('vastushanti-hom',this)">🏠 वास्तुशांती होम</button>
- <button class="stab" onclick="showPhotoTab('udakshanti',this)">💧 उदकशांती</button>
- <button class="stab" onclick="showPhotoTab('lagna',this)">💍 लग्न</button>
- <button class="stab" onclick="showPhotoTab('navgrah',this)">🪐 नवग्रह व दोष शांती</button>
- <button class="stab" onclick="showPhotoTab('gangapujan',this)">🌊 गंगा पूजन</button>
- </div>
-
- <!-- Tab Panels -->
- <div id="photo-vastushanti-hom" class="photo-panel" style="text-align:center;">
- <p style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.92rem;color:var(--txm);margin-bottom:20px;">वास्तुशांती होम – गृहप्रवेश व वास्तुपूजा फोटो</p>
- <a href="https://photos.app.goo.gl/bZojaqYhh51PfDas7" target="_blank" class="btn-fire" style="display:inline-flex;align-items:center;gap:8px;">📸 फोटो पाहा</a>
- </div>
-
- <div id="photo-udakshanti" class="photo-panel" style="display:none;text-align:center;">
- <p style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.92rem;color:var(--txm);margin-bottom:20px;">उदकशांती – विधी फोटो</p>
- <a href="https://photos.app.goo.gl/dcsCnZyED95h5KRHA" target="_blank" class="btn-fire" style="display:inline-flex;align-items:center;gap:8px;">📸 फोटो पाहा</a>
- </div>
-
- <div id="photo-lagna" class="photo-panel" style="display:none;text-align:center;">
- <p style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.92rem;color:var(--txm);margin-bottom:20px;">लग्न – विवाह विधी फोटो</p>
- <a href="https://photos.app.goo.gl/hax5iqpb4pzPD5DKA" target="_blank" class="btn-fire" style="display:inline-flex;align-items:center;gap:8px;">📸 फोटो पाहा</a>
- </div>
-
- <div id="photo-navgrah" class="photo-panel" style="display:none;text-align:center;">
- <p style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.92rem;color:var(--txm);margin-bottom:20px;">नवग्रह, नक्षत्र, जनन, दोष शांती – विधी फोटो</p>
- <a href="https://photos.app.goo.gl/UVso5bNdQBdZxpdC6" target="_blank" class="btn-fire" style="display:inline-flex;align-items:center;gap:8px;">📸 फोटो पाहा</a>
- </div>
-
- <div id="photo-gangapujan" class="photo-panel" style="display:none;text-align:center;">
- <p style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.92rem;color:var(--txm);margin-bottom:20px;">गंगा पूजन – विधी फोटो</p>
- <a href="https://photos.app.goo.gl/PQ9PePsHWDuX1BN18" target="_blank" class="btn-fire" style="display:inline-flex;align-items:center;gap:8px;">📸 फोटो पाहा</a>
+ <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;">
+  <a href="https://photos.app.goo.gl/bZojaqYhh51PfDas7" target="_blank" class="photo-link-card">
+   <div class="plc-icon">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+   </div>
+   <div class="plc-title">वास्तुशांती होम</div>
+   <div class="plc-sub">Vastushanti Hom</div>
+   <div class="plc-arrow">Google Photos वर पाहा &#8599;</div>
+  </a>
+  <a href="https://photos.app.goo.gl/dcsCnZyED95h5KRHA" target="_blank" class="photo-link-card">
+   <div class="plc-icon">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+   </div>
+   <div class="plc-title">उदकशांती</div>
+   <div class="plc-sub">Udakshanti</div>
+   <div class="plc-arrow">Google Photos वर पाहा &#8599;</div>
+  </a>
+  <a href="https://photos.app.goo.gl/hax5iqpb4pzPD5DKA" target="_blank" class="photo-link-card">
+   <div class="plc-icon">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.7C7.1 17 2 13.5 2 9a7 7 0 0 1 14 0c0 4.5-5.1 8-4 12.7zM12 7a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
+   </div>
+   <div class="plc-title">लग्न विधी</div>
+   <div class="plc-sub">Lagna</div>
+   <div class="plc-arrow">Google Photos वर पाहा &#8599;</div>
+  </a>
+  <a href="https://photos.app.goo.gl/UVso5bNdQBdZxpdC6" target="_blank" class="photo-link-card">
+   <div class="plc-icon">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+   </div>
+   <div class="plc-title">नवग्रह, नक्षत्र, दोष शांती</div>
+   <div class="plc-sub">Navgraha, Nakshatra, Janana Dosh</div>
+   <div class="plc-arrow">Google Photos वर पाहा &#8599;</div>
+  </a>
+  <a href="https://photos.app.goo.gl/PQ9PePsHWDuX1BN18" target="_blank" class="photo-link-card">
+   <div class="plc-icon">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M3.5 18.5l6-6 4 4L17 10l3.5 8.5z M6 6.5A2.5 2.5 0 1 0 11 6.5 2.5 2.5 0 0 0 6 6.5z"/></svg>
+   </div>
+   <div class="plc-title">गंगा पूजन</div>
+   <div class="plc-sub">Ganga Pujan</div>
+   <div class="plc-arrow">Google Photos वर पाहा &#8599;</div>
+  </a>
  </div>
 </div>
 
@@ -834,10 +880,10 @@ footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:
 <div id="pg-kundali" class="pg">
 <div class="sec sec-alt" style="min-height:60vh;display:flex;align-items:center;justify-content:center;">
  <div style="text-align:center;max-width:480px;margin:0 auto;padding:20px;">
- <div style="font-size:4rem;margin-bottom:20px;">⚙️</div>
+ <div style="font-size:4rem;margin-bottom:20px;"></div>
  <div style="font-family:'Cinzel Decorative',serif;font-size:1.5rem;color:var(--sd);margin-bottom:12px;">Kundali Maker</div>
  <div style="display:inline-block;background:linear-gradient(135deg,#FFF3CD,#FFEAA7);border:1.5px solid #FFCA28;border-radius:20px;padding:6px 20px;margin-bottom:24px;">
- <span style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.85rem;color:#856404;font-weight:600;">⏳ काम सुरू आहे · Work in Progress</span>
+ <span style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.85rem;color:#856404;font-weight:600;"> काम सुरू आहे · Work in Progress</span>
  </div>
  <p style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;color:var(--txm);line-height:1.9;margin-bottom:28px;">कुंडली मेकर लवकरच उपलब्ध होईल.<br>आम्ही यावर काम करत आहोत — थोडी प्रतीक्षा करा!</p>
  <div style="background:linear-gradient(145deg,var(--dk2),#5C2400);border:1.5px solid rgba(212,160,23,0.4);border-radius:var(--r);padding:22px 28px;margin-bottom:28px;">
@@ -1687,7 +1733,7 @@ const ST={
 आनन्दो नन्दनो नन्दः सत्यधर्मा त्रिविक्रमः॥ ५६॥
 
 महर्षिः कपिलाचार्यः कृतज्ञो मेदिनीपतिः।
-त्रिपदस्त्रिदशाध्यक्षो महाश‍ृङ्गः कृतान्तकृत्॥ ५७॥
+त्रिपदस्त्रिदशाध्यक्षो महाशृङ्गः कृतान्तकृत्॥ ५७॥
 
 महावराहो गोविन्दः सुषेणः कनकाङ्गदी।
 गुह्यो गभीरो गहनो गुप्तश्चक्रगदाधरः॥ ५८॥
@@ -1759,7 +1805,7 @@ const ST={
 सुमेधा मेधजो धन्यः सत्यमेधा धराधरः॥ ८०॥
 
 तेजोवृषो द्युतिधरः सर्वशस्त्रभृतां वरः।
-प्रग्रहो निग्रहो व्यग्रो नैकश‍ृङ्गो गदाग्रजः॥ ८१॥
+प्रग्रहो निग्रहो व्यग्रो नैकशृङ्गो गदाग्रजः॥ ८१॥
 
 चतुर्मूर्तिश्चतुर्बाहुश्चतुर्व्यूहश्चतुर्गतिः।
 चतुरात्मा चतुर्भावश्चतुर्वेदविदेकपात्॥ ८२॥
@@ -1771,7 +1817,7 @@ const ST={
 इन्द्रकर्मा महाकर्मा कृतकर्मा कृतागमः॥ ८४॥
 
 उद्भवः सुन्दरः सुन्दो रत्ननाभः सुलोचनः।
-अर्को वाजसनः श‍ृङ्गी जयन्तः सर्वविज्जयी॥ ८५॥
+अर्को वाजसनः शृङ्गी जयन्तः सर्वविज्जयी॥ ८५॥
 
 सुवर्णबिन्दुरक्षोभ्यः सर्ववागीश्वरेश्वरः।
 महाह्रदो महागर्तो महाभूतो महानिधिः॥ ८६॥
@@ -1843,7 +1889,7 @@ const ST={
 श्रीमान् नारायणो विष्णुर्वासुदेवोऽभिरक्षतु॥ १०८॥
 
 ॥ फलश्रुतिः ॥
-य इदं श‍ृणुयान्नित्यं यश्चापि परिकीर्तयेत्।
+य इदं शृणुयान्नित्यं यश्चापि परिकीर्तयेत्।
 नाशुभं प्राप्नुयात्किञ्चित्सोऽमुत्रेह च मानवः॥
 
 वेदान्तगो ब्राह्मणः स्यात्क्षत्रियो विजयी भवेत्।
@@ -2223,7 +2269,7 @@ const ST={
 ॥ सर्वमंगलमांगल्यं विघ्नेशो वरदो भव ॥`},
 
 
-'atharva-sheersh':{title:'श्री गणपति अथर्वशीर्ष',sub:'॥ ॐ नमस्ते गणपतये ॥',text:`।। ॐ नमस्ते गणपतये। त्वमेव प्रत्यक्षं तत्वमसि त्वमेव केवलं कर्ताऽसि त्वमेव केवलं धर्ताऽसि त्वमेव केवलं हर्ताऽसि त्वमेव सर्वं खल्विदं ब्रह्मासि त्व साक्षादात्माऽसि नित्यम्।।1।। ऋतं वच्मि। सत्यं वच्मि।।2।। अव त्व मां। अव वक्तारं। अव श्रोतारं। अव दातारं। अव धातारं। अवानूचानमव शिष्यं। अव पश्चातात। अव पुरस्तात। अवोत्तरात्तात। अव दक्षिणात्तात्। अवचोर्ध्वात्तात्।। अवाधरात्तात्।। सर्वतो मां पाहि-पाहि समंतात्।।3।। त्वं वाङ्‍मयस्त्वं चिन्मय:। त्वमानंदमसयस्त्वं ब्रह्ममय:। त्वं सच्चिदानंदाद्वितीयोऽसि। त्वं प्रत्यक्षं ब्रह्मासि। त्वं ज्ञानमयो विज्ञानमयोऽसि।।4।। सर्वं जगदिदं त्वत्तो जायते। सर्वं जगदिदं त्वत्तस्तिष्ठति। सर्वं जगदिदं त्वयि लयमेष्यति। सर्वं जगदिदं त्वयि प्रत्येति। त्वं भूमिरापोऽनलोऽनिलो नभ:। त्वं चत्वारिवाक्पदानि।।5।। त्वं गुणत्रयातीत: त्वमवस्थात्रयातीत:। त्वं देहत्रयातीत:। त्वं कालत्रयातीत:। त्वं मूलाधारस्थितोऽसि नित्यं। त्वं शक्तित्रयात्मक:। त्वां योगिनो ध्यायंति नित्यं। त्वं ब्रह्मा त्वं विष्णुस्त्वं रूद्रस्त्वं इंद्रस्त्वं अग्निस्त्वं वायुस्त्वं सूर्यस्त्वं चंद्रमास्त्वं ब्रह्मभूर्भुव:स्वरोम्।।6।। गणादि पूर्वमुच्चार्य वर्णादिं तदनंतरं। अनुस्वार: परतर:। अर्धेन्दुलसितं। तारेण ऋद्धं। एतत्तव मनुस्वरूपं। गकार: पूर्वरूपं। अकारो मध्यमरूपं। अनुस्वारश्चान्त्यरूपं। बिन्दुरूत्तररूपं। नाद: संधानं। सं हितासंधि: सैषा गणेश विद्या। गणकऋषि: निचृद्गायत्रीच्छंद:। गणपतिर्देवता। ॐ गं गणपतये नम:।।7।। एकदंताय विद्‍महे। वक्रतुण्डाय धीमहि। तन्नो दंती प्रचोदयात।।8।। एकदंतं चतुर्हस्तं पाशमंकुशधारिणम्। रदं च वरदं हस्तैर्विभ्राणं मूषकध्वजम्। रक्तं लंबोदरं शूर्पकर्णकं रक्तवाससम्। रक्तगंधाऽनुलिप्तांगं रक्तपुष्पै: सुपुजितम्।। भक्तानुकंपिनं देवं जगत्कारणमच्युतम्। आविर्भूतं च सृष्टयादौ प्रकृ‍ते पुरुषात्परम्। एवं ध्यायति यो नित्यं स योगी योगिनां वर:।।9।। नमो व्रातपतये। नमो गणपतये। नम: प्रमथपतये। नमस्तेऽस्तु लंबोदरायैकदंताय। विघ्ननाशिने शिवसुताय। श्रीवरदमूर्तये नमो नम:।।10।। एतदथर्वशीर्ष योऽधीते। स ब्रह्मभूयाय कल्पते। स सर्व विघ्नैर्नबाध्यते। स सर्वत: सुखमेधते। स पञ्चमहापापात्प्रमुच्यते।।11।। सायमधीयानो दिवसकृतं पापं नाशयति। प्रातरधीयानो रात्रिकृतं पापं नाशयति। सायंप्रात: प्रयुंजानोऽपापो भवति। सर्वत्राधीयानोऽपविघ्नो भवति। धर्मार्थकाममोक्षं च विंदति।।12।। इदमथर्वशीर्षमशिष्याय न देयम्। यो यदि मोहाद्‍दास्यति स पापीयान् भवति। सहस्रावर्तनात् यं यं काममधीते तं तमनेन साधयेत्।13।। अनेन गणपतिमभिषिंचति स वाग्मी भवति चतुर्थ्यामनश्र्नन जपति स विद्यावान भवति। इत्यथर्वणवाक्यं। ब्रह्माद्यावरणं विद्यात् न बिभेति कदाचनेति।।14।। यो दूर्वांकुरैंर्यजति स वैश्रवणोपमो भवति। यो लाजैर्यजति स यशोवान भवति स मेधावान भवति। यो मोदकसहस्रेण यजति स वाञ्छित फलमवाप्रोति। य: साज्यसमिद्भिर्यजति स सर्वं लभते स सर्वं लभते।।15।। अष्टौ ब्राह्मणान् सम्यग्ग्राहयित्वा सूर्यवर्चस्वी भवति। सूर्यग्रहे महानद्यां प्रतिमासंनिधौ वा जप्त्वा सिद्धमंत्रों भवति। महाविघ्नात्प्रमुच्यते। महादोषात्प्रमुच्यते। महापापात् प्रमुच्यते। स सर्वविद्भवति से सर्वविद्भवति। य एवं वेद इत्युपनिषद्‍।।16।। ॐ सहनाव वतु सहनो भुनक्तु सहवीर्यंकरवावहे तेजस्वी नावधितमस्तु मा विद्विषामहे।।`},
+'atharva-sheersh':{title:'श्री गणपति अथर्वशीर्ष',sub:'॥ ॐ नमस्ते गणपतये ॥',text:`।। ॐ नमस्ते गणपतये। त्वमेव प्रत्यक्षं तत्वमसि त्वमेव केवलं कर्ताऽसि त्वमेव केवलं धर्ताऽसि त्वमेव केवलं हर्ताऽसि त्वमेव सर्वं खल्विदं ब्रह्मासि त्व साक्षादात्माऽसि नित्यम्।।1।। ऋतं वच्मि। सत्यं वच्मि।।2।। अव त्व मां। अव वक्तारं। अव श्रोतारं। अव दातारं। अव धातारं। अवानूचानमव शिष्यं। अव पश्चातात। अव पुरस्तात। अवोत्तरात्तात। अव दक्षिणात्तात्। अवचोर्ध्वात्तात्।। अवाधरात्तात्।। सर्वतो मां पाहि-पाहि समंतात्।।3।। त्वं वाङ्मयस्त्वं चिन्मय:। त्वमानंदमसयस्त्वं ब्रह्ममय:। त्वं सच्चिदानंदाद्वितीयोऽसि। त्वं प्रत्यक्षं ब्रह्मासि। त्वं ज्ञानमयो विज्ञानमयोऽसि।।4।। सर्वं जगदिदं त्वत्तो जायते। सर्वं जगदिदं त्वत्तस्तिष्ठति। सर्वं जगदिदं त्वयि लयमेष्यति। सर्वं जगदिदं त्वयि प्रत्येति। त्वं भूमिरापोऽनलोऽनिलो नभ:। त्वं चत्वारिवाक्पदानि।।5।। त्वं गुणत्रयातीत: त्वमवस्थात्रयातीत:। त्वं देहत्रयातीत:। त्वं कालत्रयातीत:। त्वं मूलाधारस्थितोऽसि नित्यं। त्वं शक्तित्रयात्मक:। त्वां योगिनो ध्यायंति नित्यं। त्वं ब्रह्मा त्वं विष्णुस्त्वं रूद्रस्त्वं इंद्रस्त्वं अग्निस्त्वं वायुस्त्वं सूर्यस्त्वं चंद्रमास्त्वं ब्रह्मभूर्भुव:स्वरोम्।।6।। गणादि पूर्वमुच्चार्य वर्णादिं तदनंतरं। अनुस्वार: परतर:। अर्धेन्दुलसितं। तारेण ऋद्धं। एतत्तव मनुस्वरूपं। गकार: पूर्वरूपं। अकारो मध्यमरूपं। अनुस्वारश्चान्त्यरूपं। बिन्दुरूत्तररूपं। नाद: संधानं। सं हितासंधि: सैषा गणेश विद्या। गणकऋषि: निचृद्गायत्रीच्छंद:। गणपतिर्देवता। ॐ गं गणपतये नम:।।7।। एकदंताय विद्महे। वक्रतुण्डाय धीमहि। तन्नो दंती प्रचोदयात।।8।। एकदंतं चतुर्हस्तं पाशमंकुशधारिणम्। रदं च वरदं हस्तैर्विभ्राणं मूषकध्वजम्। रक्तं लंबोदरं शूर्पकर्णकं रक्तवाससम्। रक्तगंधाऽनुलिप्तांगं रक्तपुष्पै: सुपुजितम्।। भक्तानुकंपिनं देवं जगत्कारणमच्युतम्। आविर्भूतं च सृष्टयादौ प्रकृते पुरुषात्परम्। एवं ध्यायति यो नित्यं स योगी योगिनां वर:।।9।। नमो व्रातपतये। नमो गणपतये। नम: प्रमथपतये। नमस्तेऽस्तु लंबोदरायैकदंताय। विघ्ननाशिने शिवसुताय। श्रीवरदमूर्तये नमो नम:।।10।। एतदथर्वशीर्ष योऽधीते। स ब्रह्मभूयाय कल्पते। स सर्व विघ्नैर्नबाध्यते। स सर्वत: सुखमेधते। स पञ्चमहापापात्प्रमुच्यते।।11।। सायमधीयानो दिवसकृतं पापं नाशयति। प्रातरधीयानो रात्रिकृतं पापं नाशयति। सायंप्रात: प्रयुंजानोऽपापो भवति। सर्वत्राधीयानोऽपविघ्नो भवति। धर्मार्थकाममोक्षं च विंदति।।12।। इदमथर्वशीर्षमशिष्याय न देयम्। यो यदि मोहाद्दास्यति स पापीयान् भवति। सहस्रावर्तनात् यं यं काममधीते तं तमनेन साधयेत्।13।। अनेन गणपतिमभिषिंचति स वाग्मी भवति चतुर्थ्यामनश्र्नन जपति स विद्यावान भवति। इत्यथर्वणवाक्यं। ब्रह्माद्यावरणं विद्यात् न बिभेति कदाचनेति।।14।। यो दूर्वांकुरैंर्यजति स वैश्रवणोपमो भवति। यो लाजैर्यजति स यशोवान भवति स मेधावान भवति। यो मोदकसहस्रेण यजति स वाञ्छित फलमवाप्रोति। य: साज्यसमिद्भिर्यजति स सर्वं लभते स सर्वं लभते।।15।। अष्टौ ब्राह्मणान् सम्यग्ग्राहयित्वा सूर्यवर्चस्वी भवति। सूर्यग्रहे महानद्यां प्रतिमासंनिधौ वा जप्त्वा सिद्धमंत्रों भवति। महाविघ्नात्प्रमुच्यते। महादोषात्प्रमुच्यते। महापापात् प्रमुच्यते। स सर्वविद्भवति से सर्वविद्भवति। य एवं वेद इत्युपनिषद्।।16।। ॐ सहनाव वतु सहनो भुनक्तु सहवीर्यंकरवावहे तेजस्वी नावधितमस्तु मा विद्विषामहे।।`},
 
 
 'ganesh-panchratna':{title:'श्री गणेश पंच रत्न',sub:'॥ मुदा करात्त मोदकं ॥',text:`श्री गणेश पंच रत्न स्तोत्र! मुदा करात्त मोदकं सदा विमुक्ति साधकम् । कलाधरावतंसकं विलासिलोक रक्षकम् । अनायकैक नायकं विनाशितेभ दैत्यकम् । नताशुभाशु नाशकं नमामि तं विनायकम् ॥ 1 ॥ नतेतराति भीकरं नवोदितार्क भास्वरम् । नमत्सुरारि निर्जरं नताधिकापदुद्ढरम् । सुरेश्वरं निधीश्वरं गजेश्वरं गणेश्वरम् । महेश्वरं तमाश्रये परात्परं निरन्तरम् ॥ 2 ॥ समस्त लोक शङ्करं निरस्त दैत्य कुञ्जरम् । दरेतरोदरं वरं वरेभ वक्त्रमक्षरम् । कृपाकरं क्षमाकरं मुदाकरं यशस्करम् । मनस्करं नमस्कृतां नमस्करोमि भास्वरम् ॥ 3 ॥ अकिञ्चनार्ति मार्जनं चिरन्तनोक्ति भाजनम् । पुरारि पूर्व नन्दनं सुरारि गर्व चर्वणम् । प्रपञ्च नाश भीषणं धनञ्जयादि भूषणम् । कपोल दानवारणं भजे पुराण वारणम् ॥ 4 ॥ नितान्त कान्ति दन्त कान्ति मन्त कान्ति कात्मजम् । अचिन्त्य रूपमन्त हीन मन्तराय कृन्तनम् । हृदन्तरे निरन्तरं वसन्तमेव योगिनाम् । तमेकदन्तमेव तं विचिन्तयामि सन्ततम् ॥ 5 ॥ महागणेश पञ्चरत्नमादरेण योऽन्वहं । प्रजल्पति प्रभातके हृदि स्मरन् गणेश्वरम् । अरोगतामदोषतां सुसाहितीं सुपुत्रताम् । समाहितायु रष्टभूति मभ्युपैति सोऽचिरात् ॥ 6 ॥ श्रीमत् शंकर भगित्पादकृत श्रीगणेशपञ्चरत्न स्तोत्रम् संपूणकम्।`},
@@ -2825,6 +2871,15 @@ function copySankalp(){
     document.body.removeChild(ta);
     alert('संकल्प मंत्र कॉपी केला!');
   });
+}
+
+// Drawer photos accordion
+function toggleDrawerPhotos(){
+  const list  = document.getElementById('drawer-photos-list');
+  const arrow = document.getElementById('drawer-photos-arrow');
+  const open  = list.style.display === 'block';
+  list.style.display  = open ? 'none' : 'block';
+  arrow.style.transform = open ? '' : 'rotate(180deg)';
 }
 
 // ─── Secret admin access: tap logo 5 times ───────────────────
