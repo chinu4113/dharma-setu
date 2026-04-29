@@ -953,9 +953,15 @@ footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:
  <button class="btn-fire" style="width:100%;padding:12px;" onclick="doAdminLogin()">Login</button>
  </div>
  <div id="admin-dashboard" style="display:none;">
- <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:8px;">
+ <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px;">
  <div style="font-family:'Cinzel Decorative',serif;font-size:1rem;color:var(--sd);">Admin Dashboard</div>
+ <div style="display:flex;gap:8px;">
+ <button onclick="showAdminTab(_currentAdminTab||'logins', document.querySelector('#admin-modal .ptab.on')||document.querySelector('#admin-modal .ptab'))" style="background:var(--s);color:#fff;border:none;border-radius:12px;padding:5px 14px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.8rem;cursor:pointer;">ताज़ा करा</button>
  <button onclick="doAdminLogout()" style="background:none;border:1.5px solid var(--bd);border-radius:12px;padding:5px 14px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.8rem;cursor:pointer;color:var(--txm);">Logout</button>
+ </div>
+ </div>
+ <div style="background:#FFF8E8;border:1px solid var(--bd);border-radius:8px;padding:8px 12px;margin-bottom:14px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.75rem;color:var(--txm);line-height:1.6;">
+ <b>महत्त्वाचे:</b> नोंदी फक्त त्याच डिव्हाइसवर दिसतात जिथे वापरकर्त्यांनी साइन इन / बुकिंग केले. सर्व नोंदी पाहण्यासाठी <b>त्याच फोन/ब्राउझरवर</b> Admin Panel उघडा.
  </div>
  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px;" id="admin-stats-row"></div>
  <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;">
@@ -2645,8 +2651,9 @@ function getSavedRituals(){ return getJSON(getKey('ds_rituals'), []); }
 function logActivity(type, data){
   const key = type==='login'?DS_LOG_LOGIN : type==='enquiry'?DS_LOG_ENQ : DS_LOG_BOOK;
   const logs = getJSON(key, []);
-  logs.unshift({ ...data, time: new Date().toLocaleString('mr-IN') });
-  setJSON(key, logs.slice(0, 200));
+  const entry = { ...data, time: new Date().toLocaleString('mr-IN'), isoTime: new Date().toISOString() };
+  logs.unshift(entry);
+  setJSON(key, logs.slice(0, 500));
 }
 
 // ─── Topbar update ───────────────────────────────────────────
@@ -2882,62 +2889,104 @@ function doAdminLogout(){
 }
 
 function renderAdminStats(){
-  const logins=getJSON(DS_LOG_LOGIN,[]);
-  const enqs=getJSON(DS_LOG_ENQ,[]);
-  const books=getJSON(DS_LOG_BOOK,[]);
-  const users=getAllUsers();
-  const statsEl=document.getElementById('admin-stats-row');
+  const logins = getAllLogs('login');
+  const enqs   = getAllLogs('enquiry');
+  const books  = getAllLogs('booking');
+  const users  = getAllUsers();
+  const statsEl = document.getElementById('admin-stats-row');
   if(!statsEl) return;
   statsEl.innerHTML=[
     {n:Object.keys(users).length, l:'एकूण सदस्य'},
-    {n:logins.length, l:'साइन इन'},
-    {n:enqs.length+books.length, l:'चौकशी / बुकिंग'}
+    {n:logins.length,             l:'साइन इन नोंदी'},
+    {n:enqs.length+books.length,  l:'चौकशी / बुकिंग'}
   ].map(s=>`<div class="stat-box"><div class="num">${s.n}</div><div class="lbl">${s.l}</div></div>`).join('');
 }
 
+// Gather ALL logs across all keys (scrapes full localStorage for this domain)
+function getAllLogs(type){
+  const primary = type==='login'?DS_LOG_LOGIN : type==='enquiry'?DS_LOG_ENQ : DS_LOG_BOOK;
+  let all = getJSON(primary, []);
+  // Also scan every localStorage key for any extra logs stored under variant keys
+  try {
+    for(let i=0;i<localStorage.length;i++){
+      const k = localStorage.key(i);
+      if(!k) continue;
+      if(k===primary) continue;
+      const match = (type==='login' && k.includes('log_login')) ||
+                    (type==='enquiry' && k.includes('log_enq')) ||
+                    (type==='booking' && k.includes('log_book'));
+      if(match){
+        const extra = getJSON(k,[]);
+        all = all.concat(extra);
+      }
+    }
+  } catch(e){}
+  // Dedupe by time+name and sort newest first
+  const seen = new Set();
+  return all.filter(l=>{
+    const key = (l.time||'')+(l.name||'')+(l.phone||'');
+    if(seen.has(key)) return false;
+    seen.add(key); return true;
+  }).sort((a,b)=> new Date(b.isoTime||0) - new Date(a.isoTime||0));
+}
+
+let _currentAdminTab = 'logins';
 function showAdminTab(tab, btn){
+  _currentAdminTab = tab;
   document.querySelectorAll('#admin-modal .ptab').forEach(b=>b.classList.remove('on'));
   btn && btn.classList.add('on');
   const content=document.getElementById('admin-content');
   if(!content) return;
   renderAdminStats();
+
+  const emptyHtml = (msg) => `<div class="empty-state" style="padding:24px;">
+    <div class="et" style="margin-bottom:8px;">${msg}</div>
+    <div class="es" style="font-size:0.78rem;color:var(--txm);line-height:1.6;">
+      नोंदी तेव्हाच दिसतात जेव्हा त्याच डिव्हाइसवर / ब्राउझरमध्ये कोणी साइन इन करते.<br>
+      <b>हे साइट एकाच डिव्हाइसवर वापरल्यास सर्व नोंदी दिसतील.</b>
+    </div>
+  </div>`;
+
   if(tab==='logins'){
-    const logs=getJSON(DS_LOG_LOGIN,[]);
+    const logs = getAllLogs('login');
     content.innerHTML = logs.length ? logs.map(l=>`
-      <div class="history-row" style="flex-wrap:wrap;gap:8px;">
-        <div class="hist-date" style="min-width:130px;">${l.time}</div>
-        <div class="hist-name">${l.name||'—'}</div>
-        <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.8rem;color:var(--txm);">+91 ${l.phone||''}</div>
+      <div class="history-row" style="flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+        <div class="hist-date" style="min-width:140px;font-size:0.75rem;">${l.time}</div>
+        <div class="hist-name" style="flex:1;">${l.name||'—'}</div>
+        <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.78rem;color:var(--txm);">${l.phone?'+91 '+l.phone:''}</div>
         <div class="hist-status">${l.action||'साइन इन'}</div>
-      </div>`).join('') : '<div class="empty-state"><div class="et">कोणत्याही साइन इन नोंदी नाहीत</div></div>';
+      </div>`).join('') : emptyHtml('कोणत्याही साइन इन नोंदी नाहीत');
+
   } else if(tab==='enquiries'){
-    const logs=getJSON(DS_LOG_ENQ,[]);
+    const logs = getAllLogs('enquiry');
     content.innerHTML = logs.length ? logs.map(l=>`
-      <div class="history-row" style="flex-wrap:wrap;gap:8px;">
-        <div class="hist-date" style="min-width:130px;">${l.time}</div>
-        <div class="hist-name">${l.puja||l.subject||'—'}</div>
-        <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.8rem;color:var(--txm);">${l.name||''} · ${l.phone||''}</div>
+      <div class="history-row" style="flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+        <div class="hist-date" style="min-width:140px;font-size:0.75rem;">${l.time}</div>
+        <div class="hist-name" style="flex:1;">${l.puja||l.subject||'—'}</div>
+        <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.78rem;color:var(--txm);">${l.name||''} ${l.phone?'· +91 '+l.phone:''}</div>
         <div class="hist-status">${l.status||'नवीन'}</div>
-      </div>`).join('') : '<div class="empty-state"><div class="et">कोणत्याही चौकशी नाहीत</div></div>';
+      </div>`).join('') : emptyHtml('कोणत्याही चौकशी नाहीत');
+
   } else if(tab==='bookings'){
-    const logs=getJSON(DS_LOG_BOOK,[]);
+    const logs = getAllLogs('booking');
     content.innerHTML = logs.length ? logs.map(l=>`
-      <div class="history-row" style="flex-wrap:wrap;gap:8px;">
-        <div class="hist-date" style="min-width:130px;">${l.time}</div>
-        <div class="hist-name">${l.puja||'—'}</div>
-        <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.8rem;color:var(--txm);">${l.name||''} · ${l.phone||''}</div>
+      <div class="history-row" style="flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+        <div class="hist-date" style="min-width:140px;font-size:0.75rem;">${l.time}</div>
+        <div class="hist-name" style="flex:1;">${l.puja||'—'}</div>
+        <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.78rem;color:var(--txm);">${l.name||''} ${l.phone?'· +91 '+l.phone:''}</div>
         <div class="hist-status">${l.status||'विचाराधीन'}</div>
-      </div>`).join('') : '<div class="empty-state"><div class="et">कोणतेही बुकिंग नाही</div></div>';
+      </div>`).join('') : emptyHtml('कोणतेही बुकिंग नाही');
+
   } else if(tab==='users'){
-    const users=getAllUsers();
-    const list=Object.values(users);
+    const users = getAllUsers();
+    const list  = Object.values(users);
     content.innerHTML = list.length ? list.map(u=>`
-      <div class="history-row" style="flex-wrap:wrap;gap:8px;">
-        <div class="hist-name">${u.name}</div>
+      <div class="history-row" style="flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+        <div class="hist-name" style="flex:1;">${u.name}</div>
         <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.8rem;color:var(--txm);">+91 ${u.phone}</div>
-        <div class="hist-date" style="min-width:auto;">${new Date(u.joinedAt).toLocaleDateString('mr-IN')}</div>
+        <div class="hist-date" style="min-width:auto;font-size:0.75rem;">${new Date(u.joinedAt).toLocaleDateString('mr-IN')}</div>
         <div class="hist-status">सदस्य</div>
-      </div>`).join('') : '<div class="empty-state"><div class="et">कोणतेही सदस्य नाहीत</div></div>';
+      </div>`).join('') : emptyHtml('कोणतेही सदस्य नाहीत');
   }
 }
 
