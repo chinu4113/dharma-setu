@@ -355,6 +355,98 @@ footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:
    </a>
   </div>
  </div>
+ <!-- Navagraha Mantras nav link in drawer -->
+ <a href="#" onclick="gp('navagraha');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#5C2000;font-weight:600;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;background:linear-gradient(90deg,#fff8ee,#fffaf4);">
+  <span>🪐 Navagraha Mantras <span style="font-size:12px;color:#888;margin-left:4px;font-weight:400">नवग्रह मंत्र</span></span>
+ </a>
+ <!-- hidden placeholder to keep IDs intact -->
+ <div style="display:none;"><div id="drawer-navagraha-list">
+
+   <!-- Intro note -->
+   <div style="padding:10px 20px 6px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.72rem;color:#8B0000;letter-spacing:0.5px;border-top:0.5px solid #f0e8e0;text-align:center;font-weight:600;">— नवग्रह बीज मंत्र —</div>
+
+   <!-- Bija Mantras strip -->
+   <div style="padding:8px 14px;display:flex;flex-direction:column;gap:6px;">
+    <div style="background:#fff3e0;border-left:3px solid #E85D04;border-radius:6px;padding:8px 12px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.82rem;color:#3A1500;line-height:1.6;">☀️ <strong style="color:#C44B00;">सूर्य</strong> — ॐ ह्रीं ह्रौं सूर्याय नमः</div>
+    <div style="background:#f0f8ff;border-left:3px solid #5B8DD9;border-radius:6px;padding:8px 12px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.82rem;color:#3A1500;line-height:1.6;">🌙 <strong style="color:#2c5fa8;">चंद्र</strong> — ॐ ऐं क्लीं सोमाय नमः</div>
+    <div style="background:#ffeeed;border-left:3px solid #C0392B;border-radius:6px;padding:8px 12px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.82rem;color:#3A1500;line-height:1.6;">🔴 <strong style="color:#C0392B;">मंगळ</strong> — ॐ हूं श्रीं भौमाय नमः</div>
+    <div style="background:#f0fff0;border-left:3px solid #27AE60;border-radius:6px;padding:8px 12px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.82rem;color:#3A1500;line-height:1.6;">💚 <strong style="color:#1e8449;">बुध</strong> — ॐ ऐं श्रीं श्रीं बुधाय नमः</div>
+    <div style="background:#fffde7;border-left:3px solid #D4A017;border-radius:6px;padding:8px 12px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.82rem;color:#3A1500;line-height:1.6;">🌟 <strong style="color:#9a6f00;">गुरु</strong> — ॐ ह्रीं क्लीं हूं बृहस्पतये नमः</div>
+    <div style="background:#fdf0ff;border-left:3px solid #9B59B6;border-radius:6px;padding:8px 12px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.82rem;color:#3A1500;line-height:1.6;">⚪ <strong style="color:#7d3c98;">शुक्र</strong> — ॐ हरिंग श्रृंग शुक्राय नमः</div>
+    <div style="background:#f4f4f4;border-left:3px solid #5D6D7E;border-radius:6px;padding:8px 12px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.82rem;color:#3A1500;line-height:1.6;">🪐 <strong style="color:#2C3E50;">शनि</strong> — ॐ ऐं ह्रीं श्रीं शनैश्चराय नमः</div>
+    <div style="background:#fef0e8;border-left:3px solid #784212;border-radius:6px;padding:8px 12px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.82rem;color:#3A1500;line-height:1.6;">🌑 <strong style="color:#6E2C00;">राहू</strong> — ॐ ऐं ह्रीं राहवे नमः</div>
+    <div style="background:#f5f0ff;border-left:3px solid #6C3483;border-radius:6px;padding:8px 12px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.82rem;color:#3A1500;line-height:1.6;">🌘 <strong style="color:#6C3483;">केतू</strong> — ॐ ह्रीं ऐं केतवे नमः</div>
+   </div>
+
+   <!-- Mool Mantras button -->
+   <div style="padding:4px 14px 10px;">
+    <button onclick="toggleDrawerMool()" id="drawer-mool-btn" style="width:100%;background:linear-gradient(135deg,#8B0000,#C44B00);color:#fff;border:none;border-radius:8px;padding:10px 14px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.82rem;cursor:pointer;display:flex;align-items:center;justify-content:between;gap:6px;">
+     <span style="flex:1;text-align:left;">📜 मूल मंत्र व वैदिक मंत्र पाहा</span>
+     <svg id="drawer-mool-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transition:transform .25s;flex-shrink:0;"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+   </div>
+
+   <!-- Mool + Vedic Mantras expandable -->
+   <div id="drawer-mool-list" style="display:none;padding:0 14px 10px;">
+    <!-- Mool Mantras -->
+    <div style="background:#fff;border:1px solid #e8d5b0;border-radius:8px;padding:12px 14px;margin-bottom:8px;">
+     <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.72rem;color:#8B0000;font-weight:700;letter-spacing:0.5px;margin-bottom:8px;text-align:center;">— मूल मंत्र —</div>
+     <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.8rem;color:#3A1500;line-height:2;">
+      ☀️ सूर्य — <em>Om Sooryaay Namah</em><br>
+      🌙 चंद्र — <em>Om Chandraay Namah</em><br>
+      🔴 मंगळ — <em>Om Manglaay Namah</em><br>
+      💚 बुध — <em>Om Budhaay Namah</em><br>
+      🌟 गुरु — <em>Om Gurve Namah</em><br>
+      ⚪ शुक्र — <em>Om Shukraay Namah</em><br>
+      🪐 शनि — <em>Om ShanichRaay Namah</em><br>
+      🌑 राहू — <em>Om Raahve Namah</em><br>
+      🌘 केतू — <em>Om Ketve Namah</em>
+     </div>
+    </div>
+    <!-- Vedic Mantras -->
+    <div style="display:flex;flex-direction:column;gap:8px;">
+     <div style="background:#fff;border:1px solid #e8d5b0;border-radius:8px;padding:12px 14px;">
+      <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.75rem;color:#8B0000;font-weight:700;margin-bottom:6px;">☀️ सूर्य वैदिक मंत्र</div>
+      <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.78rem;color:#5C3A1A;line-height:1.8;">Om Aakrishnen Rajsaa Varttmaano Niveshyann Mrittam Mtarya Cha<br>Hiranyen Savitaa Rathenaa Devo Yaati Bhuvnaani Pashyan.<br><strong style="color:#C44B00;">Om Sooryaay Namah</strong></div>
+     </div>
+     <div style="background:#fff;border:1px solid #e8d5b0;border-radius:8px;padding:12px 14px;">
+      <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.75rem;color:#2c5fa8;font-weight:700;margin-bottom:6px;">🌙 चंद्र वैदिक मंत्र</div>
+      <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.78rem;color:#5C3A1A;line-height:1.8;">OM Imam DevaSpat Na Gwwam Sudhvam Mahte Kshatraay...<br><strong style="color:#2c5fa8;">Om Chandraay Namah</strong></div>
+     </div>
+     <div style="background:#fff;border:1px solid #e8d5b0;border-radius:8px;padding:12px 14px;">
+      <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.75rem;color:#9a6f00;font-weight:700;margin-bottom:6px;">🌟 गुरु (बृहस्पति) वैदिक मंत्र</div>
+      <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.78rem;color:#5C3A1A;line-height:1.8;">Om Brihaspate AtiYadaryo Arhaad DumDwiBhaati KritMajNeishu...<br><strong style="color:#9a6f00;">Om BrihasPatye Namah</strong></div>
+     </div>
+     <div style="background:#fff;border:1px solid #e8d5b0;border-radius:8px;padding:12px 14px;">
+      <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.75rem;color:#7d3c98;font-weight:700;margin-bottom:6px;">⚪ शुक्र वैदिक मंत्र</div>
+      <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.78rem;color:#5C3A1A;line-height:1.8;">Om Annaat PriSruto Rasam Brahmanaa Vyapivat Kshatram Payah...<br><strong style="color:#7d3c98;">Om Shukraay Namah</strong></div>
+     </div>
+     <div style="background:#fff;border:1px solid #e8d5b0;border-radius:8px;padding:12px 14px;">
+      <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.75rem;color:#C0392B;font-weight:700;margin-bottom:6px;">🔴 मंगळ वैदिक मंत्र</div>
+      <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.78rem;color:#5C3A1A;line-height:1.8;">Om AgniMurdhaadha Divah Kakupati Prithvya Ayam...<br><strong style="color:#C0392B;">Om Bhaumaay Namah</strong></div>
+     </div>
+     <div style="background:#fff;border:1px solid #e8d5b0;border-radius:8px;padding:12px 14px;">
+      <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.75rem;color:#1e8449;font-weight:700;margin-bottom:6px;">💚 बुध वैदिक मंत्र</div>
+      <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.78rem;color:#5C3A1A;line-height:1.8;">Om UdBudhaySwaagne Prati JagrahitavMishtaaPoorte...<br><strong style="color:#1e8449;">Om Budhaay Namah</strong></div>
+     </div>
+     <div style="background:#fff;border:1px solid #e8d5b0;border-radius:8px;padding:12px 14px;">
+      <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.75rem;color:#2C3E50;font-weight:700;margin-bottom:6px;">🪐 शनि वैदिक मंत्र</div>
+      <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.78rem;color:#5C3A1A;line-height:1.8;">Om Shanno DevirBhishtya Aapo Bhavatu Peetye...<br><strong style="color:#2C3E50;">Om ShanaiChraay Namah</strong></div>
+     </div>
+     <div style="background:#fff;border:1px solid #e8d5b0;border-radius:8px;padding:12px 14px;">
+      <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.75rem;color:#6E2C00;font-weight:700;margin-bottom:6px;">🌑 राहू वैदिक मंत्र</div>
+      <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.78rem;color:#5C3A1A;line-height:1.8;">Om KyaanshChitra AaBhuvDwati Sada Vridh Sakha...<br><strong style="color:#6E2C00;">Om Raahve Namah</strong></div>
+     </div>
+     <div style="background:#fff;border:1px solid #e8d5b0;border-radius:8px;padding:12px 14px;">
+      <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.75rem;color:#6C3483;font-weight:700;margin-bottom:6px;">🌘 केतू वैदिक मंत्र</div>
+      <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.78rem;color:#5C3A1A;line-height:1.8;">Om Ketum KrinVann Ketve Pesho Maryaa ApeshSe...<br><strong style="color:#6C3483;">Om Ketve Namah</strong></div>
+     </div>
+    </div>
+   </div>
+
+  </div>
+ </div>
+
  <a href="#" id="admin-drawer-link" onclick="openAdminPanel();toggleMenu();return false;" style="display:none;align-items:center;gap:12px;padding:14px 20px;color:#5C0000;font-weight:600;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;background:#fff0f0;"> <span>Admin Panel <span style="font-size:12px;color:#888;margin-left:4px;font-weight:400">गुरुजी – व्यवस्थापन</span></span></a>
 
  <a href="https://www.instagram.com/yash_guruji_?igsh=enF4bWh5MGloczVn" target="_blank" style="display:flex;align-items:center;gap:12px;padding:14px 20px;text-decoration:none;font-size:15px;background:linear-gradient(90deg,#f9f0ff,#fff0f9);border-bottom:0.5px solid #f0f0f0;">
@@ -950,6 +1042,105 @@ footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:
  </div>
 </div>
 </div>
+
+<!-- NAVAGRAHA MANTRAS PAGE -->
+<div id="pg-navagraha" class="pg">
+<div class="sec sec-dk" style="padding:36px 20px 28px;text-align:center;">
+  <div class="hero-chip" style="position:relative;">ाशी नवग्रह शांती ाशी</div>
+  <div class="stitle" style="font-size:clamp(1.5rem,5vw,2.2rem);margin-top:10px;">नवग्रह मंत्र</div>
+  <div class="sdiv"><div class="sdiv-line"></div><div class="sdiv-sym">ॉ</div><div class="sdiv-line"></div></div>
+  <p style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.92rem;color:rgba(255,248,200,0.72);max-width:520px;margin:0 auto;">वैदिक ज्योतिषशास्त्रानुसार नव ग्रहांचे बीज मंत्र, मूल मंत्र आणि वैदिक मंत्र</p>
+</div>
+<div class="sec" style="padding:32px 16px 48px;">
+<div style="max-width:860px;margin:0 auto;">
+
+  <style>
+  .ng2-tab{background:transparent;border:none;border-bottom:3px solid transparent;color:var(--txm);padding:12px 22px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.9rem;cursor:pointer;margin-bottom:-2px;transition:color .2s,border-color .2s;}
+  .ng2-tab.on{color:var(--sd);border-bottom-color:var(--sd);font-weight:600;}
+  .ng2-tab:hover{color:var(--sd);}
+  .ng2-panel{display:none;}
+  .ng2-panel.on{display:block;}
+  .ng2-box{background:#fff;border:1.5px solid var(--bd);border-top:none;border-radius:0 0 14px 14px;overflow:hidden;box-shadow:0 4px 20px var(--sh);}
+  .ng2-row{display:grid;grid-template-columns:120px 1fr;align-items:center;border-bottom:1px solid var(--bd);}
+  .ng2-row:last-child{border-bottom:none;}
+  .ng2-row:hover{background:#fffaf0;}
+  .ng2-planet{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.9rem;font-weight:700;color:var(--sd);padding:15px 16px;border-right:1px solid var(--bd);background:var(--gp);height:100%;display:flex;flex-direction:column;justify-content:center;}
+  .ng2-planet span{display:block;font-size:0.66rem;color:var(--txm);font-weight:400;margin-top:3px;}
+  .ng2-mantra{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;color:var(--tx);padding:15px 20px;line-height:1.8;}
+  .ng2-mantra.vedic{font-size:0.88rem;line-height:2.2;color:var(--txm);}
+  .ng2-mantra.vedic strong{color:var(--sd);display:block;margin-top:6px;font-size:0.9rem;}
+  @media(max-width:480px){
+    .ng2-row{grid-template-columns:88px 1fr;}
+    .ng2-planet{padding:12px 10px;font-size:0.8rem;}
+    .ng2-mantra{padding:12px 12px;font-size:0.88rem;}
+    .ng2-tab{padding:10px 14px;font-size:0.8rem;}
+  }
+  </style>
+
+  <!-- Tabs -->
+  <div style="display:flex;border-bottom:2px solid var(--bd);">
+    <button class="ng2-tab on" onclick="switchNgTab('bija',this)">बीज मंत्र</button>
+    <button class="ng2-tab" onclick="switchNgTab('mool',this)">मूल मंत्र</button>
+    <button class="ng2-tab" onclick="switchNgTab('vedic',this)">वैदिक मंत्र</button>
+  </div>
+
+  <!-- TAB 1: बीज मंत्र -->
+  <div class="ng2-panel on" id="ng2-bija">
+  <div class="ng2-box">
+    <div class="ng2-row"><div class="ng2-planet">सूर्य<span>रविवार</span></div><div class="ng2-mantra">ॉ ह्रीं ह्रौं सूर्याय नमः</div></div>
+    <div class="ng2-row"><div class="ng2-planet">चंद्र<span>सोमवार</span></div><div class="ng2-mantra">ॉ एं क्लीं सोमाय नमः</div></div>
+    <div class="ng2-row"><div class="ng2-planet">मंगळ<span>मंगळवार</span></div><div class="ng2-mantra">ॉ हूं श्रीं भौमाय नमः</div></div>
+    <div class="ng2-row"><div class="ng2-planet">बुध<span>बुधवार</span></div><div class="ng2-mantra">ॉ एं श्रीं श्रीं बुधाय नमः</div></div>
+    <div class="ng2-row"><div class="ng2-planet">गुरु<span>गुरुवार</span></div><div class="ng2-mantra">ॉ ह्रीं क्लीं हूं बृहस्पतये नमः</div></div>
+    <div class="ng2-row"><div class="ng2-planet">शुक्र<span>शुक्रवार</span></div><div class="ng2-mantra">ॉ हरिंग शृंग शुक्राय नमः</div></div>
+    <div class="ng2-row"><div class="ng2-planet">शनि<span>शनिवार</span></div><div class="ng2-mantra">ॉ एं ह्रीं श्रीं शनैश्चराय नमः</div></div>
+    <div class="ng2-row"><div class="ng2-planet">राहू<span>छाया ग्रह</span></div><div class="ng2-mantra">ॉ एं ह्रीं राहवे नमः</div></div>
+    <div class="ng2-row"><div class="ng2-planet">केतू<span>छाया ग्रह</span></div><div class="ng2-mantra">ॉ ह्रीं एं केतवे नमः</div></div>
+  </div>
+  </div>
+
+  <!-- TAB 2: मूल मंत्र -->
+  <div class="ng2-panel" id="ng2-mool">
+  <div class="ng2-box">
+    <div class="ng2-row"><div class="ng2-planet">सूर्य<span>रविवार</span></div><div class="ng2-mantra">ॉ सूर्याय नमः</div></div>
+    <div class="ng2-row"><div class="ng2-planet">चंद्र<span>सोमवार</span></div><div class="ng2-mantra">ॉ चंद्राय नमः</div></div>
+    <div class="ng2-row"><div class="ng2-planet">मंगळ<span>मंगळवार</span></div><div class="ng2-mantra">ॉ मंगलाय नमः</div></div>
+    <div class="ng2-row"><div class="ng2-planet">बुध<span>बुधवार</span></div><div class="ng2-mantra">ॉ बुधाय नमः</div></div>
+    <div class="ng2-row"><div class="ng2-planet">गुरु<span>गुरुवार</span></div><div class="ng2-mantra">ॉ गुरवे नमः</div></div>
+    <div class="ng2-row"><div class="ng2-planet">शुक्र<span>शुक्रवार</span></div><div class="ng2-mantra">ॉ शुक्राय नमः</div></div>
+    <div class="ng2-row"><div class="ng2-planet">शनि<span>शनिवार</span></div><div class="ng2-mantra">ॉ शनैश्चराय नमः</div></div>
+    <div class="ng2-row"><div class="ng2-planet">राहू<span>छाया ग्रह</span></div><div class="ng2-mantra">ॉ राहवे नमः</div></div>
+    <div class="ng2-row"><div class="ng2-planet">केतू<span>छाया ग्रह</span></div><div class="ng2-mantra">ॉ केतवे नमः</div></div>
+  </div>
+  </div>
+
+  <!-- TAB 3: वैदिक मंत्र -->
+  <div class="ng2-panel" id="ng2-vedic">
+  <div class="ng2-box">
+    <div class="ng2-row" style="align-items:flex-start;"><div class="ng2-planet" style="padding-top:18px;">सूर्य<span>रविवार</span></div><div class="ng2-mantra vedic">ॉ आकृष्णेन रजसा वर्तमानो निवेशयन्नमृतं मर्त्यं च ।<br>हिरण्येन सविता रथेना देवो याति भुवनानि पश्यन् ।।<br><strong>ॉ सूर्याय नमः ।।</strong></div></div>
+    <div class="ng2-row" style="align-items:flex-start;"><div class="ng2-planet" style="padding-top:18px;">चंद्र<span>सोमवार</span></div><div class="ng2-mantra vedic">ॉ इमं देवा असपत्नं सुवध्वं महते क्षत्राय महते ज्येष्ठ्याय ।<br>महते जानराज्यायेन्द्रस्येन्द्राय इमममुष्य पुत्रमस्यै विश एष वोअमी राजा सोमोस्माकं ब्राह्मणानां राजा ।।<br><strong>ॉ चंद्राय नमः ।।</strong></div></div>
+    <div class="ng2-row" style="align-items:flex-start;"><div class="ng2-planet" style="padding-top:18px;">मंगळ<span>मंगळवार</span></div><div class="ng2-mantra vedic">ॉ अग्निर्मूर्धा दिवः ककुत् पतिः पृथिव्या अयम् ।<br>अपां रेतांसि जिन्वति ।।<br><strong>ॉ भौमाय नमः ।।</strong></div></div>
+    <div class="ng2-row" style="align-items:flex-start;"><div class="ng2-planet" style="padding-top:18px;">बुध<span>बुधवार</span></div><div class="ng2-mantra vedic">ॉ उद्बुध्यस्वाग्ने प्रति जागृह्यस्मिन्त्सधस्थे अध्युत्तरस्मिन् ।<br>विश्वेदेवा यजमानश्च सीदत ।।<br><strong>ॉ बुधाय नमः ।।</strong></div></div>
+    <div class="ng2-row" style="align-items:flex-start;"><div class="ng2-planet" style="padding-top:18px;">गुरु<span>गुरुवार</span></div><div class="ng2-mantra vedic">ॉ बृहस्पते अतियदर्यो अर्हाद् द्युमद्विभाति क्रतुमज्जनेषु ।<br>यद्दीदयच्छवस ृतप्रजात तदस्मासु द्रविणं धेहि चित्रम् ।।<br><strong>ॉ बृहस्पतये नमः ।।</strong></div></div>
+    <div class="ng2-row" style="align-items:flex-start;"><div class="ng2-planet" style="padding-top:18px;">शुक्र<span>शुक्रवार</span></div><div class="ng2-mantra vedic">ॉ अन्नात् परिस्रुतो रसं ब्रह्मणा व्यअपिबत् क्षत्रं पयः ।<br>सोमं प्रजापति ृतेन सत्यमिन्द्रियं विपानं शुक्रमन्धस इन्द्रस्येन्द्रियमिदं पयोअमृतं मधु ।।<br><strong>ॉ शुक्राय नमः ।।</strong></div></div>
+    <div class="ng2-row" style="align-items:flex-start;"><div class="ng2-planet" style="padding-top:18px;">शनि<span>शनिवार</span></div><div class="ng2-mantra vedic">ॉ शंनो देवीरभिष्टय आपो भवन्तु पीतये ।<br>शंयोरभिस्रवन्तु नः ।।<br><strong>ॉ शनैश्चराय नमः ।।</strong></div></div>
+    <div class="ng2-row" style="align-items:flex-start;"><div class="ng2-planet" style="padding-top:18px;">राहू<span>छाया ग्रह</span></div><div class="ng2-mantra vedic">ॉ कयानश्चित्र आभुवदूती सदावृधः सखा ।<br>कया शचिष्ठया वृता ।।<br><strong>ॉ राहवे नमः ।।</strong></div></div>
+    <div class="ng2-row" style="align-items:flex-start;"><div class="ng2-planet" style="padding-top:18px;">केतू<span>छाया ग्रह</span></div><div class="ng2-mantra vedic">ॉ केतुं कृण्वन्नकेतवे पेशो मर्या अपेशसे ।<br>समुषद्भिरजायथाः ।।<br><strong>ॉ केतवे नमः ।।</strong></div></div>
+  </div>
+  </div>
+
+  <div style="margin-top:28px;background:linear-gradient(135deg,var(--dk2),#5C2400);border:1px solid rgba(212,160,23,0.35);border-radius:12px;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;">
+    <div>
+      <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.95rem;color:var(--gl);">नवग्रह पूजा / शांती</div>
+      <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.8rem;color:rgba(255,248,200,0.6);margin-top:3px;">ग्रहदोष शांतीसाठी गुरुजींशी संपर्क करा</div>
+    </div>
+    <button class="btn-fire" onclick="gp('booking')" style="font-size:0.88rem;padding:10px 24px;">पूजा बुकिंग करा</button>
+  </div>
+
+</div>
+</div>
+</div>
+<!-- END NAVAGRAHA PAGE -->
 
 <!-- PROFILE PAGE -->
 <div id="pg-profile" class="pg">
@@ -3085,6 +3276,40 @@ function copySankalp(){
 
 
 // ─── Drawer photos accordion ──────────────────────────────────
+function switchNgTab(tab, btn){
+  document.querySelectorAll('.ng2-tab').forEach(t=>t.classList.remove('on'));
+  document.querySelectorAll('.ng2-panel').forEach(p=>p.classList.remove('on'));
+  btn.classList.add('on');
+  document.getElementById('ng2-'+tab).classList.add('on');
+}
+function toggleNgVedic(btn){
+  const text=btn.nextElementSibling;
+  const open=text.style.display==='block';
+  text.style.display=open?'none':'block';
+  const svg=btn.querySelector('svg');
+  if(svg) svg.style.transform=open?'':'rotate(180deg)';
+}
+function filterNg(planet,btn){
+  document.querySelectorAll('.ng-tab').forEach(t=>t.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('#ng-grid .ng-planet-card').forEach(card=>{
+    card.style.display=(planet==='all'||card.dataset.planet===planet)?'':'none';
+  });
+}
+function toggleDrawerNavagraha(){
+  const list=document.getElementById('drawer-navagraha-list');
+  const arrow=document.getElementById('drawer-navagraha-arrow');
+  const open=list.style.display==='block';
+  list.style.display=open?'none':'block';
+  if(arrow) arrow.style.transform=open?'':'rotate(180deg)';
+}
+function toggleDrawerMool(){
+  const list=document.getElementById('drawer-mool-list');
+  const arrow=document.getElementById('drawer-mool-arrow');
+  const open=list.style.display==='block';
+  list.style.display=open?'none':'block';
+  if(arrow) arrow.style.transform=open?'':'rotate(180deg)';
+}
 function toggleDrawerPhotos(){
   const list  = document.getElementById('drawer-photos-list');
   const arrow = document.getElementById('drawer-photos-arrow');
