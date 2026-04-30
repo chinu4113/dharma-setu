@@ -108,6 +108,13 @@ body{font-family:'Cormorant Garamond',Georgia,serif;background:var(--cream);colo
 .muh-name{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;font-weight:500;flex:1}.muh-tag{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.72rem;background:var(--gp);border:1px solid var(--bd);color:var(--txm);padding:3px 10px;border-radius:10px}
 .muh-time{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.85rem;color:var(--txm)}
 .muh-month-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;max-width:900px;margin:0 auto}
+.muh-single-box{max-width:620px;margin:0 auto;background:#fff;border:1.5px solid var(--bd);border-radius:var(--rt);box-shadow:0 4px 20px var(--sh);overflow:hidden;}
+.muh-box-header{background:linear-gradient(135deg,var(--sd),var(--cr));color:#fff;font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;font-weight:600;padding:16px 24px;letter-spacing:0.3px;}
+.muh-box-row{display:flex;align-items:baseline;gap:12px;padding:13px 24px;border-bottom:1px solid var(--bd);transition:background .15s;}
+.muh-box-row:hover{background:#fdf8f0;}
+.muh-box-month{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.95rem;font-weight:700;color:var(--sd);min-width:120px;flex-shrink:0;}
+.muh-box-dates{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.92rem;color:var(--tx);line-height:1.6;}
+.muh-no-date{color:var(--txm);font-style:italic;font-size:0.85rem;}
 .photo-panel{max-width:700px;margin:0 auto;padding:28px 20px;background:#fff;border:1px solid var(--bd);border-radius:var(--rt);box-shadow:0 2px 14px var(--sh)}
 .photo-link-card{display:flex;flex-direction:column;align-items:center;text-align:center;background:#fff;border:1.5px solid var(--bd);border-radius:var(--r);padding:24px 16px;text-decoration:none;box-shadow:0 2px 10px var(--sh);transition:transform .2s,box-shadow .2s,border-color .2s;}
 .photo-link-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px var(--sh);border-color:var(--s);}
@@ -593,70 +600,70 @@ footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:
 
  <!-- VASTUSHANTI -->
  <div id="muh-vastushanti" class="muh-section">
- <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.82rem;color:var(--txm);text-align:center;margin-bottom:20px;">२०२६ वास्तुशांती शुभ मुहूर्त</div>
- <div class="muh-month-grid">
- <div class="muh-month-card"><div class="mc-month">जानेवारी</div><div class="mc-dates">१, ५, ७, २४, २६, २८</div></div>
- <div class="muh-month-card"><div class="mc-month">फेब्रुवारी</div><div class="mc-dates">६, ७, १३, २०, २६, २८</div></div>
- <div class="muh-month-card"><div class="mc-month">मार्च</div><div class="mc-dates">५, १४, १६</div></div>
- <div class="muh-month-card"><div class="mc-month">एप्रिल</div><div class="mc-dates">२३, २४, २९</div></div>
- <div class="muh-month-card"><div class="mc-month">मे</div><div class="mc-dates">१, ६, ८, ९, १३, १४</div></div>
- <div class="muh-month-card"><div class="mc-month">जून</div><div class="mc-dates">१७, २२, २४, २७</div></div>
- <div class="muh-month-card"><div class="mc-month">जुलै</div><div class="mc-dates">१, ८, ९, ११</div></div>
- <div class="muh-month-card"><div class="mc-month">ऑगस्ट</div><div class="mc-dates">२०, २६, २८</div></div>
- <div class="muh-month-card"><div class="mc-month">सप्टेंबर</div><div class="mc-dates">४, ७</div></div>
+ <div class="muh-single-box">
+  <div class="muh-box-header">🏠 वास्तुशांती शुभ मुहूर्त २०२६</div>
+  <div class="muh-box-row"><span class="muh-box-month">जानेवारी</span><span class="muh-box-dates">१, ५, ७, २४, २६, २८</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">फेब्रुवारी</span><span class="muh-box-dates">६, ७, १३, २०, २६, २८</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">मार्च</span><span class="muh-box-dates">५, १४, १६</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">एप्रिल</span><span class="muh-box-dates">२३, २४, २९</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">मे</span><span class="muh-box-dates">१, ६, ८, ९, १३, १४</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">जून</span><span class="muh-box-dates">१७, २२, २४, २७</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">जुलै</span><span class="muh-box-dates">१, ८, ९, ११</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">ऑगस्ट</span><span class="muh-box-dates">२०, २६, २८</span></div>
+  <div class="muh-box-row" style="border-bottom:none;"><span class="muh-box-month">सप्टेंबर</span><span class="muh-box-dates">४, ७</span></div>
  </div>
  </div>
 
  <!-- VIVAH -->
  <div id="muh-vivah" class="muh-section" style="display:none;">
- <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.82rem;color:var(--txm);text-align:center;margin-bottom:20px;">२०२६ विवाह शुभ मुहूर्त</div>
- <div class="muh-month-grid">
- <div class="muh-month-card"><div class="mc-month">जानेवारी</div><div class="mc-dates no-date">मुहूर्त नाही</div></div>
- <div class="muh-month-card"><div class="mc-month">फेब्रुवारी</div><div class="mc-dates">३, ५, ६, ७, ८, १०, ११, १२, २०, २२, २५, २६</div></div>
- <div class="muh-month-card"><div class="mc-month">मार्च</div><div class="mc-dates">५, ७, ८, १२, १४, १५, १६</div></div>
- <div class="muh-month-card"><div class="mc-month">एप्रिल</div><div class="mc-dates">२१, २६, २८, २९, ३०</div></div>
- <div class="muh-month-card"><div class="mc-month">मे</div><div class="mc-dates">१, ३, ६, ७, ८, ९, १०, १३, १४</div></div>
- <div class="muh-month-card"><div class="mc-month">जून</div><div class="mc-dates">१९, २०, २२, २३, २४, २७</div></div>
- <div class="muh-month-card"><div class="mc-month">जुलै</div><div class="mc-dates">१, २, ३, ४, ७, ८, ९, ११</div></div>
- <div class="muh-month-card"><div class="mc-month">ऑगस्ट – डिसेंबर</div><div class="mc-dates no-date">मुहूर्त नाही</div></div>
+ <div class="muh-single-box">
+  <div class="muh-box-header">💍 विवाह शुभ मुहूर्त २०२६</div>
+  <div class="muh-box-row"><span class="muh-box-month">जानेवारी</span><span class="muh-box-dates muh-no-date">मुहूर्त नाही</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">फेब्रुवारी</span><span class="muh-box-dates">३, ५, ६, ७, ८, १०, ११, १२, २०, २२, २५, २६</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">मार्च</span><span class="muh-box-dates">५, ७, ८, १२, १४, १५, १६</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">एप्रिल</span><span class="muh-box-dates">२१, २६, २८, २९, ३०</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">मे</span><span class="muh-box-dates">१, ३, ६, ७, ८, ९, १०, १३, १४</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">जून</span><span class="muh-box-dates">१९, २०, २२, २३, २४, २७</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">जुलै</span><span class="muh-box-dates">१, २, ३, ४, ७, ८, ९, ११</span></div>
+  <div class="muh-box-row" style="border-bottom:none;"><span class="muh-box-month">ऑगस्ट – डिसेंबर</span><span class="muh-box-dates muh-no-date">मुहूर्त नाही</span></div>
  </div>
  </div>
 
  <!-- SAKHARPUDA -->
  <div id="muh-sakharpuda" class="muh-section" style="display:none;">
- <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.82rem;color:var(--txm);text-align:center;margin-bottom:20px;">२०२६ साखरपुडा शुभ मुहूर्त</div>
- <div class="muh-month-grid">
- <div class="muh-month-card"><div class="mc-month">जानेवारी</div><div class="mc-dates">१, २, ८, १०, ११, १२, १९, २०, २४, २५, २८</div></div>
- <div class="muh-month-card"><div class="mc-month">फेब्रुवारी</div><div class="mc-dates">३, ५, ६, ७, १०, १२, १३, २०, २१, २२, २५</div></div>
- <div class="muh-month-card"><div class="mc-month">मार्च</div><div class="mc-dates">५, ७, ८, १४, १५, २०, २१, २४, २९, ३१</div></div>
- <div class="muh-month-card"><div class="mc-month">एप्रिल</div><div class="mc-dates">३, ४, ८, १०, ११, १२, २१, २६, २८, २९, ३०</div></div>
- <div class="muh-month-card"><div class="mc-month">मे</div><div class="mc-dates">१, ३, ६, ९, १०, १३, १८, २३, २५, २८, ३१</div></div>
- <div class="muh-month-card"><div class="mc-month">जून</div><div class="mc-dates">२, ४, ५, ९, १०, ११, १९, २३, २४, २७</div></div>
- <div class="muh-month-card"><div class="mc-month">जुलै</div><div class="mc-dates">१, ३, ४, ७, ८, ११, १९, २०, २४, २६, २९, ३०, ३१</div></div>
- <div class="muh-month-card"><div class="mc-month">ऑगस्ट</div><div class="mc-dates">३, ४, ५, ८, ९, १३, १५, १६, १८, २०, २२, २३, २६, ३०, ३१</div></div>
- <div class="muh-month-card"><div class="mc-month">सप्टेंबर</div><div class="mc-dates">४, ५, १२, १३, १५, १७, १९, २१, २३, २६</div></div>
- <div class="muh-month-card"><div class="mc-month">ऑक्टोबर</div><div class="mc-dates">१२, १४, १६, १९, २०, २१, २४, २५, २६, २९</div></div>
- <div class="muh-month-card"><div class="mc-month">नोव्हेंबर</div><div class="mc-dates">३, १२, १५, १६, १७, २५, २६</div></div>
- <div class="muh-month-card"><div class="mc-month">डिसेंबर</div><div class="mc-dates">२, ४, ५, १०, १२, १३, १४, १८, १९, २२, ३०, ३१</div></div>
+ <div class="muh-single-box">
+  <div class="muh-box-header">💛 साखरपुडा शुभ मुहूर्त २०२६</div>
+  <div class="muh-box-row"><span class="muh-box-month">जानेवारी</span><span class="muh-box-dates">१, २, ८, १०, ११, १२, १९, २०, २४, २५, २८</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">फेब्रुवारी</span><span class="muh-box-dates">३, ५, ६, ७, १०, १२, १३, २०, २१, २२, २५</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">मार्च</span><span class="muh-box-dates">५, ७, ८, १४, १५, २०, २१, २४, २९, ३१</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">एप्रिल</span><span class="muh-box-dates">३, ४, ८, १०, ११, १२, २१, २६, २८, २९, ३०</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">मे</span><span class="muh-box-dates">१, ३, ६, ९, १०, १३, १८, २३, २५, २८, ३१</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">जून</span><span class="muh-box-dates">२, ४, ५, ९, १०, ११, १९, २३, २४, २७</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">जुलै</span><span class="muh-box-dates">१, ३, ४, ७, ८, ११, १९, २०, २४, २६, २९, ३०, ३१</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">ऑगस्ट</span><span class="muh-box-dates">३, ४, ५, ८, ९, १३, १५, १६, १८, २०, २२, २३, २६, ३०, ३१</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">सप्टेंबर</span><span class="muh-box-dates">४, ५, १२, १३, १५, १७, १९, २१, २३, २६</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">ऑक्टोबर</span><span class="muh-box-dates">१२, १४, १६, १९, २०, २१, २४, २५, २६, २९</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">नोव्हेंबर</span><span class="muh-box-dates">३, १२, १५, १६, १७, २५, २६</span></div>
+  <div class="muh-box-row" style="border-bottom:none;"><span class="muh-box-month">डिसेंबर</span><span class="muh-box-dates">२, ४, ५, १०, १२, १३, १४, १८, १९, २२, ३०, ३१</span></div>
  </div>
  </div>
 
  <!-- DOHALA JEVAN -->
  <div id="muh-dohala" class="muh-section" style="display:none;">
- <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.82rem;color:var(--txm);text-align:center;margin-bottom:20px;">२०२६ दोहाळे जेवण शुभ मुहूर्त</div>
- <div class="muh-month-grid">
- <div class="muh-month-card"><div class="mc-month">जानेवारी</div><div class="mc-dates">२, ५, १९, २०, २५, २९</div></div>
- <div class="muh-month-card"><div class="mc-month">फेब्रुवारी</div><div class="mc-dates">१, ६, २२, २५, २६</div></div>
- <div class="muh-month-card"><div class="mc-month">मार्च</div><div class="mc-dates">५, ९, २५, २६, २७</div></div>
- <div class="muh-month-card"><div class="mc-month">एप्रिल</div><div class="mc-dates">२, ६, २१, २३, २४, २९</div></div>
- <div class="muh-month-card"><div class="mc-month">मे</div><div class="mc-dates">३, ६, १८, २१, ३१</div></div>
- <div class="muh-month-card"><div class="mc-month">जून</div><div class="mc-dates">२, ५, १६, १७, २२, २३, २९</div></div>
- <div class="muh-month-card"><div class="mc-month">जुलै</div><div class="mc-dates">२, १५, १९, २०, २४, २६, २९, ३०</div></div>
- <div class="muh-month-card"><div class="mc-month">ऑगस्ट</div><div class="mc-dates">१६, २०, २३, २६</div></div>
- <div class="muh-month-card"><div class="mc-month">सप्टेंबर</div><div class="mc-dates">१३, १६, १७</div></div>
- <div class="muh-month-card"><div class="mc-month">ऑक्टोबर</div><div class="mc-dates">१४, १६, १९, २०, २६, २९</div></div>
- <div class="muh-month-card"><div class="mc-month">नोव्हेंबर</div><div class="mc-dates">१०, ११, १२, १६, २६</div></div>
- <div class="muh-month-card"><div class="mc-month">डिसेंबर</div><div class="mc-dates">१०, १३, २५</div></div>
+ <div class="muh-single-box">
+  <div class="muh-box-header">🤱 दोहाळे जेवण शुभ मुहूर्त २०२६</div>
+  <div class="muh-box-row"><span class="muh-box-month">जानेवारी</span><span class="muh-box-dates">२, ५, १९, २०, २५, २९</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">फेब्रुवारी</span><span class="muh-box-dates">१, ६, २२, २५, २६</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">मार्च</span><span class="muh-box-dates">५, ९, २५, २६, २७</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">एप्रिल</span><span class="muh-box-dates">२, ६, २१, २३, २४, २९</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">मे</span><span class="muh-box-dates">३, ६, १८, २१, ३१</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">जून</span><span class="muh-box-dates">२, ५, १६, १७, २२, २३, २९</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">जुलै</span><span class="muh-box-dates">२, १५, १९, २०, २४, २६, २९, ३०</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">ऑगस्ट</span><span class="muh-box-dates">१६, २०, २३, २६</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">सप्टेंबर</span><span class="muh-box-dates">१३, १६, १७</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">ऑक्टोबर</span><span class="muh-box-dates">१४, १६, १९, २०, २६, २९</span></div>
+  <div class="muh-box-row"><span class="muh-box-month">नोव्हेंबर</span><span class="muh-box-dates">१०, ११, १२, १६, २६</span></div>
+  <div class="muh-box-row" style="border-bottom:none;"><span class="muh-box-month">डिसेंबर</span><span class="muh-box-dates">१०, १३, २५</span></div>
  </div>
  </div>
 
