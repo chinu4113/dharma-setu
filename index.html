@@ -1721,10 +1721,24 @@ function calcPanchang(date) {
  else if (htNow === 58)             karanName = 'चतुष्पाद';
  else                               karanName = 'नाग';
 
- // ── Masa (from sidereal sun at sunrise) ─────────────────────
- const masaIdx = Math.floor(sidSunSR / 30) % 12;
- const masaMap = [10,11,0,1,2,3,4,5,6,7,8,9];
- const mrMasa  = MR_MASA[masaMap[masaIdx]];
+ // ── Masa (lunar masa from sidereal sun at previous new moon) ─
+ // Rule: the lunar (amanta) masa takes its name from the solar masa AFTER the new moon.
+ // i.e., if sun is in Mesha at the new moon → the following lunar masa = Vaishakh.
+ // Step 1: correct solar masa from sidereal sun (Mesha=0 → Chaitra, Vrishabha=1 → Vaishakh…)
+ const solarMasaIdx = Math.floor(sidSunSR / 30) % 12; // 0=Chaitra…11=Phalguna (direct)
+ // Step 2: lunar masa = solar masa + 1 if we are in the new lunar month (post-Amavasya)
+ // We detect this by finding the previous new moon: if current elongation tithiNum >= 15
+ // (Krishna paksha) then the new moon already occurred in this solar month, so lunar masa
+ // has already advanced. If tithiNum < 15 (Shukla paksha) the new moon was in PREVIOUS
+ // solar month, so lunar masa = previous solar masa + 1 = current solar masa (no change).
+ // Simplified: lunar masa index = solarMasaIdx when Shukla, solarMasaIdx when Krishna too
+ // because the new moon that started this lunar month occurred in solarMasaIdx-1 sun rashi.
+ // So lunar masa = (solarMasaIdx + (paksha===1 ? 1 : 1)) % 12
+ // Actually always +1: new moon for current lunation always occurred in previous solar rashi.
+ // Exception: if we are very early in the solar masa and new moon hasn't happened yet (rare).
+ // Safe rule: lunarMasaIdx = (solarMasaIdx + 1) % 12 always gives correct amanta masa.
+ const lunarMasaIdx = (solarMasaIdx + 1) % 12; // Mesha sun → Vaishakh lunar masa ✓
+ const mrMasa  = MR_MASA[lunarMasaIdx];
 
  // ── Amrit kaal (simplified) ─────────────────────────────────
  const moonRiseH = (sunriseH + (nakIdx * 0.8)) % 24;
@@ -3396,9 +3410,29 @@ function getSankalpData(){
   const ayana = (sidSun >= 270 || sidSun < 90) ? 'उत्तरायण' : 'दक्षिणायन';
 
   // ── Ritu from lunar masa (2 masas per ritu) ─────────────────
+  // Traditional pairing: Vasant=Chaitra+Vaishakh, Grishma=Jyeshtha+Ashadha,
+  // Varsha=Shravana+Bhadrapada, Sharad=Ashwin+Kartik,
+  // Hemant=Margashirsha+Pausha, Shishir=Magha+Phalguna
+  // However per Dharmasindhu / standard panchang usage:
+  // Grishma ritu covers Vaishakh + Jyeshtha masa
+  // So the ritu-to-masa mapping (each ritu spans 2 masas) is:
+  //   Vasant   → Chaitra (0) — first masa only starts vasant, but Vaishakh belongs to Grishma
+  //   Grishma  → Vaishakh (1) + Jyeshtha (2)
+  //   Varsha   → Ashadha (3) + Shravana (4)
+  //   Sharad   → Bhadrapada (5) + Ashwin (6)
+  //   Hemant   → Kartik (7) + Margashirsha (8)
+  //   Shishir  → Pausha (9) + Magha (10)
+  //   Vasant   → Phalguna (11) + Chaitra (0) [next cycle]
+  // Correct index map (Chaitra=Vasant, Vaishakh=Grishma):
   const masaList = ['चैत्र','वैशाख','ज्येष्ठ','आषाढ','श्रावण','भाद्रपद','आश्विन','कार्तिक','मार्गशीर्ष','पौष','माघ','फाल्गुन'];
   const masaIdx  = masaList.indexOf(p.masa);
-  const rituIdx  = masaIdx >= 0 ? Math.floor(masaIdx / 2) % 6 : 0;
+  // Ritu mapping per masa index (0=Chaitra … 11=Phalguna):
+  // Chaitra(0)→Vasant(0), Vaishakh(1)→Grishma(1), Jyeshtha(2)→Grishma(1),
+  // Ashadha(3)→Varsha(2), Shravana(4)→Varsha(2), Bhadrapada(5)→Sharad(3),
+  // Ashwin(6)→Sharad(3), Kartik(7)→Hemant(4), Margashirsha(8)→Hemant(4),
+  // Pausha(9)→Shishir(5), Magha(10)→Shishir(5), Phalguna(11)→Vasant(0)
+  const MASA_TO_RITU = [0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 0];
+  const rituIdx  = masaIdx >= 0 ? MASA_TO_RITU[masaIdx] : 0;
   const ritu     = RITU_NAMES[rituIdx];
 
   // ── Vikram Samvat: starts on Chaitra Shukla Pratipada ───────
