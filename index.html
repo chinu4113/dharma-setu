@@ -736,190 +736,303 @@ footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:
 <div class="sec sec-dk">
   <div class="stitle">नवग्रह मंत्र</div>
   <div class="sdiv"><div class="sdiv-line"></div><div class="sdiv-sym">ॐ</div><div class="sdiv-line"></div></div>
-  <p style="text-align:center;font-family:'Tiro Devanagari Sanskrit',serif;color:rgba(255,248,200,0.72);margin-bottom:32px;font-size:0.97rem;">वैदिक ज्योतिषानुसार नऊ ग्रहांचे बीज मंत्र, मूल मंत्र, पुराणोक्त मंत्र व वेदोक्त मंत्र</p>
+  <p style="text-align:center;font-family:'Tiro Devanagari Sanskrit',serif;color:rgba(255,248,200,0.72);margin-bottom:36px;font-size:0.97rem;">वैदिक ज्योतिषानुसार नऊ ग्रहांचे बीज मंत्र, मूल मंत्र, पुराणोक्त मंत्र व वेदोक्त मंत्र</p>
 
-  <!-- Single Box with all 9 planets -->
-  <div style="max-width:900px;margin:0 auto;background:rgba(255,248,200,0.04);border:1.5px solid rgba(212,160,23,0.4);border-radius:18px;overflow:hidden;">
+  <!-- Single Box -->
+  <div class="ngt-box">
 
     <!-- Box Header -->
-    <div style="background:linear-gradient(135deg,rgba(180,100,0,0.5),rgba(100,40,0,0.7));padding:18px 24px;text-align:center;border-bottom:1px solid rgba(212,160,23,0.35);">
-      <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.7rem;color:var(--g);letter-spacing:2px;margin-bottom:4px;">॥ नवग्रह मंत्र संग्रह ॥</div>
-      <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;color:var(--gl);">सर्व नऊ ग्रहांचे संपूर्ण मंत्र</div>
+    <div class="ngt-box-header">
+      <div class="ngt-box-title">॥ नवग्रह मंत्र संग्रह ॥</div>
+      <div class="ngt-box-sub">सर्व नऊ ग्रहांचे संपूर्ण मंत्र</div>
     </div>
 
-    <!-- Column Headers -->
-    <div style="display:grid;grid-template-columns:90px 1fr 1fr 1fr;background:rgba(212,160,23,0.1);border-bottom:1.5px solid rgba(212,160,23,0.3);">
-      <div style="padding:12px 10px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.65rem;color:var(--g);letter-spacing:1px;text-align:center;border-right:1px solid rgba(212,160,23,0.2);">ग्रह</div>
-      <div style="padding:12px 10px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.65rem;color:var(--g);letter-spacing:1px;text-align:center;border-right:1px solid rgba(212,160,23,0.2);">बीज मंत्र · मूल मंत्र</div>
-      <div style="padding:12px 10px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.65rem;color:var(--g);letter-spacing:1px;text-align:center;border-right:1px solid rgba(212,160,23,0.2);">पुराणोक्त मंत्र</div>
-      <div style="padding:12px 10px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.65rem;color:var(--g);letter-spacing:1px;text-align:center;">वेदोक्त मंत्र</div>
+    <!-- Column Header Row -->
+    <div class="ngt-row ngt-col-header">
+      <div class="ngt-planet-col">ग्रह</div>
+      <div class="ngt-mantra-group">
+        <div class="ngt-col-lbl">बीज मंत्र</div>
+        <div class="ngt-col-lbl">मूल मंत्र</div>
+        <div class="ngt-col-lbl">पुराणोक्त मंत्र</div>
+        <div class="ngt-col-lbl">वेदोक्त मंत्र</div>
+      </div>
     </div>
 
-    <!-- Surya Row -->
-    <div class="ng-row">
-      <div class="ng-planet-cell">सूर्य<span>Surya</span></div>
-      <div class="ng-mantra-cell">
-        <div class="ng-beej">ॐ ह्रीं ह्रौं सूर्याय नमः</div>
-        <div class="ng-mool">ॐ सूर्याय नमः</div>
+    <!-- Surya -->
+    <div class="ngt-row">
+      <div class="ngt-planet-col">
+        <div class="ngt-pname">सूर्य</div>
+        <div class="ngt-peng">Surya</div>
       </div>
-      <div class="ng-mantra-cell">ॐ कुसुम संकाशं काश्यपेयं महाद्युतिं ।<br>तमोऽरिं सर्व पापघ्नं प्रणतोस्मि दिवाकरं ॥</div>
-      <div class="ng-mantra-cell">ॐ आकृष्णेन रजसा वर्तमानो निवेशयन्नमृतम् मर्त्यञ्च ।<br>हिरण्ययेन सविता रथेना देवो याति भुवनानि पश्यन् ॥</div>
-
-    <!-- Chandra Row -->
-    <div class="ng-row ng-row-alt">
-      <div class="ng-planet-cell">चंद्र<span>Chandra</span></div>
-      <div class="ng-mantra-cell">
-        <div class="ng-beej">ॐ ऐं क्लीं सोमाय नमः</div>
-        <div class="ng-mool">ॐ चंद्राय नमः</div>
+      <div class="ngt-mantra-group">
+        <div class="ngt-mantra ngt-beej">ॐ ह्रीं ह्रौं सूर्याय नमः</div>
+        <div class="ngt-mantra ngt-mool">ॐ सूर्याय नमः</div>
+        <div class="ngt-mantra">ॐ कुसुम संकाशं काश्यपेयं महाद्युतिं ।<br>तमोऽरिं सर्व पापघ्नं प्रणतोस्मि दिवाकरं ॥</div>
+        <div class="ngt-mantra">ॐ आकृष्णेन रजसा वर्तमानो निवेशयन्नमृतम् मर्त्यञ्च ।<br>हिरण्ययेन सविता रथेना देवो याति भुवनानि पश्यन् ॥</div>
       </div>
-      <div class="ng-mantra-cell">ॐ दधिशंख तुषाराभं क्षीरोदार्णव संभवं ।<br>नमामि शशिनं सोमं शंभोर्मुकुट भूषणं ॥</div>
-      <div class="ng-mantra-cell">ॐ इमं देवा असपत्नं सुवध्वं महते क्षत्राय ।<br>सोमोऽस्माकं ब्राह्मणानां राजा ॥</div>
+    </div>
 
-    <!-- Mangal Row -->
-    <div class="ng-row">
-      <div class="ng-planet-cell">मंगळ<span>Mangal</span></div>
-      <div class="ng-mantra-cell">
-        <div class="ng-beej">ॐ हूं श्रीं भौमाय नमः</div>
-        <div class="ng-mool">ॐ मंगलाय नमः</div>
+    <!-- Chandra -->
+    <div class="ngt-row ngt-row-alt">
+      <div class="ngt-planet-col">
+        <div class="ngt-pname">चंद्र</div>
+        <div class="ngt-peng">Chandra</div>
       </div>
-      <div class="ng-mantra-cell">ॐ धरणीगर्भ संभूतं विद्युत्कांति समप्रभं ।<br>कुमारं शक्ति हस्तं च मंगलं प्रणमाम्यहं ॥</div>
-      <div class="ng-mantra-cell">ॐ अग्निमूर्धा दिवः ककुत्पतिः पृथिव्या अयम् ।<br>अपां रेतांसि जिन्वति ॥</div>
-
-    <!-- Budh Row -->
-    <div class="ng-row ng-row-alt">
-      <div class="ng-planet-cell">बुध<span>Budha</span></div>
-      <div class="ng-mantra-cell">
-        <div class="ng-beej">ॐ ऐं श्रीं श्रीं बुधाय नमः</div>
-        <div class="ng-mool">ॐ बुधाय नमः</div>
+      <div class="ngt-mantra-group">
+        <div class="ngt-mantra ngt-beej">ॐ ऐं क्लीं सोमाय नमः</div>
+        <div class="ngt-mantra ngt-mool">ॐ चंद्राय नमः</div>
+        <div class="ngt-mantra">ॐ दधिशंख तुषाराभं क्षीरोदार्णव संभवं ।<br>नमामि शशिनं सोमं शंभोर्मुकुट भूषणं ॥</div>
+        <div class="ngt-mantra">ॐ इमं देवा असपत्नं सुवध्वं महते क्षत्राय ।<br>सोमोऽस्माकं ब्राह्मणानां राजा ॥</div>
       </div>
-      <div class="ng-mantra-cell">ॐ प्रियंगु कलिकाश्यामं रूपेणां प्रतिमं बुधं ।<br>सौम्यं सौम्य गुणोपेतं बुधं प्रणमाम्यहं ॥</div>
-      <div class="ng-mantra-cell">ॐ उद्बुध्यस्वाग्ने प्रतिजागृहि त्वमिष्टापूर्ते सँस्रजेथाम् ।<br>विश्वे देवा यजमानश्च सीदत ॥</div>
+    </div>
 
-    <!-- Guru Row -->
-    <div class="ng-row">
-      <div class="ng-planet-cell">गुरु<span>Brihaspati</span></div>
-      <div class="ng-mantra-cell">
-        <div class="ng-beej">ॐ ह्रीं क्लीं हूं बृहस्पतये नमः</div>
-        <div class="ng-mool">ॐ गुरवे नमः</div>
+    <!-- Mangal -->
+    <div class="ngt-row">
+      <div class="ngt-planet-col">
+        <div class="ngt-pname">मंगळ</div>
+        <div class="ngt-peng">Mangal</div>
       </div>
-      <div class="ng-mantra-cell">ॐ देवानां च ऋषीणां च गुरुं कांचन सन्निभं ।<br>बुद्धिभूतं त्रिलोकेशं तं नमामि बृहस्पतिं ॥</div>
-      <div class="ng-mantra-cell">ॐ बृहस्पते अतियदर्यो अर्हाद् द्युमद्विभाति ।<br>तदस्मासु द्रविणं धेहि चित्रम् ॥</div>
-
-    <!-- Shukra Row -->
-    <div class="ng-row ng-row-alt">
-      <div class="ng-planet-cell">शुक्र<span>Shukra</span></div>
-      <div class="ng-mantra-cell">
-        <div class="ng-beej">ॐ हरिं श्रीं शुक्राय नमः</div>
-        <div class="ng-mool">ॐ शुक्राय नमः</div>
+      <div class="ngt-mantra-group">
+        <div class="ngt-mantra ngt-beej">ॐ हूं श्रीं भौमाय नमः</div>
+        <div class="ngt-mantra ngt-mool">ॐ मंगलाय नमः</div>
+        <div class="ngt-mantra">ॐ धरणीगर्भ संभूतं विद्युत्कांति समप्रभं ।<br>कुमारं शक्ति हस्तं च मंगलं प्रणमाम्यहं ॥</div>
+        <div class="ngt-mantra">ॐ अग्निमूर्धा दिवः ककुत्पतिः पृथिव्या अयम् ।<br>अपां रेतांसि जिन्वति ॥</div>
       </div>
-      <div class="ng-mantra-cell">ॐ हिमकुंद मृणालाभं दैत्यानां परमं गुरुं ।<br>सर्वशास्त्र प्रवक्तारं भार्गवं प्रणमाम्यहं ॥</div>
-      <div class="ng-mantra-cell">ॐ अन्नात्परिस्रुतो रसं ब्रह्मणा व्यपिबत् ।<br>शुक्रमन्धस इन्द्रस्येन्द्रियमिदं पयोऽमृतं मधु ॥</div>
+    </div>
 
-    <!-- Shani Row -->
-    <div class="ng-row">
-      <div class="ng-planet-cell">शनि<span>Shani</span></div>
-      <div class="ng-mantra-cell">
-        <div class="ng-beej">ॐ ऐं ह्रीं श्रीं शनैश्चराय नमः</div>
-        <div class="ng-mool">ॐ शनैश्चराय नमः</div>
+    <!-- Budha -->
+    <div class="ngt-row ngt-row-alt">
+      <div class="ngt-planet-col">
+        <div class="ngt-pname">बुध</div>
+        <div class="ngt-peng">Budha</div>
       </div>
-      <div class="ng-mantra-cell">ॐ नीलांजन समाभासं रविपुत्रं यमाग्रजं ।<br>छाया मार्तांड संभूतं तं नमामि शनेश्वरं ॥</div>
-      <div class="ng-mantra-cell">ॐ शं नो देवीरभिष्टय आपो भवन्तु पीतये ।<br>शं योरभि स्रवन्तु नः ॥</div>
-
-    <!-- Rahu Row -->
-    <div class="ng-row ng-row-alt">
-      <div class="ng-planet-cell">राहू<span>Rahu</span></div>
-      <div class="ng-mantra-cell">
-        <div class="ng-beej">ॐ ऐं ह्रीं राहवे नमः</div>
-        <div class="ng-mool">ॐ राहवे नमः</div>
+      <div class="ngt-mantra-group">
+        <div class="ngt-mantra ngt-beej">ॐ ऐं श्रीं श्रीं बुधाय नमः</div>
+        <div class="ngt-mantra ngt-mool">ॐ बुधाय नमः</div>
+        <div class="ngt-mantra">ॐ प्रियंगु कलिकाश्यामं रूपेणां प्रतिमं बुधं ।<br>सौम्यं सौम्य गुणोपेतं बुधं प्रणमाम्यहं ॥</div>
+        <div class="ngt-mantra">ॐ उद्बुध्यस्वाग्ने प्रतिजागृहि त्वमिष्टापूर्ते सँस्रजेथाम् ।<br>विश्वे देवा यजमानश्च सीदत ॥</div>
       </div>
-      <div class="ng-mantra-cell">ॐ अर्धकायं महावीर्यं चंद्रादित्य विमर्धनं ।<br>सिंहिका गर्भ संभूतं तं राहुं प्रणमाम्यहं ॥</div>
-      <div class="ng-mantra-cell">ॐ कयानश्चित्र आ भुवदूती सदावृधः सखा ।<br>कया शचिष्ठया वृता ॥</div>
+    </div>
 
-    <!-- Ketu Row -->
-    <div class="ng-row" style="border-bottom:none;">
-      <div class="ng-planet-cell">केतू<span>Ketu</span></div>
-      <div class="ng-mantra-cell">
-        <div class="ng-beej">ॐ ह्रीं ऐं केतवे नमः</div>
-        <div class="ng-mool">ॐ केतवे नमः</div>
+    <!-- Guru -->
+    <div class="ngt-row">
+      <div class="ngt-planet-col">
+        <div class="ngt-pname">गुरु</div>
+        <div class="ngt-peng">Brihaspati</div>
       </div>
-      <div class="ng-mantra-cell">ॐ फलाशपुष्प संकाशं तारकाग्रह मस्तकं ।<br>रौद्रं रौद्रात्मकं घोरं तं केतुं प्रणमाम्यहं ॥</div>
-      <div class="ng-mantra-cell">ॐ केतुं कृण्वन्नकेतवे पेशो मर्या अपेशसे ।<br>समुषद्भिरजायथाः ॥</div>
+      <div class="ngt-mantra-group">
+        <div class="ngt-mantra ngt-beej">ॐ ह्रीं क्लीं हूं बृहस्पतये नमः</div>
+        <div class="ngt-mantra ngt-mool">ॐ गुरवे नमः</div>
+        <div class="ngt-mantra">ॐ देवानां च ऋषीणां च गुरुं कांचन सन्निभं ।<br>बुद्धिभूतं त्रिलोकेशं तं नमामि बृहस्पतिं ॥</div>
+        <div class="ngt-mantra">ॐ बृहस्पते अतियदर्यो अर्हाद् द्युमद्विभाति ।<br>तदस्मासु द्रविणं धेहि चित्रम् ॥</div>
+      </div>
+    </div>
 
-  </div><!-- /main box -->
+    <!-- Shukra -->
+    <div class="ngt-row ngt-row-alt">
+      <div class="ngt-planet-col">
+        <div class="ngt-pname">शुक्र</div>
+        <div class="ngt-peng">Shukra</div>
+      </div>
+      <div class="ngt-mantra-group">
+        <div class="ngt-mantra ngt-beej">ॐ हरिं श्रीं शुक्राय नमः</div>
+        <div class="ngt-mantra ngt-mool">ॐ शुक्राय नमः</div>
+        <div class="ngt-mantra">ॐ हिमकुंद मृणालाभं दैत्यानां परमं गुरुं ।<br>सर्वशास्त्र प्रवक्तारं भार्गवं प्रणमाम्यहं ॥</div>
+        <div class="ngt-mantra">ॐ अन्नात्परिस्रुतो रसं ब्रह्मणा व्यपिबत् ।<br>शुक्रमन्धस इन्द्रस्येन्द्रियमिदं पयोऽमृतं मधु ॥</div>
+      </div>
+    </div>
 
+    <!-- Shani -->
+    <div class="ngt-row">
+      <div class="ngt-planet-col">
+        <div class="ngt-pname">शनि</div>
+        <div class="ngt-peng">Shani</div>
+      </div>
+      <div class="ngt-mantra-group">
+        <div class="ngt-mantra ngt-beej">ॐ ऐं ह्रीं श्रीं शनैश्चराय नमः</div>
+        <div class="ngt-mantra ngt-mool">ॐ शनैश्चराय नमः</div>
+        <div class="ngt-mantra">ॐ नीलांजन समाभासं रविपुत्रं यमाग्रजं ।<br>छाया मार्तांड संभूतं तं नमामि शनेश्वरं ॥</div>
+        <div class="ngt-mantra">ॐ शं नो देवीरभिष्टय आपो भवन्तु पीतये ।<br>शं योरभि स्रवन्तु नः ॥</div>
+      </div>
+    </div>
 
+    <!-- Rahu -->
+    <div class="ngt-row ngt-row-alt">
+      <div class="ngt-planet-col">
+        <div class="ngt-pname">राहू</div>
+        <div class="ngt-peng">Rahu</div>
+      </div>
+      <div class="ngt-mantra-group">
+        <div class="ngt-mantra ngt-beej">ॐ ऐं ह्रीं राहवे नमः</div>
+        <div class="ngt-mantra ngt-mool">ॐ राहवे नमः</div>
+        <div class="ngt-mantra">ॐ अर्धकायं महावीर्यं चंद्रादित्य विमर्धनं ।<br>सिंहिका गर्भ संभूतं तं राहुं प्रणमाम्यहं ॥</div>
+        <div class="ngt-mantra">ॐ कयानश्चित्र आ भुवदूती सदावृधः सखा ।<br>कया शचिष्ठया वृता ॥</div>
+      </div>
+    </div>
 
+    <!-- Ketu -->
+    <div class="ngt-row ngt-last">
+      <div class="ngt-planet-col">
+        <div class="ngt-pname">केतू</div>
+        <div class="ngt-peng">Ketu</div>
+      </div>
+      <div class="ngt-mantra-group">
+        <div class="ngt-mantra ngt-beej">ॐ ह्रीं ऐं केतवे नमः</div>
+        <div class="ngt-mantra ngt-mool">ॐ केतवे नमः</div>
+        <div class="ngt-mantra">ॐ फलाशपुष्प संकाशं तारकाग्रह मस्तकं ।<br>रौद्रं रौद्रात्मकं घोरं तं केतुं प्रणमाम्यहं ॥</div>
+        <div class="ngt-mantra">ॐ केतुं कृण्वन्नकेतवे पेशो मर्या अपेशसे ।<br>समुषद्भिरजायथाः ॥</div>
+      </div>
+    </div>
+
+  </div><!-- /ngt-box -->
 </div>
 </div>
 
 <style>
-.ng-row{
-  display:grid;
-  grid-template-columns:90px 1fr 1fr 1fr;
-  border-bottom:1px solid rgba(212,160,23,0.18);
-  align-items:start;
+/* ── Single Navagraha Box ───────────────────────── */
+.ngt-box {
+  max-width: 1000px;
+  margin: 0 auto;
+  border: 1.5px solid rgba(212,160,23,0.45);
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255,248,200,0.03);
 }
-.ng-row-alt{
-  background:rgba(212,160,23,0.04);
+.ngt-box-header {
+  background: linear-gradient(135deg,rgba(180,100,0,0.55),rgba(80,30,0,0.75));
+  padding: 18px 24px;
+  text-align: center;
+  border-bottom: 1.5px solid rgba(212,160,23,0.4);
 }
-.ng-planet-cell{
-  padding:16px 10px;
-  font-family:'Tiro Devanagari Sanskrit',serif;
-  font-size:0.95rem;
-  font-weight:600;
-  color:var(--gl);
-  text-align:center;
-  border-right:1px solid rgba(212,160,23,0.2);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:3px;
+.ngt-box-title {
+  font-family: 'Tiro Devanagari Sanskrit', serif;
+  font-size: 0.78rem;
+  color: var(--g);
+  letter-spacing: 2px;
+  margin-bottom: 4px;
 }
-.ng-planet-cell span{
-  font-size:0.58rem;
-  color:rgba(212,160,23,0.6);
-  font-weight:400;
-  letter-spacing:0.5px;
-}
-.ng-mantra-cell{
-  padding:14px 12px;
-  font-family:'Tiro Devanagari Sanskrit',serif;
-  font-size:0.82rem;
-  color:rgba(255,248,200,0.85);
-  line-height:1.9;
-  border-right:1px solid rgba(212,160,23,0.2);
-}
-.ng-beej{
-  color:var(--gl);
-  font-size:0.88rem;
-  margin-bottom:6px;
-  font-weight:500;
-}
-.ng-mool{
-  color:rgba(255,248,200,0.6);
-  font-size:0.78rem;
-  font-style:italic;
+.ngt-box-sub {
+  font-family: 'Tiro Devanagari Sanskrit', serif;
+  font-size: 1rem;
+  color: var(--gl);
 }
 
-@media(max-width:680px){
-  .ng-row{grid-template-columns:1fr;}
-  .ng-planet-cell{
-    flex-direction:row;
-    justify-content:flex-start;
-    gap:8px;
-    background:rgba(212,160,23,0.12);
-    border-right:none;
-    border-bottom:1px solid rgba(212,160,23,0.2);
-    padding:10px 14px;
-    font-size:1rem;
+/* ── Column Header Row ──────────────────────────── */
+.ngt-col-header {
+  background: rgba(212,160,23,0.1) !important;
+  border-bottom: 1.5px solid rgba(212,160,23,0.35) !important;
+}
+.ngt-col-header .ngt-planet-col {
+  font-family: 'Tiro Devanagari Sanskrit', serif;
+  font-size: 0.65rem;
+  color: var(--g);
+  letter-spacing: 1px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ngt-col-lbl {
+  font-family: 'Tiro Devanagari Sanskrit', serif;
+  font-size: 0.65rem;
+  color: var(--g);
+  letter-spacing: 0.8px;
+  text-align: center;
+  padding: 4px 0;
+}
+
+/* ── Each Planet Row ────────────────────────────── */
+.ngt-row {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  border-bottom: 1px solid rgba(212,160,23,0.18);
+  align-items: stretch;
+}
+.ngt-last { border-bottom: none; }
+.ngt-row-alt { background: rgba(212,160,23,0.04); }
+
+/* ── Planet Name Cell ───────────────────────────── */
+.ngt-planet-col {
+  padding: 16px 10px;
+  text-align: center;
+  border-right: 1px solid rgba(212,160,23,0.22);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+.ngt-pname {
+  font-family: 'Tiro Devanagari Sanskrit', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gl);
+}
+.ngt-peng {
+  font-family: 'Tiro Devanagari Sanskrit', serif;
+  font-size: 0.58rem;
+  color: rgba(212,160,23,0.55);
+  letter-spacing: 0.5px;
+}
+
+/* ── 4-column mantra group ──────────────────────── */
+.ngt-mantra-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.6fr 1.6fr;
+}
+.ngt-mantra {
+  padding: 14px 12px;
+  font-family: 'Tiro Devanagari Sanskrit', serif;
+  font-size: 0.82rem;
+  color: rgba(255,248,200,0.82);
+  line-height: 1.9;
+  border-right: 1px solid rgba(212,160,23,0.15);
+}
+.ngt-mantra:last-child { border-right: none; }
+.ngt-beej {
+  color: var(--gl);
+  font-weight: 600;
+  font-size: 0.86rem;
+}
+.ngt-mool {
+  color: rgba(255,248,200,0.6);
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+/* ── Mobile: stack each planet as a block ───────── */
+@media (max-width: 680px) {
+  .ngt-col-header { display: none; }
+  .ngt-row { grid-template-columns: 1fr; }
+  .ngt-planet-col {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 10px 14px;
+    border-right: none;
+    border-bottom: 1px solid rgba(212,160,23,0.25);
+    background: rgba(212,160,23,0.1);
   }
-  .ng-mantra-cell{border-right:none;border-bottom:1px solid rgba(212,160,23,0.1);padding:10px 14px;}
-  .ng-japa-cell{border-top:1px solid rgba(212,160,23,0.1);padding:8px 14px;text-align:left;}
-  .ng-mantra-cell:first-of-type::before{content:attr(data-label);display:block;font-size:0.6rem;color:var(--g);letter-spacing:1px;margin-bottom:4px;}
+  .ngt-pname { font-size: 1rem; }
+  .ngt-peng { font-size: 0.7rem; }
+  .ngt-mantra-group { grid-template-columns: 1fr; }
+  .ngt-mantra {
+    border-right: none;
+    border-bottom: 1px solid rgba(212,160,23,0.1);
+    padding: 10px 14px;
+    font-size: 0.85rem;
+  }
+  .ngt-mantra:last-child { border-bottom: none; }
+  .ngt-mantra::before {
+    content: attr(data-lbl);
+    display: block;
+    font-size: 0.58rem;
+    color: var(--g);
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
 }
 </style>
-</script>
 
 <!-- AARTI SANGRAHA -->
 <div id="pg-aarti" class="pg">
