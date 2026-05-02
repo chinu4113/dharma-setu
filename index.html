@@ -325,6 +325,7 @@ footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:
  <a href="#" onclick="gp('booking');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#333;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;"> <span>Puja Booking <span style="font-size:12px;color:#888;margin-left:4px">पूजा बुकिंग</span></span></a>
  <a href="#" onclick="gp('about');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#333;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;"> <span>About Guruji <span style="font-size:12px;color:#888;margin-left:4px">गुरुजींबद्दल</span></span></a>
  <a href="#" onclick="gp('contact');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#333;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;"> <span>Contact <span style="font-size:12px;color:#888;margin-left:4px">संपर्क</span></span></a>
+ <a href="#" onclick="gp('karmakaand');toggleMenu();return false;" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#8B0000;font-weight:600;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;background:#fff8f0;"> <span>🪔 Karmakaand <span style="font-size:12px;color:#888;margin-left:4px;font-weight:400">कर्मकांड</span></span></a>
  <a href="#" onclick="openAuthOrProfile();toggleMenu();return false;" id="drawer-profile-link" style="display:flex;align-items:center;gap:12px;padding:14px 20px;color:#8B0000;font-weight:600;text-decoration:none;font-size:15px;border-bottom:0.5px solid #f0f0f0;background:#fff8f0;"> <span id="drawer-profile-label">माझे प्रोफाईल <span style="font-size:12px;color:#888;margin-left:4px;font-weight:400">साइन इन / My Account</span></span></a>
 
  <!-- Pooja Photos accordion in drawer -->
@@ -1311,6 +1312,119 @@ footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:
 
  </div>
  </div>
+</div>
+</div>
+
+<!-- KARMAKAAND PAGE -->
+<div id="pg-karmakaand" class="pg">
+<div class="sec sec-alt">
+ <div class="stitle">कर्मकांड</div>
+ <div class="sdiv"><div class="sdiv-line"></div><div class="sdiv-sym">🪔</div><div class="sdiv-line"></div></div>
+ <p style="max-width:720px;margin:0 auto 36px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:1.05rem;line-height:2;color:var(--txm);text-align:center;">
+  कर्मकांडामध्ये पूजा, पाठ, जप, हवन, शांती, संस्कार, श्राद्ध यांसारख्या सर्व गोष्टींचा समावेश होतो. कर्मकांड विधीद्वारे या सर्व पूजा पद्धतींशी संबंधित विधी आणि मंत्रांचा पुरेसा संग्रह येथे उपलब्ध आहे।
+ </p>
+
+ <!-- Sub-tabs -->
+ <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:32px;" id="kk-tabs">
+  <button class="stab on" onclick="showKKTab('praman',this)">प्रमाण</button>
+  <button class="stab" onclick="showKKTab('poojavidhi',this)">पूजा विधी</button>
+  <button class="stab" onclick="showKKTab('vratparva',this)">व्रत पर्व</button>
+  <button class="stab" onclick="showKKTab('navagraha',this)">नवग्रह शांती</button>
+  <button class="stab" onclick="showKKTab('havanvidhi',this)">हवन विधी</button>
+  <button class="stab" onclick="showKKTab('yadnya',this)">यज्ञ</button>
+  <button class="stab" onclick="showKKTab('pranpratishtha',this)">प्राण प्रतिष्ठा</button>
+ </div>
+
+ <!-- Tab panels -->
+ <div id="kk-praman" class="kk-panel" style="max-width:820px;margin:0 auto;">
+  <div style="background:#fff;border:1.5px solid var(--bd);border-radius:var(--rt);padding:32px 28px;box-shadow:0 4px 20px var(--sh);">
+   <h2 style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:1.35rem;color:var(--sd);margin-bottom:18px;border-bottom:1px solid var(--bd);padding-bottom:12px;">प्रमाण</h2>
+   <p style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;line-height:2.1;color:var(--tx);">
+    ही श्रेणी वेद, स्मृती, पुराण आणि धर्मशास्त्रांतील त्या श्लोक आणि सूत्रांचे प्रामाणिक संकलन आहे, जे कर्मकांडाच्या शुद्धतेचे निर्धारण करतात. येथे केवळ तथ्यांचा संग्रह आहे, मानसिक विश्लेषण नाही; कारण शास्त्र स्वतः सिद्ध आणि पूर्ण आहेत. या प्रमाणांचे सम्यक् अनुशीलन केल्यास, कोणत्याही 'कालनेमि'च्या पाखंडाला पराभूत करून शुद्ध सनातन धर्माची मर्यादा अक्षुण्ण राखता येईल।
+   </p>
+   <p style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;line-height:2.1;color:var(--tx);margin-top:16px;">
+    ही श्रेणी तीन स्तरांवर वाचकांना मार्गदर्शन करेल:
+   </p>
+   <div style="margin:16px 0 16px 8px;display:flex;flex-direction:column;gap:14px;">
+    <div style="background:var(--gp);border-left:3px solid var(--s);border-radius:6px;padding:14px 18px;">
+     <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.85rem;font-weight:600;color:var(--sd);margin-bottom:4px;">शुद्धतेचा मापदंड</div>
+     <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.92rem;color:var(--tx);line-height:1.8;">कर्मकांडात वापरल्या जाणाऱ्या द्रव्य, काल, विधी आणि मंत्र यांची प्रामाणिकता।</div>
+    </div>
+    <div style="background:var(--gp);border-left:3px solid var(--s);border-radius:6px;padding:14px 18px;">
+     <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.85rem;font-weight:600;color:var(--sd);margin-bottom:4px;">भ्रम निवारण</div>
+     <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.92rem;color:var(--tx);line-height:1.8;">समाजात प्रचलित कुरीती आणि मनघडंत पूजा पद्धतींविरुद्ध शास्त्रीय पुरावे।</div>
+    </div>
+    <div style="background:var(--gp);border-left:3px solid var(--s);border-radius:6px;padding:14px 18px;">
+     <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.85rem;font-weight:600;color:var(--sd);margin-bottom:4px;">स्वाध्यायाची प्रेरणा</div>
+     <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.92rem;color:var(--tx);line-height:1.8;">कर्मकांडी पंडितांना केवळ 'पोथी' वाचक न ठेवता 'शास्त्रज्ञ' बनवण्याचा प्रयत्न।</div>
+    </div>
+   </div>
+   <p style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;line-height:2.1;color:var(--tx);">
+    येथे संकलित प्रमाणे — जसे स्मृती, पुराण, निर्णय ग्रंथ, रामायण, महाभारत इत्यादी महत्त्वाच्या ग्रंथांतून घेतलेली आहेत, जी पंडितांसाठी 'प्रमाणपत्र' आणि यजमानांसाठी 'ज्ञानचक्षु' म्हणून कार्य करतील।
+   </p>
+  </div>
+ </div>
+
+ <div id="kk-poojavidhi" class="kk-panel" style="display:none;max-width:820px;margin:0 auto;">
+  <div style="background:#fff;border:1.5px solid var(--bd);border-radius:var(--rt);padding:32px 28px;box-shadow:0 4px 20px var(--sh);">
+   <h2 style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:1.35rem;color:var(--sd);margin-bottom:18px;border-bottom:1px solid var(--bd);padding-bottom:12px;">पूजा विधी</h2>
+   <p style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;line-height:2.1;color:var(--tx);">
+    संपूर्ण सृष्टी देवतांच्या अधीन चालते. जीवनात शांती आणि आत्मकल्याण मिळवण्यासाठी देवतांची अनुकूलता आवश्यक असते. त्यासाठी आपण विविध प्रकारे देवतांची पूजा-अर्चना करतो. या श्रेणीत विविध प्रसंगांनुसार भिन्न देवतांच्या पूजा-विधीची माहिती दिली आहे.
+   </p>
+  </div>
+ </div>
+
+ <div id="kk-vratparva" class="kk-panel" style="display:none;max-width:820px;margin:0 auto;">
+  <div style="background:#fff;border:1.5px solid var(--bd);border-radius:var(--rt);padding:32px 28px;box-shadow:0 4px 20px var(--sh);">
+   <h2 style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:1.35rem;color:var(--sd);margin-bottom:18px;border-bottom:1px solid var(--bd);padding-bottom:12px;">व्रत पर्व</h2>
+   <p style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;line-height:2.1;color:var(--tx);">
+    सनातन परंपरेत सांसारिक सुखापेक्षा आत्मकल्याणाला अधिक महत्त्व दिले गेले आहे. इतकेच नव्हे, तर आत्मकल्याणासाठी आवश्यक असल्यास संपूर्ण संसाराचाही त्याग करावा असे सांगितले आहे. आत्मकल्याण साध्य करण्यासाठी मनुष्याने सतत आध्यात्मिक मार्गावर पुढे जात राहणे आवश्यक आहे; म्हणूनच वर्षभर विविध व्रत-पर्व साजरे केले जातात.
+   </p>
+   <p style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;line-height:2.1;color:var(--tx);margin-top:16px;">
+    या श्रेणीत वर्षभर येणाऱ्या व्रत-पर्वांची माहिती तसेच त्यांची पूजा-विधी, मंत्र, कथा इत्यादींचे संकलन करण्यात आले आहे.
+   </p>
+  </div>
+ </div>
+
+ <div id="kk-navagraha" class="kk-panel" style="display:none;max-width:820px;margin:0 auto;">
+  <div style="background:#fff;border:1.5px solid var(--bd);border-radius:var(--rt);padding:32px 28px;box-shadow:0 4px 20px var(--sh);">
+   <h2 style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:1.35rem;color:var(--sd);margin-bottom:18px;border-bottom:1px solid var(--bd);padding-bottom:12px;">नवग्रह शांती</h2>
+   <p style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;line-height:2.1;color:var(--tx);">
+    शास्त्रांमध्ये ग्रहांची एकूण संख्या ९ सांगितली आहे: सूर्य, चंद्र, मंगळ, बुध, गुरु, शुक्र, शनि, राहु आणि केतु. येथे नवग्रह शांती विधी व मंत्रांसह सर्व ग्रहांच्या शांतीसाठीचे उपाय दिले आहेत. नवग्रह शांतीसाठी मंत्र, स्तोत्र, शांती विधी, दान, यंत्र इत्यादी विविध उपायांचे सविस्तर वर्णन येथे केले आहे.
+   </p>
+  </div>
+ </div>
+
+ <div id="kk-havanvidhi" class="kk-panel" style="display:none;max-width:820px;margin:0 auto;">
+  <div style="background:#fff;border:1.5px solid var(--bd);border-radius:var(--rt);padding:32px 28px;box-shadow:0 4px 20px var(--sh);">
+   <h2 style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:1.35rem;color:var(--sd);margin-bottom:18px;border-bottom:1px solid var(--bd);padding-bottom:12px;">हवन विधी</h2>
+   <p style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;line-height:2.1;color:var(--tx);">
+    हवन हे कर्मकांडातील एक अत्यंत महत्त्वाचे अंग आहे, ज्यासाठी विशिष्ट विधी सांगितलेली असून ती विधीनुसारच करणे आवश्यक आहे. हवन विधीमध्ये हवनाविषयी सविस्तर माहिती दिली असून, हवन करण्याची प्रक्रिया आणि संबंधित मंत्रांचा समावेश करण्यात आला आहे. कर्मकांड शिकण्यासाठी हवन शिकणे अत्यावश्यक मानले जाते.
+   </p>
+  </div>
+ </div>
+
+ <div id="kk-yadnya" class="kk-panel" style="display:none;max-width:820px;margin:0 auto;">
+  <div style="background:#fff;border:1.5px solid var(--bd);border-radius:var(--rt);padding:32px 28px;box-shadow:0 4px 20px var(--sh);">
+   <h2 style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:1.35rem;color:var(--sd);margin-bottom:18px;border-bottom:1px solid var(--bd);padding-bottom:12px;">यज्ञ</h2>
+   <p style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;line-height:2.1;color:var(--tx);">
+    यज्ञ हे कर्मकांडातील एक व्यापक आणि महत्त्वपूर्ण कर्म आहे, ज्यासाठी विशेष व्यवस्था, विधी आणि मंत्रांचा उपयोग केला जातो. यज्ञाचा मुख्य उद्देश आत्मकल्याण साध्य करणे हा आहे. या श्रेणीत यज्ञाची विधी आणि संबंधित मंत्रांचे संकलन करण्यात आले आहे.
+   </p>
+  </div>
+ </div>
+
+ <div id="kk-pranpratishtha" class="kk-panel" style="display:none;max-width:820px;margin:0 auto;">
+  <div style="background:#fff;border:1.5px solid var(--bd);border-radius:var(--rt);padding:32px 28px;box-shadow:0 4px 20px var(--sh);">
+   <h2 style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:1.35rem;color:var(--sd);margin-bottom:18px;border-bottom:1px solid var(--bd);padding-bottom:12px;">प्राण प्रतिष्ठा</h2>
+   <p style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;line-height:2.1;color:var(--tx);">
+    कर्मकांडात प्रतिमेला विशेष महत्त्व आहे. घरात प्रतिमा स्थापता येते, परंतु तेथे सामान्यतः लहान प्रतिमाच ठेवली जाते; मोठ्या प्रतिमेसाठी मंदिर आवश्यक असते. मंदिरांमध्ये मोठ्या प्रतिमेची स्थापना करण्यासाठी विशिष्ट विधी असते, ज्याला 'प्राण प्रतिष्ठा' असे म्हणतात.
+   </p>
+   <p style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;line-height:2.1;color:var(--tx);margin-top:16px;">
+    या श्रेणीत प्राण प्रतिष्ठेची सविस्तर माहिती, विधी आणि संबंधित मंत्रांचे संकलन करण्यात आले आहे.
+   </p>
+  </div>
+ </div>
+
 </div>
 </div>
 
@@ -3405,6 +3519,13 @@ function handleLogoTap(e){
   clearTimeout(_logoTimer);
   if(_logoTaps >= 5){ _logoTaps=0; openAdminPanel(); }
   else { _logoTimer = setTimeout(()=>{ _logoTaps=0; }, 2000); }
+}
+
+function showKKTab(tab, btn){
+  document.querySelectorAll('.kk-panel').forEach(p=>p.style.display='none');
+  document.querySelectorAll('#kk-tabs .stab').forEach(b=>b.classList.remove('on'));
+  document.getElementById('kk-'+tab).style.display='block';
+  btn.classList.add('on');
 }
 
 function toggleMenu() {
