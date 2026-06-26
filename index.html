@@ -282,6 +282,177 @@ footer{background:var(--dk);border-top:1.5px solid rgba(212,160,23,0.4);padding:
  margin-left: 10px; /* left side */
 }
 
+
+/* ====== CLASSY POLISH LAYER: preserves existing layout/format ====== */
+:root{
+ --s:#B84A18;
+ --sl:#D9872F;
+ --sd:#7D260D;
+ --g:#B88A2B;
+ --gl:#E8C76A;
+ --gp:#FFF8EA;
+ --cr:#7F1D2D;
+ --cream:#FBF3E3;
+ --ivory:#FFFDF7;
+ --dk:#130704;
+ --dk2:#251007;
+ --tx:#2F1409;
+ --txm:#6E5A43;
+ --bd:#DFC98B;
+ --sh:rgba(62,32,8,0.11);
+ --r:10px;
+ --rt:16px;
+}
+html{background:#f6ead4;}
+body{
+ background:
+  radial-gradient(circle at 50% -10%,rgba(232,199,106,.16),transparent 32rem),
+  linear-gradient(180deg,#fffaf1 0%,var(--cream) 38%,#f7ecd8 100%);
+ color:var(--tx);
+ font-synthesis-weight:none;
+ text-rendering:optimizeLegibility;
+ -webkit-font-smoothing:antialiased;
+}
+body::before{
+ content:'';
+ position:fixed;
+ inset:0;
+ pointer-events:none;
+ z-index:-1;
+ background-image:linear-gradient(rgba(125,38,13,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(125,38,13,.025) 1px,transparent 1px);
+ background-size:36px 36px;
+ mask-image:linear-gradient(to bottom,rgba(0,0,0,.22),transparent 60%);
+}
+#topbar,
+#topbar[style]{
+ background:linear-gradient(180deg,#4b1009 0%,#741d12 100%) !important;
+ border-bottom:1px solid rgba(232,199,106,.62) !important;
+ box-shadow:0 10px 30px rgba(25,7,3,.22) !important;
+ backdrop-filter:saturate(120%) blur(8px);
+}
+#left-drawer{
+ background:linear-gradient(180deg,#fffdf8 0%,#fbf1e4 100%) !important;
+ box-shadow:12px 0 36px rgba(35,13,5,.24) !important;
+}
+#left-drawer > div:first-child,
+#left-drawer > div:first-child[style]{
+ background:linear-gradient(135deg,#5c120b,#8b2a16) !important;
+ border-bottom:1px solid rgba(232,199,106,.35);
+}
+#left-drawer nav a,
+#left-drawer nav button{
+ transition:background .18s ease,color .18s ease,transform .18s ease,border-color .18s ease !important;
+}
+#left-drawer nav a:hover,
+#left-drawer nav button:hover{
+ background:#fff4e6 !important;
+ color:#7d260d !important;
+ transform:translateX(2px);
+}
+.hero{
+ background:
+  linear-gradient(145deg,rgba(19,7,4,.96),rgba(82,28,12,.94) 52%,rgba(33,13,6,.98)),
+  radial-gradient(circle at 50% 8%,rgba(232,199,106,.18),transparent 26rem);
+ padding-top:58px;
+ border-bottom:1px solid rgba(184,138,43,.38);
+}
+.hero::before{opacity:.75;}
+.hero-chip,.live-pill,.profile-btn{
+ border-color:rgba(232,199,106,.52) !important;
+ background:rgba(255,248,234,.08) !important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
+}
+.hero h1{
+ color:#f1d77e;
+ text-shadow:0 1px 0 rgba(0,0,0,.35),0 18px 46px rgba(184,138,43,.24);
+ letter-spacing:.02em;
+}
+.hero p{color:rgba(255,250,235,.82);}
+.hbtns{gap:10px;}
+.btn-fire,
+.btn-sm,
+button.btn-fire,
+a.btn-fire{
+ background:linear-gradient(135deg,#d99a3f,#a94019 55%,#76220c) !important;
+ box-shadow:0 8px 22px rgba(125,38,13,.28),inset 0 1px 0 rgba(255,255,255,.18) !important;
+ border:1px solid rgba(255,235,180,.22) !important;
+}
+.btn-fire:hover,.btn-sm:hover{box-shadow:0 12px 28px rgba(125,38,13,.34),inset 0 1px 0 rgba(255,255,255,.2) !important;}
+.btn-ring,
+.pan-nav button,
+.stab,
+.ptab{
+ border-color:rgba(184,138,43,.72) !important;
+ color:#8a390f;
+ background:rgba(255,253,247,.36);
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.45);
+}
+.sec-dk .btn-ring,.sec-dk .stab,.hero .btn-ring{color:#f0d677;background:rgba(255,248,234,.05);}
+.btn-ring:hover,.pan-nav button:hover,.stab.on,.stab:hover,.ptab.on,.ptab:hover{
+ background:linear-gradient(135deg,#c99a3d,#a77924) !important;
+ color:#231007 !important;
+ border-color:#d9bd68 !important;
+}
+.sec{padding-top:58px;padding-bottom:58px;}
+.sec-alt{background:linear-gradient(180deg,#fffaf1,#fbf1e3);}
+.sec-dk{background:linear-gradient(145deg,#1c0a05,#351409 62%,#1a0904);}
+.stitle{color:#8f2e12;font-weight:600;}
+.sdiv-line{background:linear-gradient(90deg,transparent,var(--g),transparent);}
+.pband,
+.feat-box,
+.muh-single-box,
+.photo-panel,
+.bform,
+.guru-card,
+.auth-box,
+.ov-box,
+.profile-hero{
+ box-shadow:0 16px 38px rgba(61,28,8,.13) !important;
+ border-color:rgba(184,138,43,.56) !important;
+}
+.rahu-card,.pan-item,.muh-row,.muh-month-card,.photo-link-card,.rashi-card,.puja-card,.saved-card,.ritual-card,.stat-box,.suggestion-strip,.history-row{
+ background:linear-gradient(180deg,#fffefd,#fff8ed) !important;
+ border-color:rgba(184,138,43,.48) !important;
+ box-shadow:0 10px 26px rgba(65,31,9,.09) !important;
+}
+.rahu-card:hover,.pan-item:hover,.muh-month-card:hover,.photo-link-card:hover,.rashi-card:hover,.puja-card:hover{
+ box-shadow:0 16px 34px rgba(65,31,9,.14) !important;
+}
+.muh-box-header,.pow-band,.profile-hero,
+[style*="background:linear-gradient(135deg,var(--sd),var(--cr))"]{
+ background:linear-gradient(135deg,#7d260d,#812538) !important;
+}
+.fg input,.fg select,.fg textarea{
+ background:#fffdf7 !important;
+ border-color:rgba(184,138,43,.54) !important;
+ box-shadow:inset 0 1px 2px rgba(55,25,6,.04);
+}
+.fg input:focus,.fg select:focus,.fg textarea:focus{
+ border-color:#b88a2b !important;
+ box-shadow:0 0 0 3px rgba(184,138,43,.16),inset 0 1px 2px rgba(55,25,6,.04);
+}
+a,button,input,select,textarea{outline-color:#b88a2b;}
+button{font-weight:600;}
+.photo-link-card .plc-icon,.guru-orb,.profile-avatar,.profile-avatar-lg,.logo-orb{
+ box-shadow:0 10px 26px rgba(125,38,13,.18),inset 0 1px 0 rgba(255,255,255,.2) !important;
+}
+.fwa,
+a[href*="instagram.com"][style*="fixed"]{
+ box-shadow:0 12px 28px rgba(33,13,6,.24) !important;
+ border:1px solid rgba(255,255,255,.22);
+}
+footer{
+ background:linear-gradient(180deg,#1d0a05,#100503) !important;
+ border-top-color:rgba(232,199,106,.36) !important;
+}
+@media(max-width:640px){
+ .hero{padding-top:46px;padding-bottom:38px;}
+ .sec{padding:44px 16px;}
+ .btn-fire,.btn-ring,.btn-wa{min-height:44px;}
+ .pband-cell{padding:12px 8px;}
+ .muh-row:hover{transform:none;}
+}
+
 </style>
 </head>
 <body>
@@ -2168,7 +2339,7 @@ const ST={
 राम लखन सीता सहित, हृदय बसहु सुर भूप॥
 
 ॥ इति श्री हनुमान चालीसा संपूर्णम् ॥`},
-'bajrang-baan':{title:'बजरंग बाण',sub:'॥ श्री हनुमते नमः ॥',text:`|| श्री बजरंग बाण || निश्चय प्रेम प्रतीति ते, बिनय करैं सनमान तेहि के कारज सकल शुभ, सिद्ध करैं हनुमान जय हनुमंत संत हितकार, सुन लीजै प्रभु अरज हमारी जन के काज बिलंब न कीजै, आतुर दौरि महा सुख दीजै जैसे कूदि सिंधु महिपारा, सुरसा बदन पैठि बिस्तारा आगे जाय लंकिनी रोका, मारेहु लात गई सुरलोका जाय बिभीषन को सुख दीन्हा, सीता निरखि परमपद लीन्हा बाग उजारि सिंधु महँ बोरा, अति आतुर जमकातर तोरा अक्षय कुमार मारि संहारा, लूम लपेटि लंक को जारा लाह समान लंक जरि गई, जय-जय धुनि सुरपुर नभ भई अब बिलंब केहि कारन स्वामी, कृपा करहु उर अंतरयामी जय-जय लखन प्रान के दाता, आतुर ह्वै दुख करहु निपाता जय हनुमान जयति बल-सागर, सुर-समूह-समरथ भट-नागर ॐ हनु-हनु-हनु हनुमंत हठीले, बैरिहि मारु बज्र की कीले ॐ ह्नीं ह्नीं ह्नीं हनुमंत कपीसा, ॐ हुं हुं हुं हनु अरि उर सीसा जय अंजनि कुमार बलवंता, शंकरसुवन बीर हनुमंता बदन कराल काल-कुल-घालक, राम सहाय सदा प्रतिपालक भूत, प्रेत, पिसाच निसाच, र अगिन बेताल काल मारी मर इन्हें मारु, तोहि सपथ राम की, राखु नाथ मरजाद नाम की सत्य होहु हरि सपथ पाइ कै, राम दूत धरु मारु धाइ कै जय-जय-जय हनुमंत अगाधा, दुख पावत जन केहि अपराधा पूजा जप तप नेम अचारा, नहिं जानत कछु दास तुम्हारा बन उपबन मग गिरि गृह माहीं, तुम्हरे बल हौं डरपत नाहीं जनकसुता हरि दास कहावौ, ताकी सपथ बिलंब न लावौ जै जै जै धुनि होत अकासा, सुमिरत होय दुसह दुख नासा चरन पकरि, कर जोरि मनावौं, यहि औसर अब केहि गोहरावौं उठु, उठु, चलु, तोहि राम दुहाई, पायँ परौं, कर जोरि मनाई ॐ चं चं चं चं चपल चलंता, ॐ हनु हनु हनु हनु हनुमंता ॐ हं हं हाँक देत कपि चंचल, ॐ सं सं सहमि पराने खल-दल अपने जन को तुरत उबारौ, सुमिरत होय आनंद हमारौ यह बजरंग-बाण जेहि मारै, ताहि कहौ फिरि कवन उबारै पाठ करै बजरंग-बाण की, हनुमत रक्षा करै प्रान की यह बजरंग बाण जो जापैं, तासों भूत-प्रेत सब कापैं धूप देय जो जपै हमेसा, ताके तन नहिं रहै कलेसा ताके तन नहिं रहै कलेसा उर प्रतीति दृढ़, सरन ह्वै, पाठ करै धरि ध्यान बाधा सब हर, करैं सब काम सफल हनुमान`},
+'bajrang-baan':{title:'बजरंग बाण',sub:'॥ श्री हनुमते नमः ॥',text:`|| श्री बजरंग बाण || निश्चय प्रेम प्रतीति ते, बिनय करैं सनमान तेहि के कारज सकल शुभ, सिद्ध करैं हनुमान जय हनुमंत संत हितकार, सुन लीजै प्रभु अरज हमारी जन के काज बिलंब न कीजै, आतुर दौरि महा सुख दीजै जैसे कूदि सिंधु महिपारा, सुरसा बदन पैठि बिस्तारा आगे जाय लंकिनी रोका, मारेहु लात गई सुरलोका जाय बिभीषन को सुख दीन्हा, सीता निरखि परमपद लीन्हा बाग उजारि सिंधु महँ बोरा, अति आतुर जमकातर तोरा अक्षय कुमार मारि संहारा, लूम लपेटि लंक को जारा लाह समान लंक जरि गई, जय-जय धुनि सुरपुर नभ भई अब बिलंब केहि कारन स्वामी, कृपा करहु उर अंतरयामी जय-जय लखन प्रान के दाता, आतुर ह्वै दुख करहु निपाता जय हनुमान जयति बल-सागर, सुर-समूह-समरथ भट-नागर ॐ हनु-हनु-हनु हनुमंत हठीले, बैरिहि मारु बज्र की कीले ॐ ह्नीं ह्नीं ह्नीं हनुमंत कपीसा, ॐ हुं हुं हुं हनु अरि उर सीसा जय अंजनि कुमार बलवंता, शंकरसुवन बीर हनुमंता बदन कराल काल-कुल-घालक, राम सहाय सदा प्रतिपालक भूत, प्रेत, पिसाच निसाच, र अगिन बेताल काल मारी मर इन्हें मारु, तोहि सपथ राम की, राखु नाथ मरजाद नाम की सत्य होहु हरि सपथ पाइ कै, राम दूत धरु मारु धाइ कै जय-जय-जय हनुमंत अगाधा, दुख पावत जन केहि अपराधा पूजा जप तप नेम अचारा, नहिं जानत कछु दास तुम्हारा बन उपबन मग गिरि गृह माहीं, तुम्हरे बल हौं डरपत नाहीं जनकसुता हरि दास कहावौ, ताकी सपथ बिलंब न लावौ जै जै जै धुनि होत अकासा, सुमिरत होय दुसह दुख नासा चरन पकरि, कर जोरि मनावौं, यहि औसर अब केहि गोहरावौं उठु, उठु, चलु, तोहि राम दुहाई, पायँ परौं, कर जोरि मनाई ॐ चं चं चं चं चपल चलंता, ॐ हनु हनु हनु हनु हनुमंता ॐ हं हं हाँक देत कपि चंचल, ॐ सं सं सहमि पराने खल-दल अपने जन को तुरत उबारौ, सुमिरत होय आनंद हमारौ यह बजरंग-बाण जेहि मारै, ताहि कहौ फिरि कवन उबारै पाठ करै बजरंग-बाण की, हनुमत रक्षा करै प्रान की यह बजरंग बाण जो जापैं, तासों भूत-प्रेत सब कापैं धूप देय जो जपै हमेसा, ताके तन नहिं रहै कलेसा ताके तन नहिं रहै कलेसा उर प्रतीति दृढ़, सरन ह्वै, पाठ करै धरि ध्यान बाधा सब हर, करैं सब काम सफल हनुमान`},
 'shiv-panchakshar':{title:'शिव पञ्चाक्षर स्तोत्रम्',sub:'॥ ॐ नमः शिवाय ॥',text:`नागेन्द्रहाराय त्रिलोचनाय
 भस्माङ्गरागाय महेश्वराय।
 नित्याय शुद्धाय दिगम्बराय
@@ -3530,6 +3701,49 @@ const GRAHA_RASHI = {
   guru:   ['मेष','वृषभ','मिथुन','कर्क','सिंह','कन्या','तुला','वृश्चिक','धनु','मकर','कुंभ','मीन']
 };
 
+
+const SANKALP_OVERRIDES = {
+  '2026-06-26': {
+    samvatName: 'पराभव',
+    ayana: 'दक्षिणायन',
+    ritu: 'वर्षा',
+    masa: 'ज्येष्ठ',
+    paksha: 'शुक्ल पक्ष',
+    tithi: 'द्वादशी',
+    vasara: 'शुक्रवार',
+    nakshatra: 'अनुराधा',
+    yoga: 'साध्य',
+    karan: 'बालव',
+    moonRashi: 'वृश्चिक',
+    sunRashi: 'मिथुन',
+    guruRashi: 'कर्क'
+  }
+};
+
+function sankalpDateKey(date){
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, '0');
+  const d = String(date.getDate()).padStart(2, '0');
+  return `${y}-${m}-${d}`;
+}
+
+function applySankalpOverride(d){
+  const override = SANKALP_OVERRIDES[sankalpDateKey(d.n)];
+  if(!override) return d;
+  d.samvatName = override.samvatName || d.samvatName;
+  d.ayana = override.ayana || d.ayana;
+  d.ritu = override.ritu || d.ritu;
+  d.vasara = override.vasara || d.vasara;
+  d.moonRashi = override.moonRashi || d.moonRashi;
+  d.sunRashi = override.sunRashi || d.sunRashi;
+  d.guruRashi = override.guruRashi || d.guruRashi;
+  d.p = {...d.p};
+  ['masa','paksha','tithi','nakshatra','yoga','karan'].forEach(key => {
+    if(override[key]) d.p[key] = override[key];
+  });
+  return d;
+}
+
 // ── Jupiter longitude (low-precision VSOP87 reduction) ──────────
 function jupiterLongitude(jd) {
   const T = (jd - 2451545.0) / 36525;
@@ -3629,7 +3843,7 @@ function getSankalpData(){
   const vasaraNames = ['रविवार','सोमवार','मंगळवार','बुधवार','गुरुवार','शुक्रवार','शनिवार'];
   const vasara = vasaraNames[n.getDay()];
 
-  return { p, vikramYear, samvatName, shakaYear, ayana, ritu, sunRashi, moonRashi, guruRashi, vasara, n };
+  return applySankalpOverride({ p, vikramYear, samvatName, shakaYear, ayana, ritu, sunRashi, moonRashi, guruRashi, vasara, n });
 }
 
 function buildSankalpText(d){
@@ -3655,6 +3869,17 @@ function buildSankalpText(d){
 
 function openSankalpModal(){
   const d = getSankalpData();
+  // Use on-screen Panchang values only when today has no manual Sankalp correction.
+  if(!SANKALP_OVERRIDES[sankalpDateKey(d.n)]){
+    const tithiEl=document.getElementById('hp-tithi');
+    const nakEl=document.getElementById('hp-nak');
+    const yogaEl=document.getElementById('hp-yoga');
+    const karanEl=document.getElementById('hp-karan');
+    if(tithiEl && tithiEl.textContent.trim()) d.p.tithi=tithiEl.textContent.trim();
+    if(nakEl && nakEl.textContent.trim()) d.p.nakshatra=nakEl.textContent.trim();
+    if(yogaEl && yogaEl.textContent.trim()) d.p.yoga=yogaEl.textContent.trim();
+    if(karanEl && karanEl.textContent.trim()) d.p.karan=karanEl.textContent.trim();
+  }
   const lines = buildSankalpText(d);
 
   // Date line in header
